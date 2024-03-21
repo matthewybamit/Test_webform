@@ -17,16 +17,27 @@
           margin-right: auto;  /*Creates a space on the right side of the box */
 
         }
-   
+        #button {
+            display: flex;
+            text-align: center;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+        }
+        #button_size {
+           font-size: 100px;
+           padding: 10px 20px;
+
+        }
 
     </style>
 
 </head>
 <body> 
     <form id="form1" runat="server"> 
-        <div>
-
-        </div>
+         <div id="button">
+         <button id="button_size">HELLO</button>
+     </div>
     </form>
 
 </body>
