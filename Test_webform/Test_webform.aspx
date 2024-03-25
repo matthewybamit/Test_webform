@@ -3,75 +3,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>My Introduction</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #form1 {
-            height: 600px;
-            width: 500px;
-            background-color: lightgreen;
-            margin: 0 auto; 
-            padding: 20px; 
-        }
-
-        #button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        #button_size {
-            font-size: 100px;
-            padding: 10px 20px;
-            overflow: hidden;
-        }
-         .topnav img {
-            max-height: 50px; /* Adjust as needed */
-            max-width: 100px; /* Adjust as needed */
-            vertical-align: middle;
-        }
-
-
-        .topnav {
-            background-color: #2E2118;
-            padding: 10px 20px;
-            margin-bottom: 30px;
-            overflow: hidden; /* Added overflow to contain floated elements */
-        }
-
-        .topnav a {
-            color: #f2f2f2;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .topnav a.active {
-
-            margin-left: 5px;
-            color: white;
-        }
-
-        .topnav-right {
-            float: right;
-            padding-top:inherit;
-            padding-bottom: inherit;
-            vertical-align: middle;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="CSS/StyleSheet1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+
+
+
+
+
+
+
+<body style="background-color:#FAEBDB;">
+
+
     <div class="topnav">
-        <img src="Dresserve.png" alt="">
+        <img class ="logo" src="Dresserve.png" alt="">
         <a class="active" href="#home">DRESSERVE</a>
         <div class="topnav-right">
             <a href="#search">Search</a>

@@ -1,0 +1,84 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+#form1 {
+    height: 600px;
+    width: 500px;
+    background-color: lightgreen;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#button_size {
+    font-size: 100px;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+.topnav img {
+    max-height: 50px; 
+    max-width: 100px; 
+    vertical-align: middle;
+}
+
+
+.topnav {
+    background-color: #2E2118;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    overflow: hidden; 
+}
+
+    .topnav a {
+        color: #f2f2f2;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+        .topnav a:hover {
+            background-color: #f2f2f2;
+            color: black;
+        }
+
+        .topnav a.active {
+            margin-left: 5px;
+        
+        }
+/* Logo animation */
+.topnav {
+    position: relative;
+}
+
+.logo {
+    transition: transform 0.3s ease; 
+}
+
+    .logo:hover {
+        transform: scale(1.2);
+    }
+
+    .logo:hover {
+        cursor: pointer;
+    }
+/* Logo animation */
+
+
+.topnav-right {
+    float: right;
+    padding-top: inherit;
+    padding-bottom: inherit;
+    vertical-align: middle;
+}
+
+/* Carousel */
+
