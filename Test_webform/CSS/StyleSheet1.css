@@ -8,6 +8,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #FAEBDB;
 }
 
 .topnav img {
@@ -20,7 +21,6 @@ body {
 .topnav {
     background-color: #2E2118;
     padding: 6.5px 20px;
-    margin-bottom: 30px;
     overflow: hidden; 
 }
 
@@ -32,11 +32,39 @@ body {
         
     }
 
+.topnav-right {
+    float: right;
+    padding-top: inherit;
+    padding-bottom: inherit;
+    vertical-align: middle;
+}
+
 .icon {
     margin-left: 15px;
     width: 30px;
     height: 30px; 
 }
+
+/*--------------------------------------------------------------------------------------------*/
+
+/*TESTING*/
+
+
+.hamburger-menu {
+    display: none;
+}
+
+@media screen and (max-width: 730px) {
+    .icon {
+        display: none; /* Hide icons */
+    }
+
+    .hamburger-menu {
+        display: inline-block; /* Display hamburger menu icon */
+    }
+}
+
+/*--------------------------------------------------------------------------------------------*/
 
 /* icon animation */
 
@@ -58,7 +86,7 @@ body {
             font-size: 40px ;
         }
 
-
+/*--------------------------------------------------------------------------------------------*/
 /* Logo animation */
 .topnav {
     position: relative;
@@ -77,14 +105,9 @@ body {
         cursor: pointer;
     }
 /* Logo animation */
+/*--------------------------------------------------------------------------------------------*/
 
 
-.topnav-right {
-    float: right;
-    padding-top: inherit;
-    padding-bottom: inherit;
-    vertical-align: middle;
-}
 
 /* Carousel */
 
