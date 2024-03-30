@@ -104,7 +104,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="CSS\login-page.css" />
-    <Content Include="CSS\StyleSheet1.css" />
+    <Content Include="CSS\StyleSheet1 - Copy.css" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -123,6 +123,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CSS\Carousel.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

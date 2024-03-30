@@ -12,16 +12,23 @@ body {
 }
 
 .topnav img {
-    max-height: 50px; 
-    max-width: 100px; 
+    max-height: 50px;
+    max-width: 100px;
     vertical-align: middle;
 }
 
 
 .topnav {
+    position: fixed; /* Change to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #2E2118;
     padding: 6.5px 20px;
-    overflow: hidden; 
+    z-index: 1000;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+
 }
 
     .topnav a {
@@ -29,7 +36,6 @@ body {
         padding: 10px 10px;
         text-decoration: none;
         font-size: 20px;
-        
     }
 
 .topnav-right {
@@ -42,7 +48,7 @@ body {
 .icon {
     margin-left: 15px;
     width: 30px;
-    height: 30px; 
+    height: 30px;
 }
 
 /*--------------------------------------------------------------------------------------------*/
@@ -57,6 +63,7 @@ body {
 @media screen and (max-width: 730px) {
     .icon {
         display: none; /* Hide icons */
+
     }
 
     .hamburger-menu {
@@ -81,20 +88,18 @@ body {
 /* icon animation */
 
 
-        .topnav a.active {      
-            font-family: Kapakana ;
-            font-size: 40px ;
-        }
+.topnav a.active {
+    font-family: Kapakana;
+    font-size: 40px;
+}
 
 /*--------------------------------------------------------------------------------------------*/
 /* Logo animation */
-.topnav {
-    position: relative;
-}
+
 
 .logo {
-    margin-left: 20px ;
-    transition: transform 0.3s ease; 
+    margin-left: 20px;
+    transition: transform 0.3s ease;
 }
 
     .logo:hover {
@@ -108,6 +113,16 @@ body {
 /*--------------------------------------------------------------------------------------------*/
 
 
+p {
+    font-size: 100px;
+}
 
-/* Carousel */
 
+/* NAV HIDDEN animation */
+.topnav.hidden {
+    transform: translateY(-100%);
+}
+
+.topnav.visible {
+    transform: translateY(0);
+}
