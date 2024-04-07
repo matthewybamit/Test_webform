@@ -1,42 +1,53 @@
 ﻿
-       // JavaScript to toggle visibility of the top navigation on scroll
-    $(document).ready(function () {
-           var lastScrollTop = 0;
+// JavaScript to toggle visibility of the top navigation on scroll
+
+
+
+$(document).ready(function () {
+    var lastScrollTop = 0;
 
     $(window).scroll(function (event) {
-               var st = $(this).scrollTop();
-               if (st > lastScrollTop) {
-        // Scroll down
-        $("#topnav").removeClass("visible").addClass("hidden");
-               } else {
-        // Scroll up
-        $("#topnav").removeClass("hidden").addClass("visible");
-               }
-    lastScrollTop = st;
-           });
-       });
-
-
-    const carouselContainer = document.querySelector('.carousel-container');
-    const prevBtn = document.querySelector('.btn-prev');
-    const nextBtn = document.querySelector('.btn-next');
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    const totalItems = carouselItems.length;
-    let currentIndex = 0;
-
-    function updateCarousel() {
-        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop) {
+            // Scroll down
+            $("#topnav").removeClass("visible").addClass("hidden");
+        } else {
+            // Scroll up
+            $("#topnav").removeClass("hidden").addClass("visible");
         }
+        lastScrollTop = st;
+    });
+});
 
-    function prevSlide() {
-        currentIndex = (currentIndex === 0) ? totalItems - 1 : currentIndex - 1;
-    updateCarousel();
-        }
 
+$(document).ready(function () {
+    var slideIndex = 0; // Initialize slide index
+
+    // Function to move to the next slide
     function nextSlide() {
-        currentIndex = (currentIndex === totalItems - 1) ? 0 : currentIndex + 1;
-    updateCarousel();
-        }
+        var slideWidth = $('.slides a').eq(0).outerWidth();
+        slideIndex = (slideIndex + 1) % $('.slides a').length; // Increment slide index
+        $('.slides').css('transform', 'translateX(' + (-slideIndex * slideWidth) + 'px)');
+        updateSliderIndicator(); // Update slider indicator
+    }
 
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
+    // Function to update the slider indicator
+    function updateSliderIndicator() {
+        $('.slider').removeClass('active');
+        $('.slider[data-slide="' + slideIndex + '"]').addClass('active');
+    }
+
+    // Set interval to automatically move to the next slide every 8 seconds
+    var interval = setInterval(nextSlide, 4000);
+
+    // Click event handler for slider
+    $('.slider').click(function () {
+        clearInterval(interval); // Clear previous interval
+        slideIndex = $(this).data('slide'); // Update slide index
+        var slideWidth = $('.slides a').eq(0).outerWidth();
+        $('.slides').css('transform', 'translateX(' + (-slideIndex * slideWidth) + 'px)');
+        updateSliderIndicator(); // Update slider indicator
+        // Set new interval after click
+        interval = setInterval(nextSlide, 4000);
+    });
+});
