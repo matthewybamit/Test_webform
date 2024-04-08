@@ -4,40 +4,30 @@
     /* Add additional font formats and paths as needed */
 }
 
-
 body {
     margin: 0;
     padding: 0;
     background-color: #FAEBDB;
 }
 
-.topnav img {
-    max-height: 50px;
-    max-width: 100px;
+.topnav img.logo {
+    max-height: 40px; /* Adjust the maximum height for the logo */
+    max-width: auto; /* Let the width adjust proportionally */
     vertical-align: middle;
 }
 
-
 .topnav {
-   
     position: fixed; /* Change to fixed */
     top: 0;
     left: 0;
     width: 100%;
     background-color: #2E2118;
-    padding: 6.5px 20px;
+    padding: 4.5px 15px;
     z-index: 1000;
     overflow: hidden;
     transition: transform 0.3s ease; /* Add transition for smooth animation */
-    
 }
 
-    .topnav a {
-        color: #f2f2f2;
-        padding: 10px 10px;
-        text-decoration: none;
-        font-size: 20px;
-    }
 
 .topnav-right {
     float: right;
@@ -46,39 +36,15 @@ body {
     vertical-align: middle;
 }
 
-.icon {
-    margin-left: 15px;
-    width: 30px;
-    height: 30px;
-}
-
-/*--------------------------------------------------------------------------------------------*/
-
-/*TESTING*/
-
-
-.hamburger-menu {
-    display: none;
-    margin-right: 30px ;
-}
-
-@media screen and (max-width: 730px) {
-    .icon {
-        display: none; /* Hide icons */
-
-    }
-
-    .hamburger-menu {
-        display: inline-block; /* Display hamburger menu icon */
-    }
-}
-
-/*--------------------------------------------------------------------------------------------*/
-
-/* icon animation */
 
 .icon {
     margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    color: #f2f2f2;
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 20px;
     transition: transform 0.3s ease;
 }
 
@@ -86,18 +52,18 @@ body {
         transform: scale(1.2);
         cursor: pointer;
     }
+#burger{
+    margin-right:39px;
 
-/* icon animation */
-
-
-.topnav a.active {
-    font-family: Kapakana;
-    font-size: 40px;
 }
-
-/*--------------------------------------------------------------------------------------------*/
-/* Logo animation */
-
+a.active {
+    margin-left: 5px;
+    font-family: Kapakana;
+    font-size: 30px;
+    color: white; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+    
+}
 
 .logo {
     margin-left: 20px;
@@ -111,20 +77,53 @@ body {
     .logo:hover {
         cursor: pointer;
     }
-/* Logo animation */
-/*--------------------------------------------------------------------------------------------*/
-
 
 p {
     font-size: 20px;
 }
 
-
-/* NAV HIDDEN animation */
 .topnav.hidden {
     transform: translateY(-100%);
 }
 
 .topnav.visible {
     transform: translateY(0);
+}
+
+
+
+/* Mobile view */
+
+
+@media screen and (max-width: 730px) {
+    .topnav {
+        padding: 5px 5px; /* Reduce padding */
+    }
+
+    .icon {
+        display: none; /* Hide icons */
+    }
+
+    .hamburger-menu {
+        display: inline-block; /* Display hamburger menu icon */
+        margin-right: 20px;
+        transition: transform 0.3s ease !important; /* Add !important to override other transition properties */
+    }
+
+        .hamburger-menu:hover {
+            transform: scale(1.2); /* Scale up the icon on hover */
+        }
+
+    /* Remove padding and margin for img.logo */
+    img.logo {
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+
+    .active {
+        font-size: 80px; /* Adjust font size for mobile */
+        margin-top: 20px; /* Move the active link down by 10px */
+    }
 }

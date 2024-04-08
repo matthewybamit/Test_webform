@@ -8,6 +8,7 @@
          <script src="javascripts/JavaScript.js"></script>
         <link rel="stylesheet" type="text/css" href="CSS/StyleSheet1 - Copy.css">
          <link rel="stylesheet" type="text/css" href="CSS/Carousel.css">  
+        <link rel="stylesheet" type="text/css" href="CSS/for_him_for_her.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
    
@@ -18,25 +19,30 @@
     <!--TOP NAV-->
 
         <div class="topnav visible" id="topnav">
-        <!-- LOGO -->
+        <!-- LOGO -->   
         <img class="logo" src="Dresserve.png" alt="">
         <a class="active" href="#home">Dresserve</a>
+        <!-- END -->  
+
         <!--NAV ICON-->
         <div class="topnav-right">
-            <a href="#home"><img class="icon" src="magnifying-glass.png" alt="Search"></a>
+            <a href="#home"><img class="icon" id="search-bar" src="magnifying-glass.png" alt="Search"></a>
             <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
             <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
-            <a href="#home"><img class="icon" src="hamburger.png" alt="Menu"></a>
+            <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>
             <a href="#home"><img class="hamburger-menu" src="hamburger.png" alt="Menu"></a>
         </div>
+          <!-- END -->  
+
     </div>
-    <!--TOP NAV-->
+
+  <!-- END -->  
 
     <!--Courosel-->
    
        <div class="container">
         <div class="slides"> 
-            <a href="#"><img src="1.png" alt="Slide 1"></a>
+            <a href="#"><img src="2.jpg" alt="Slide 1"></a>
             <a href="#"><img src="2.jpg" alt="Slide 2"></a>
             <a href="#"><img src="3.jpg" alt="Slide 3"></a>
         </div>
@@ -48,9 +54,27 @@
     </div>
 
     
-    <!--Courosel-->
- 
+    <!--END-->
 
+
+<!--FOR HIM FOR HER-->
+
+  <div class="container">
+  <div class="box" id="box1">
+    <img src="Dresserve1.png" id="image1" alt="Image 1">
+    <a href="#" class="box-link">FOR HIM</a> 
+  
+  </div>
+  <div class="box">   
+    <img src="Dresserve1.png" id="image2" alt="Image 2">
+    <a href="#" class="box-link">FOR HER</a> 
+   
+  </div>
+</div>
+
+<!--END-->
+
+<!--COLLECTION LIST-->
 
     </body>
 
