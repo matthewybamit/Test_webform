@@ -51,3 +51,4 @@ $(document).ready(function () {
         interval = setInterval(nextSlide, 4000);
     });
 });
+

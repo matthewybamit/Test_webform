@@ -1,10 +1,18 @@
-﻿.container {
+﻿@font-face {
+    font-family: 'Barlow Semi Condensed';
+    font-style: normal;
+    font-weight: 600; /* Semibold weight */
+    src: url('path/to/barlow-semi-condensed-600.woff2') format('woff2'), /* Modern Browsers */
+    url('path/to/barlow-semi-condensed-600.woff') format('woff'); /* Older Browsers */
+}
+
+.container {
     position: relative;
     max-width: 100%;
     overflow: hidden;
-    max-height: 70%;
+    max-height: 80%;
     image-orientation: from-image;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 .slides {
@@ -18,7 +26,7 @@
         object-fit: cover;
         transform: scale(1.35); /* Scale the image diagonally to 35% */
         transform-origin: 0 0; /* Set transform origin to top-left */
-        object-position: -200px center;
+      
     }
 
     .slides a {
@@ -61,8 +69,8 @@
 
 .slider {
     cursor: pointer;
-    height: 10px;
-    width: 10px;
+    height: 20px;
+    width:20px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.5); /* Set default background to transparent white */
     margin: 0 5px;
@@ -72,13 +80,80 @@
         background: #fff; /* Set active slider background to white */
     }
 
+
+
+
+
+.text-between-containers {
+    text-align: center;
+    margin: 20px 0; /* Adjust margin as needed */
+}
+
+    .text-between-containers span {
+        color: black;
+        font-family: 'Barlow Semi Condensed', sans-serif; /* Include the font-family */
+        font-size: 10px;
+        font-weight: 600; /* Semibold weight */
+        letter-spacing: 20px; /* Adjust the spacing between letters */
+    }
+
+
+
+
+
+
+
 /* Media query for mobile devices */
 @media screen and (max-width: 767px) {
-    .slides img {
-        width: 100%; /* Set width to 100% to fill the container */
-        height: auto; /* Allow the height to adjust proportionally */
-        object-fit: contain; /* Ensure the entire image fits within the container */
-        transform: none; /* Reset transform for mobile */
-        object-position: initial; /* Reset object position for mobile */
+    .container {
+        margin: 0; /* Reset margin */
+        position: relative;
+        max-width: 200%;
+        overflow: hidden;
+        height: auto; /* Change max-height to height: auto */
+        image-orientation: from-image;
+        margin-bottom: 10%;
     }
-}
+
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out; /* Add transition effect */
+    }
+
+        .slides img {
+            width: 150%; /* Set width to 100% to fill the container */
+            height: auto; /* Allow the height to adjust proportionally */
+            object-fit: cover;
+            transform: none; /* Reset transform for mobile */
+        }
+
+        .slides a {
+            flex: 0 0 100%;
+            position: relative;
+            display: block; /* Ensure the link takes full image area */
+        }
+
+    #carousel1 {
+        /* Add specific styles for carousel images if needed */
+    }
+
+    #carousel2 {
+        /* Add specific styles for carousel images if needed */
+    }
+
+    #carousel3 {
+        /* Add specific styles for carousel images if needed */
+    }
+
+    .text-between-containers {
+        text-align: center;
+        margin: 20px 0; /* Adjust margin as needed */
+    }
+
+        .text-between-containers span {
+            color: black;
+            font-family: 'Barlow Semi Condensed', sans-serif; /* Include the font-family */
+            font-size: 12px;
+            font-weight: 600; /* Semibold weight */
+            letter-spacing: 4px; /* Adjust the spacing between letters */
+        }

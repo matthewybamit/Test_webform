@@ -8,8 +8,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #FAEBDB;
+    /* Add other body styles */
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0) 0%, #FAEBDB 50%, #2E2118 100%);
 }
-
 .topnav img.logo {
     max-height: 40px; /* Adjust the maximum height for the logo */
     max-width: auto; /* Let the width adjust proportionally */
@@ -65,6 +66,10 @@ a.active {
     
 }
 
+.hamburger-menu{
+    display: none;
+}
+
 .logo {
     margin-left: 20px;
     transition: transform 0.3s ease;
@@ -92,6 +97,7 @@ p {
 
 
 
+
 /* Mobile view */
 
 
@@ -101,19 +107,23 @@ p {
     }
 
     .icon {
-        display: none; /* Hide icons */
+        margin-top: 2px;
+        margin-left: 8px;
+        width: 25px;
+        height: 25px;
+        color: #f2f2f2;
+        margin-right: 10px;
+        text-decoration: none;
+        font-size: 20px;
+        transition: transform 0.3s ease;
     }
 
-    .hamburger-menu {
-        display: inline-block; /* Display hamburger menu icon */
-        margin-right: 20px;
-        transition: transform 0.3s ease !important; /* Add !important to override other transition properties */
+
+    .topnav img.logo {
+        max-height: 30px; /* Adjust the maximum height for the logo */
+        max-width: auto; /* Let the width adjust proportionally */
+        vertical-align: middle;
     }
-
-        .hamburger-menu:hover {
-            transform: scale(1.2); /* Scale up the icon on hover */
-        }
-
     /* Remove padding and margin for img.logo */
     img.logo {
         padding: 0;
@@ -126,4 +136,5 @@ p {
         font-size: 80px; /* Adjust font size for mobile */
         margin-top: 20px; /* Move the active link down by 10px */
     }
+    
 }

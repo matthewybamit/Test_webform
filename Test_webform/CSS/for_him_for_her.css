@@ -1,4 +1,4 @@
-﻿.container {
+﻿.container1 {
     display: flex;
     justify-content: center; /* Center the boxes horizontally */
    
@@ -53,42 +53,39 @@
         color: #2E2118; /* Change text color on hover */
         text-decoration: none; /* Remove underline on hover */
     }
- 
- 
-
-
 
 
 @media screen and (max-width: 767px) {
-    .box {
-        width: 50%; /* Each box takes up half of the container width */
-        padding: 20px;
+    .container1 {
+        display: flex;  
+        flex-direction: column; /* Stack boxes vertically */
+        padding-right: 10%; /* Add padding to the right side of the container */
+    }
 
+    .box {
+        width: calc(100% - 20px); /* Adjust the width to account for the padding */
+        margin-bottom: 5px; /* Add margin between stacked boxes */
     }
 
         .box img {
-         
-         
+            height: 100px; /* Set a fixed height for the image */
             object-fit: cover; /* Ensure the image covers the entire container */
-            object-position: center; /* Center the image */
+            object-position: right center; /* Adjust the position of the image to the right */
             display: block;
         }
 
     #image1 {
-        
-        height: 100px; /* Set a fixed height for the image */
-        object-fit: cover; /* Ensure the image covers the entire container */
-        object-position: 10px center; /* Adjust the position of the image to the right by 10 pixels */
+        object-position: 50px center; /* Adjust the position of the image to the right by 10 pixels */
     }
+
     #image2 {
-        object-position: 10px center; /* Adjust the position of the image to the right by 10 pixels */
-        height: 100px; /* Set a fixed height for the images */
+        object-position: 50px center; /* Adjust the position of the image to the right by 10 pixels */
     }
+
 
         .box p {
             margin-top: 10px;
         }
-
 
     .box-link {
         position: absolute;
@@ -102,5 +99,4 @@
         transition: color 0.3s ease; /* Add transition effect for color change */
         transition: transform 0.3s ease;
     }
-
 }

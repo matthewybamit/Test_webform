@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="CSS/StyleSheet1 - Copy.css">
          <link rel="stylesheet" type="text/css" href="CSS/Carousel.css">  
         <link rel="stylesheet" type="text/css" href="CSS/for_him_for_her.css">
+        <link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
    
@@ -16,35 +17,35 @@
 
     <body>
 
-    <!--TOP NAV-->
+   <!--TOP NAV-->
+<div class="topnav visible" id="topnav">
+    <!-- LOGO -->   
+    <img class="logo" src="Dresserve.png" alt="">
+    <a class="active" href="#home">Dresserve</a>
+    <!-- END -->  
 
-        <div class="topnav visible" id="topnav">
-        <!-- LOGO -->   
-        <img class="logo" src="Dresserve.png" alt="">
-        <a class="active" href="#home">Dresserve</a>
-        <!-- END -->  
-
-        <!--NAV ICON-->
-        <div class="topnav-right">
-            <a href="#home"><img class="icon" id="search-bar" src="magnifying-glass.png" alt="Search"></a>
-            <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
-            <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
-            <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>
-            <a href="#home"><img class="hamburger-menu" src="hamburger.png" alt="Menu"></a>
-        </div>
-          <!-- END -->  
-
+    <!--NAV ICON-->
+    <div class="topnav-right">
+        <a href="#home"><img class="icon" id="search-bar" src="magnifying-glass.png" alt="Search"></a>
+        <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
+        <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
+        <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>
+        <a href="#home"><img class="hamburger-menu" src="hamburger.png" alt="Menu"></a>
     </div>
+    <!-- Search container -->
+    <!-- END -->  
+</div>
 
   <!-- END -->  
+
 
     <!--Courosel-->
    
        <div class="container">
         <div class="slides"> 
-            <a href="#"><img src="2.jpg" alt="Slide 1"></a>
-            <a href="#"><img src="2.jpg" alt="Slide 2"></a>
-            <a href="#"><img src="3.jpg" alt="Slide 3"></a>
+            <a href="#"><img src="2.jpg" alt="Slide 1" id="carousel1"></a>
+            <a href="#"><img src="2.jpg" alt="Slide 2" id="carousel2"></a>
+            <a href="#"><img src="3.jpg" alt="Slide 3" id="carouse  l3"></a>
         </div>
         <div class="sliders">
             <a class="slider" data-slide="0"></a>
@@ -56,10 +57,14 @@
     
     <!--END-->
 
+            <div class="text-between-containers">
+                <span>|  TRY  |  CUSTOMIZE  |  RENT  |</span>
+            </div>
+
 
 <!--FOR HIM FOR HER-->
 
-  <div class="container">
+  <div class="container1">
   <div class="box" id="box1">
     <img src="Dresserve1.png" id="image1" alt="Image 1">
     <a href="#" class="box-link">FOR HIM</a> 
