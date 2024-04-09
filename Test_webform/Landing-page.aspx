@@ -6,10 +6,10 @@
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
-        <link rel="stylesheet" type="text/css" href="CSS/StyleSheet1 - Copy.css">
-         <link rel="stylesheet" type="text/css" href="CSS/Carousel.css">  
-        <link rel="stylesheet" type="text/css" href="CSS/for_him_for_her.css">
-        <link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
+            <link rel="stylesheet" type="text/css" href="CSS/StyleSheet1 - Copy.css">
+            <link rel="stylesheet" type="text/css" href="CSS/Carousel.css">  
+            <link rel="stylesheet" type="text/css" href="CSS/for_him_for_her.css">
+            <link rel="stylesheet" type="text/css" href="CSS/Collection-list.css">  
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
    
@@ -29,8 +29,7 @@
         <a href="#home"><img class="icon" id="search-bar" src="magnifying-glass.png" alt="Search"></a>
         <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
         <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
-        <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>
-        <a href="#home"><img class="hamburger-menu" src="hamburger.png" alt="Menu"></a>
+        <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
     </div>
     <!-- Search container -->
     <!-- END -->  
@@ -45,7 +44,7 @@
         <div class="slides"> 
             <a href="#"><img src="2.jpg" alt="Slide 1" id="carousel1"></a>
             <a href="#"><img src="2.jpg" alt="Slide 2" id="carousel2"></a>
-            <a href="#"><img src="3.jpg" alt="Slide 3" id="carouse  l3"></a>
+            <a href="#"><img src="3.jpg" alt="Slide 3" id="carousel3"></a>
         </div>
         <div class="sliders">
             <a class="slider" data-slide="0"></a>
@@ -78,8 +77,30 @@
 </div>
 
 <!--END-->
-
+         <div class="text-between-collections">
+     <span>COLLECTION LIST</span>
+ </div>
 <!--COLLECTION LIST-->
+    <div class="collections">
+    <div class="collection-list">
+        <div class="collection-item">
+            <img src="wedding.png" alt="Wedding Gowns">
+            <a href="#" class="collection-link" id="wedding-link">Wedding Gowns</a>
+        </div>
+        <div class="collection-item">
+            <img src="debut.png" alt="Debut Gowns" id="debut-link" >
+            <a href="#" class="collection-link">Debut Gowns</a>
+        </div>
+        <div class="collection-item">
+            <img src="formal.png" alt="Formal">
+            <a href="#" class="collection-link" id="formal-link">Formal</a>
+        </div>
+        <div class="collection-item">
+            <img src="dresses.png" alt="Dresses">
+            <a href="#" class="collection-link" id="dress-link">Dresses</a>
+        </div>
+    </div>
+</div>
 
     </body>
 

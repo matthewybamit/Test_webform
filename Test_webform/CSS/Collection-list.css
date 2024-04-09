@@ -1,0 +1,136 @@
+﻿@font-face {
+    font-family: 'Barlow Semi Condensed';
+    font-style: normal;
+    font-weight: 600; /* Semibold weight */
+    src: url('path/to/barlow-semi-condensed-600.woff2') format('woff2'), /* Modern Browsers */
+    url('path/to/barlow-semi-condensed-600.woff') format('woff'); /* Older Browsers */
+}
+
+.collections {
+    max-width: 1000000px; /* Adjust as needed */
+    margin: 0 auto; /* Center the container */
+    margin-top: 0%;
+    margin-right: 2%;
+}
+
+.collection-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collection-item {
+    position: relative;
+    text-align: center;
+    margin: 2%; /* Adjust as needed */
+    margin-right: 100px;
+}
+
+    .collection-item img {
+        width: 120%;
+        height: auto;
+    }
+
+#formal-link {
+   left: 55%;
+}
+#dress-link {
+    left: 55%;
+}
+#wedding-link {
+    left: 39%;
+
+}
+
+.collection-link {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-20%, -20%);
+    margin-top: 10px;
+    display: block;
+    font-family: Kapakana;
+    color: white ;
+    font-size: 30px ;
+}
+
+
+
+
+.text-between-collections{
+    text-align: center;
+    margin-top: 200px; /* Adjust margin as needed */
+   
+}
+
+    .text-between-collections span {
+        color: black;
+        font-family: 'Barlow Semi Condensed', sans-serif; /* Include the font-family */
+        font-size: 20px;
+        font-weight: 600; /* Semibold weight */
+        letter-spacing: 15px; /* Adjust the spacing between letters */
+    }
+
+
+
+
+
+
+
+
+@media screen and (max-width: 730px) {
+    .collections {
+        margin: 15%;
+        margin-right: 20.3%;
+    }
+
+    .collection-list {
+        display: grid; /* Change to grid layout */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 30px; /* Increase the gap between items */
+        justify-items: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+        column-gap: 30px;
+    }
+
+    .collection-item {
+        width: 100%; /* Adjust width for better fit */
+        margin: 2%; /* Reset margin */
+    
+    }
+    #formal-link {
+        left: 48%;
+    }
+
+    #dress-link {
+        left: 48%;
+    }
+
+    #debut-link {
+        left: 4000%;
+    }
+
+    #wedding-link {
+        left: 45%;
+    }
+
+    .collection-link {
+        font-size: 5vw; /* Responsive font size */
+    }
+
+    .text-between-collections {
+        text-align: center;
+        margin-top: 100px; /* Adjust margin as needed */
+        margin-left: 10px;
+    }
+
+        .text-between-collections span {
+            color: black;
+            font-family: 'Barlow Semi Condensed', sans-serif; /* Include the font-family */
+            font-size: 15px;
+
+            font-weight: 600; /* Semibold weight */
+            letter-spacing: 10px; /* Adjust the spacing between letters */
+        }
+
+
+}

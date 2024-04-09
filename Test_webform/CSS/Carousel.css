@@ -92,9 +92,9 @@
     .text-between-containers span {
         color: black;
         font-family: 'Barlow Semi Condensed', sans-serif; /* Include the font-family */
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 600; /* Semibold weight */
-        letter-spacing: 20px; /* Adjust the spacing between letters */
+        letter-spacing: 15px; /* Adjust the spacing between letters */
     }
 
 

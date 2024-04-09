@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="CSS\Collection-list.css" />
     <Content Include="CSS\login-page.css" />
     <Content Include="CSS\StyleSheet1 - Copy.css" />
     <Content Include="Contact.aspx" />

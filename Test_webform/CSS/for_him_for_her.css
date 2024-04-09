@@ -7,7 +7,8 @@
 .box {
     position: relative; /* Relative positioning for the box */
     width: 50%; /* Each box takes up half of the container width */
-    padding: 30px;
+    padding: 12px;
+    margin-right: 3.5%;
 }
 
     .box img {
@@ -59,10 +60,11 @@
     .container1 {
         display: flex;  
         flex-direction: column; /* Stack boxes vertically */
-        padding-right: 10%; /* Add padding to the right side of the container */
+        padding-right: 1%; /* Add padding to the right side of the container */
     }
 
     .box {
+       
         width: calc(100% - 20px); /* Adjust the width to account for the padding */
         margin-bottom: 5px; /* Add margin between stacked boxes */
     }
