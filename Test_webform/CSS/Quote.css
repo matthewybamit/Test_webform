@@ -1,0 +1,133 @@
+﻿@font-face {
+    font-family: 'Kaisei Opti';
+    src: url('path/to/kaisei-opti.woff2') format('woff2'), /* Modern Browsers */
+    url('path/to/kaisei-opti.woff') format('woff'); /* Older Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container-quote {
+    width: 100%;
+    position: relative; /* Ensure positioning context for absolute positioning */
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+
+.quote-image {
+    width: 100%; /* Ensure the image fills the entire container width */
+    height: auto; /* Maintain aspect ratio */
+ 
+  
+}
+
+#line-1 {
+    font-size: 30px;
+    color: white;
+}
+
+#line-2 {
+    color: white;
+    font-size: 100px;
+    font-family: Kapakana;
+}
+
+.quote {
+    background-color: rgba(46, 33, 24,0.7);
+    position: absolute; /* Position the content absolutely */
+    top: 20%; /* Move the content to the vertical center */
+    left: 50%; /* Move the content to the horizontal center */
+    transform: translate(-95%, -10%); /* Center horizontally and vertically */
+    text-align: center; /* Center text horizontally */
+    padding: 10px; /* Add padding for better visibility */
+    border-radius: 10px; /* Add rounded corners */
+}
+
+.quote p {
+    margin: 5px 0; /* Add some vertical spacing between elements */
+}
+.shop-now {
+    position: absolute; /* Position the button absolutely */
+    top: 50%; /* Adjust the top position to place it vertically centered */
+    left: 50%; /* Adjust the left position to place it horizontally centered */
+    transform: translate(-280%, 80%); /* Center the button */
+    background-color: rgba(46, 33, 24,0.7);
+    color: #fff; /* white text color */
+    padding: 15px 30px; /* padding around the text */
+    border: 2px solid #ffffff; /* add border with black color */
+    border-radius: 5px; /* add rounded corners */
+    font-size: 16px; /* set font size */
+    font-family: 'Kaisei Opti', sans-serif; /* Include the font-family */
+    cursor: pointer; /* indicate the element is clickable */
+    transition: transform 0.3s ease, color 0.3s ease; /* Add transition effect for transform and color */
+}
+
+    .shop-now:hover {
+        transform: translate(-280%, 80%) scale(1.2); /* Scale up to 120% on hover */
+        color:; /* Change text color on hover */
+    }
+
+
+@media screen and (max-width: 767px) {
+
+    .container-quote {
+        width: 100%;
+        position: relative; /* Ensure positioning context for absolute positioning */
+        margin-top: 15%;
+    }
+
+    .quote-image {
+        width: 100%; /* Ensure the image fills the entire container width */
+        height: auto; /* Maintain aspect ratio */
+ 
+        top: 0;
+        left: 0;
+    }
+
+    #line-1 {
+        font-size: 8px;
+        color: white;
+    }
+
+    #line-2 {
+        color: white;
+        font-size: 20px;
+        font-family: Kapakana;
+    }
+
+    .quote {
+        background-color: rgba(46, 33, 24,0.7);
+        position: absolute; /* Position the content absolutely */
+        top: 20%; /* Move the content to the vertical center */
+        left: 50%; /* Move the content to the horizontal center */
+        transform: translate(-95%, 40%); /* Center horizontally and vertically */
+        text-align: center; /* Center text horizontally */
+        padding: 5px; /* Add padding for better visibility */
+        border-radius: 10px; /* Add rounded corners */
+    }
+
+        .quote p {
+            margin: 5px 0; /* Add some vertical spacing between elements */
+        }
+
+    .shop-now {
+        position: absolute; /* Position the button absolutely */
+        top: 30%; /* Adjust the top position to place it vertically centered */
+        left: 50%; /* Adjust the left position to place it horizontally centered */
+        transform: translate(-50%, 600%); /* Center the button */
+        background-color: rgba(46, 33, 24,0.7);
+        color: #fff; /* white text color */
+        padding: 5px 10px; /* padding around the text */
+        border: 1px solid #ffffff; /* add border with black color */
+        border-radius: 0px; /* add rounded corners */
+        font-size: 10px; /* set font size */
+        font-family: 'Kaisei Opti', sans-serif; /* Include the font-family */
+        cursor: pointer; /* indicate the element is clickable */
+        transition: transform 0.3s ease, color 0.3s ease; /* Add transition effect for transform and color */
+    }
+
+        .shop-now:hover {
+            transform: translate(-50%, 600%) scale(1.2); /* Scale up to 120% on hover */
+            color:; /* Change text color on hover */
+        }
+
+}

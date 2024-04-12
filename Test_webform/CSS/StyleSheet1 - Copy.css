@@ -9,6 +9,8 @@ body {
     padding: 0;
     background-color: #FAEBDB;
     background: radial-gradient(circle at center, rgba(255, 255, 255, 0) 0%, #FAEBDB 50%, #2E2118 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Ensures the background remains fixed while scrolling */
 }
 .topnav img.logo {
     max-height: 40px; /* Adjust the maximum height for the logo */
@@ -53,7 +55,7 @@ body {
         cursor: pointer;
     }
 #burger{
-    margin-right:80px;
+    margin-right:30px;
 
 }
 a.active {
@@ -101,8 +103,19 @@ p {
 
 
 @media screen and (max-width: 730px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #FAEBDB;
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0) 20%, #FAEBDB 50%, #2E2118 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Ensures the background remains fixed while scrolling */
+    }
+   
     .topnav {
         padding: 5px 5px; /* Reduce padding */
+
     }
 
     .topnav-right {

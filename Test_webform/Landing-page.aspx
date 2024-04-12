@@ -10,6 +10,9 @@
             <link rel="stylesheet" type="text/css" href="CSS/Carousel.css">  
             <link rel="stylesheet" type="text/css" href="CSS/for_him_for_her.css">
             <link rel="stylesheet" type="text/css" href="CSS/Collection-list.css">  
+            <link rel="stylesheet" type="text/css" href="CSS/Quote.css">  
+            <link rel="stylesheet" type="text/css" href="CSS/inquire-view.css">  
+            <link rel="stylesheet" type="text/css" href="CSS/Footer.css">  
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
    
@@ -31,7 +34,6 @@
         <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
     </div>
-    <!-- Search container -->
     <!-- END -->  
 </div>
 
@@ -65,21 +67,28 @@
 
   <div class="container1">
   <div class="box" id="box1">
-    <img src="Dresserve1.png" id="image1" alt="Image 1">
+    <img src="for-him.jpg" id="image1" alt="Image 1">
     <a href="#" class="box-link">FOR HIM</a> 
   
   </div>
   <div class="box">   
-    <img src="Dresserve1.png" id="image2" alt="Image 2">
+    <img src="for-her.jpg" id="image2" alt="Image 2">
     <a href="#" class="box-link">FOR HER</a> 
    
   </div>
 </div>
 
 <!--END-->
+
+
+
          <div class="text-between-collections">
      <span>COLLECTION LIST</span>
  </div>
+
+
+
+
 <!--COLLECTION LIST-->
     <div class="collections">
     <div class="collection-list">
@@ -88,8 +97,8 @@
             <a href="#" class="collection-link" id="wedding-link">Wedding Gowns</a>
         </div>
         <div class="collection-item">
-            <img src="debut.png" alt="Debut Gowns" id="debut-link" >
-            <a href="#" class="collection-link">Debut Gowns</a>
+            <img src="debut.png" alt="Debut Gowns"  >
+            <a href="#" class="collection-link" id="debut-link" >Debut Gowns</a>
         </div>
         <div class="collection-item">
             <img src="formal.png" alt="Formal">
@@ -101,8 +110,134 @@
         </div>
     </div>
 </div>
+        <!--END-->
+
+  <!--QUOTE/SHOP-->
+
+  <div class="container-quote">
+    <img src="gown.png" alt="Quote image" class="quote-image" />
+    <div class="quote">
+        <p id="line-1">Once in a Lifetime Event</p>
+        <p id="line-2">Let us show you what you Deserve</p>      
+    </div>
+      <button class="shop-now">Shop Now</button>
+</div>
+
+
+                 <!--INQUIRE/VIEWMORE-->
+    
+ <div class="Inquire-veiw-container">
+  <div class="inquire-box">
+    <img src="inquire.jpg" id="inquire-image" alt="inquire-image">
+    <p class="inquire-view-link" id="inquire-text">Find Your Piece</p> 
+    <a href="#" class="inquire-view-link" id="inquire-id">Inquire</a> 
+  </div>
+  <div class="inquire-box">   
+    <img src="viewmore.jpg" id="view-image" alt="view-image">
+    <p class="inquire-view-link" id="view-more-text">Dress For Every Occassion</p> 
+    <a href="#" class="inquire-view-link" id="view-more-id">View More</a> 
+  </div>
+</div>
+
+                 <!--END-->
+
+
+
+                 <!--FOOTER -->
+
+      <footer class="footer">
+  <div class="footer__addr">
+    <h1 class="footer__logo">Dresserve</h1>
+     <img src="Dresserve.png"  class="footer-logo"/>
+    <h2>Contact</h2>
+    
+    <address>
+      5534 Somewhere In. The World 22193-10212<br>
+          
+    
+    </address>
+  </div>
+  
+  <ul class="footer__nav">
+    <li class="nav__item">
+      <h2 class="nav__title">INFO</h2>
+
+      <ul class="nav__ul">
+        <li>
+          <a href="#">About Us</a>
+        </li>
+
+        <li>
+          <a href="#">Contact Us</a>
+        </li>
+            
+        <li>
+          <a href="#">FAQs</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="nav__item nav__item--extra">
+      <h2 class="nav__title">OUR SERVICES</h2>
+      
+      <ul class="nav__ul nav__ul--extra">
+        <li>
+          <a >Rental</a>
+        </li>
+        
+        <li>
+          <a >Try-On</a>
+        </li>
+        
+        <li>
+          <a>Customization</a>
+        </li>
+
+        <li>
+          <a>Customer Support</a>
+        </li>
+        
+        <li>
+          <a>Delivery and Pickup</a>
+        </li>
+        
+        
+      </ul>
+    </li>
+    
+    <li class="nav__item">
+      <h2 class="nav__title">SUBSCRIBE</h2>
+    
+      <ul class="nav__ul">
+        <li>
+                 <input id="subscribe-input" type="text" placeholder="Your Email">
+                
+        </li>
+        <li>
+            <button class="subscribe-btn">SEND</button>
+        </li>
+
+      </ul>
+    </li>
+  </ul>
+   <div class="separator"></div>
+   
+  <div class="legal">
+    <p>Terms and Condition   |   Privacy Policy   |  &copy; 2024 All rights reserved </p>
+    
+    <div class="legal__links">
+      <span> <img scr="facebook(1).png" /> <span class="heart"></span> </span>
+    </div>
+  </div>
+</footer>
+
+         <!--END-->
+
+
 
     </body>
 
+  
+   
 
-    </html>
+      

@@ -104,7 +104,10 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="CSS\Collection-list.css" />
+    <Content Include="CSS\Footer.css" />
+    <Content Include="CSS\inquire-view.css" />
     <Content Include="CSS\login-page.css" />
+    <Content Include="CSS\Quote.css" />
     <Content Include="CSS\StyleSheet1 - Copy.css" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
