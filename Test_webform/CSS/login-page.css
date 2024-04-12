@@ -1,3 +1,23 @@
 ﻿body {
+    background-image: url(../login_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
+#login_auth {
+    text-align: center;
+    margin-top: 232px;
+}
+
+#google{
+    position: static;
+    margin-top: -192px;
+    margin-left: 287px;
+}
+
+#facebook {
+    position: static;
+    margin-top: -73px;
+    margin-left: 177px;
 }
