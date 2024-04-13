@@ -137,12 +137,6 @@ html {
     width: 80%; /* Adjust width */
 }
 
-.footer-logo {
-   
-    max-height: auto;
-    max-width: 90px;
-  
-}
 
 .subscribe-btn {
     display: inline-block;
@@ -166,6 +160,13 @@ html {
     .legal .legal__links {
         margin-left: auto;
     }
+    .footer-logo {
+
+    max-height: auto;
+    max-width: 40px;
+}
+
+
 }
 
 @media screen and (min-width: 40.375em) {
@@ -184,9 +185,11 @@ html {
     .footer__nav {
         flex: 2 0px;
     }
-
     .footer-logo {
+        max-height: auto;
+        max-width: 80px;
     }
+   
 }
 
 
