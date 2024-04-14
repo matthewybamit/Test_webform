@@ -44,21 +44,38 @@
 
 #formal-link {
     transform: translate(-40%, -20%);
-    padding: 18px 100px;
+    padding: 18px 98px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
+
+    #formal-link:hover {
+        transform: translate(-40%, -20%) scale(1.2);
+    }
 
 #dress-link {
     transform: translate(-40%, -20%);
-    padding: 18px 100px;
+    padding: 18px 99px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
+
+    #dress-link:hover {
+        transform: translate(-40%, -20%) scale(1.2);
+    }
 
 #wedding-link {
     left: 39%;
+    padding: 2px 90px;
 }
 
 #debut-link {
     transform: translate(-40%, -20%);
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 2px 101px;
 }
+
+    #debut-link:hover {
+        transform: translate(-40%, -20%) scale(1.2);
+    }
 
 .collection-link {
     background-color: rgba(46, 33, 24,0.7);
@@ -73,8 +90,12 @@
     font-family: Kapakana;
     color: white;
     font-size: 30px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+    .collection-link:hover {
+        transform: translate(-30%, -20%) scale(1.2);
+    }
 
 
 

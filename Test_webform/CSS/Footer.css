@@ -9,10 +9,6 @@
     box-sizing: border-box;
 }
 
-html {
-  
-}
-
 
 
 .footer {
@@ -156,14 +152,14 @@ html {
         background-color: #E64A19; /* Darker background color on hover */
     }
 
-@media screen and (min-width: 24.375em) {
+@media screen and (max-width: 767px)  {
     .legal .legal__links {
         margin-left: auto;
     }
     .footer-logo {
 
     max-height: auto;
-    max-width: 40px;
+    max-width:50px;
 }
 
 

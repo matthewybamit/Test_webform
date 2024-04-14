@@ -13,9 +13,12 @@
             <link rel="stylesheet" type="text/css" href="CSS/Quote.css">  
             <link rel="stylesheet" type="text/css" href="CSS/inquire-view.css">  
             <link rel="stylesheet" type="text/css" href="CSS/Footer.css">  
+            <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
    
+
+
 
 
     <body>
@@ -29,10 +32,17 @@
 
     <!--NAV ICON-->
     <div class="topnav-right">
-        <a href="#home"><img class="icon" id="search-bar" src="magnifying-glass.png" alt="Search"></a>
+        <a href="#home" id="search-icon">
+  <img class="icon" src="magnifying-glass.png" alt="Search">
+</a>
+<div id="search-box">
+  <input type="text" id="search-input" placeholder="Enter your search">
+</div>
         <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
         <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
+
+</div>
     </div>
     <!-- END -->  
 </div>
@@ -226,13 +236,55 @@
     <p>Terms and Condition   |   Privacy Policy   |  &copy; 2024 All rights reserved </p>
     
     <div class="legal__links">
-      <span> <img scr="facebook(1).png" /> <span class="heart"></span> </span>
+      <span> <img scr="facebook (1).png" /> <span class="heart"></span> </span>
     </div>
   </div>
 </footer>
 
-         <!--END-->
 
+
+
+
+
+
+
+         <!--END-->
+        <script>
+document.getElementById("search-icon").addEventListener("click", function() {
+    document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
+});
+
+            document.getElementById("search-icon").addEventListener("click", function () {
+                // Toggle the 'active' class on the .topnav-right element
+                document.querySelector(".topnav-right").classList.toggle("active-padding");
+            });
+
+            // Get the input element
+            var input = document.getElementById("search-input");
+
+            // Add event listener for keydown event
+            input.addEventListener("keydown", function (event) {
+                // Check if the key pressed is Enter (key code 13)
+                if (event.keyCode === 13) {
+                    // Prevent the default action (e.g., form submission)
+                    event.preventDefault();
+                    // Clear the input value
+                    input.value = "";
+                    // Trigger your search function here
+                    // For example, you can call a function to handle the search
+                    performSearch();
+                }
+            });
+
+            // Function to handle search
+            function performSearch() {
+                // Get the search input value
+                var searchTerm = document.getElementById("search-input").value;
+                // Perform your search action here
+                console.log("Search term:", searchTerm);
+                // You can replace the console.log statement with your actual search logic
+            }   
+        </script>
 
 
     </body>
