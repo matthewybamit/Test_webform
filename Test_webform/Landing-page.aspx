@@ -131,7 +131,6 @@
         <p id="line-1">Once in a Lifetime Event</p>
         <p id="line-2">Let us show you what you Deserve</p>      
     </div>
-      <button class="shop-now">Shop Now</button>
 </div>
 
 
@@ -237,7 +236,7 @@
     <p>Terms and Condition   |   Privacy Policy   |  &copy; 2024 All rights reserved </p>
     
     <div class="legal__links">
-      <span> <img src="facebook (1).png" /> <span class="heart"></span> </span>
+      <span> <img scr="facebook (1).png" /> <span class="heart"></span> </span>
     </div>
   </div>
 </footer>
@@ -293,4 +292,5 @@ document.getElementById("search-icon").addEventListener("click", function() {
   
    
 
-      
+
+    </html>
