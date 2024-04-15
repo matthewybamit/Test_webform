@@ -3,6 +3,7 @@
 
 
 
+
 $(document).ready(function () {
     var lastScrollTop = 0;
 
@@ -19,6 +20,9 @@ $(document).ready(function () {
     });
 });
 
+document.getElementById("search-icon").addEventListener("click", function () {
+    document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
+});
 
 $(document).ready(function () {
     var slideIndex = 0; // Initialize slide index

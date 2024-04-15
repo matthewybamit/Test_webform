@@ -1,4 +1,4 @@
-﻿@font-face {
+﻿﻿@font-face {
     font-family: 'Barlow Semi Condensed';
     font-style: normal;
     font-weight: 600; /* Semibold weight */
@@ -6,11 +6,23 @@
     url('path/to/barlow-semi-condensed-600.woff') format('woff'); /* Older Browsers */
 }
 
+@font-face {
+    font-family: 'Kaisei Opti';
+    src: url('path/to/kaisei-opti.woff2') format('woff2'), /* Modern Browsers */
+    url('path/to/kaisei-opti.woff') format('woff'); /* Older Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* FONTS */
+/*-----------------------------------------------------------------------------------------------------*/
+
+
 .collections {
     max-width: 1000000px; /* Adjust as needed */
     margin: 0 auto; /* Center the container */
     margin-top: 0%;
-    margin-right: 2%;
+  
 }
 
 .collection-list {
@@ -22,7 +34,7 @@
     position: relative;
     text-align: center;
     margin: 2%; /* Adjust as needed */
-    margin-right: 100px;
+    margin-right: 82px;
 }
 
     .collection-item img {
@@ -31,40 +43,70 @@
     }
 
 #formal-link {
-   left: 55%;
+    transform: translate(-40%, -20%);
+    padding: 18px 98px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
+
+    #formal-link:hover {
+        transform: translate(-40%, -20%) scale(1.2);
+    }
+
 #dress-link {
-    left: 55%;
+    transform: translate(-40%, -20%);
+    padding: 18px 99px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
+
+    #dress-link:hover {
+        transform: translate(-40%, -20%) scale(1.2);
+    }
+
 #wedding-link {
     left: 39%;
-
+    padding: 2px 90px;
 }
 
+#debut-link {
+    transform: translate(-40%, -20%);
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 2px 101px;
+}
+
+    #debut-link:hover {
+        transform: translate(-40%, -20%) scale(1.2);
+    }
+
 .collection-link {
+    background-color: rgba(46, 33, 24,0.7);
+    padding: 2px 100px;
+    text-decoration: none;
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-20%, -20%);
+    transform: translate(-30%, -20%);
     margin-top: 10px;
     display: block;
     font-family: Kapakana;
-    color: white ;
-    font-size: 30px ;
+    color: white;
+    font-size: 30px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+    .collection-link:hover {
+        transform: translate(-30%, -20%) scale(1.2);
+    }
 
 
 
-.text-between-collections{
+.text-between-collections {
     text-align: center;
     margin-top: 200px; /* Adjust margin as needed */
-   
+    font-family: 'Kaisei Opti', sans-serif; /* Include the font-family */
 }
 
     .text-between-collections span {
         color: black;
-        font-family: 'Barlow Semi Condensed', sans-serif; /* Include the font-family */
         font-size: 20px;
         font-weight: 600; /* Semibold weight */
         letter-spacing: 15px; /* Adjust the spacing between letters */
@@ -95,31 +137,48 @@
     .collection-item {
         width: 100%; /* Adjust width for better fit */
         margin: 2%; /* Reset margin */
-    
     }
+
     #formal-link {
-        left: 48%;
+        transform: translate(-42%, -25%);
+        padding: 18px 45px;
     }
 
     #dress-link {
-        left: 48%;
-    }
-
-    #debut-link {
-        left: 4000%;
+        transform: translate(-41%, -25%);
+        padding: 18px 43px;
     }
 
     #wedding-link {
-        left: 45%;
+        transform: translate(-32%, -20%);
+        padding: 2px 41px;
+    }
+
+    #debut-link {
+        transform: translate(-41%, -20%);
+        padding: 2px 48px;
     }
 
     .collection-link {
+        background-color: rgba(46, 33, 24,0.7);
+        padding: 2px 45px;
+        text-decoration: none;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-30%, -20%);
+        margin-top: 10px;
+        display: block;
+        font-family: Kapakana;
+        color: white;
+        font-size: 30px;
         font-size: 5vw; /* Responsive font size */
     }
 
+  
     .text-between-collections {
         text-align: center;
-        margin-top: 100px; /* Adjust margin as needed */
+        margin-top: 60px; /* Adjust margin as needed */
         margin-left: 10px;
     }
 
@@ -127,10 +186,7 @@
             color: black;
             font-family: 'Barlow Semi Condensed', sans-serif; /* Include the font-family */
             font-size: 15px;
-
             font-weight: 600; /* Semibold weight */
             letter-spacing: 10px; /* Adjust the spacing between letters */
         }
-
-
 }

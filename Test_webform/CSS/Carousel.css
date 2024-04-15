@@ -6,11 +6,15 @@
     url('path/to/barlow-semi-condensed-600.woff') format('woff'); /* Older Browsers */
 }
 
+/* FONTS */
+/*-----------------------------------------------------------------------------------------------------*/
+
+
 .container {
     position: relative;
     max-width: 100%;
     overflow: hidden;
-    max-height: 80%;
+    max-height: 85%;
     image-orientation: from-image;
     margin-bottom: 5%;
 }
@@ -82,7 +86,7 @@
 
 
 
-
+/* The text in between Him/Her and collection list */
 
 .text-between-containers {
     text-align: center;
@@ -121,7 +125,7 @@
     }
 
         .slides img {
-            width: 150%; /* Set width to 100% to fill the container */
+            width: 100%; /* Set width to 100% to fill the container */
             height: auto; /* Allow the height to adjust proportionally */
             object-fit: cover;
             transform: none; /* Reset transform for mobile */

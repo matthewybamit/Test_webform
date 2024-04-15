@@ -1,4 +1,5 @@
 ﻿using System;
+using Facebook;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -72,7 +73,19 @@ namespace Test_webform
 
         protected void FBLogin(object sender, EventArgs e)
         {
-            FaceBookConnect.Authorize("user_photos,email", Request.Url.AbsoluteUri.Split('?')[0]);
+
+            //FaceBookConnect.Authorize("user_photos,email", Request.Url.AbsoluteUri.Split('?')[0]);
+            var fb = new FacebookClient();
+            var loginUrl = fb.GetLoginUrl(new
+            {
+                client_id = "711184364288415",
+                client_secret = "cf06a3114cd0eb7d63ca230deae5c8d7",
+                redirect_uri = "https://localhost:44308/login-page/",
+                response_type = "code",
+                scope = "email"
+            });
+
+            Response.Redirect(loginUrl.AbsoluteUri);
         }
 
         protected void Logout(object sender, EventArgs e)

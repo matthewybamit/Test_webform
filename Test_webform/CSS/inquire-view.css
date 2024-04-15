@@ -1,0 +1,133 @@
+﻿.Inquire-veiw-container {
+    display: flex;
+    justify-content: center; /* Center the boxes horizontally */
+    margin-bottom: 10%;
+}
+
+.inquire-box {
+    position: relative; /* Relative positioning for the box */
+    width: 40%; /* Each box takes up half of the container width */
+    padding: 12px;
+}
+
+@font-face {
+    font-family: 'Kaisei Opti';
+    src: url('path/to/kaisei-opti.woff2') format('woff2'), /* Modern Browsers */
+    url('path/to/kaisei-opti.woff') format('woff'); /* Older Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#view-more-text {
+    text-decoration: none;
+}
+
+#inquire-text {
+    transform: translate(-50%, -70%);
+    padding: 30px 40px;
+    padding-bottom: 50px;
+    text-decoration: none; /* Add underline */
+}
+
+    .inquire-box img {
+        width: 100%;
+        height: 200px; /* Set a fixed height for the images */
+        object-fit: cover; /* Ensure the image covers the entire container */
+        display: block;
+        background: #C7B1A6;
+    }
+
+    .inquire-box p {
+        margin-top: 5px;
+        position: absolute;
+        transform: translate(-50%, -70%);
+        background-color: rgb(255, 255, 255, 0.7);
+        padding: 30px 20px;
+        padding-bottom: 50px;
+    }
+
+
+.inquire-view-link {
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    text-align: center;
+    color: #2E2118; /* Text color */
+    font-size: 20px; /* Adjust font size */
+    text-decoration: underline; /* Add underline */
+    font-family: 'Kaisei Opti', sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#inquire-id:hover {
+    transform: translate(-50%, -40%) scale(1.2);
+}
+#view-more-id:hover {
+    transform: translate(-50%, -40%) scale(1.2);
+}
+
+
+@media screen and (max-width: 767px) {
+    .Inquire-veiw-container {
+        display: flex;
+        flex-direction: column; /* Stack boxes vertically */
+        margin-top: 20%;
+    }
+
+    .inquire-box {
+        margin-left: 2.5%;
+        width: calc(100% - 20px); /* Adjust the width to account for the padding */
+        margin-bottom: 5px; /* Add margin between stacked boxes */
+    }
+
+        .inquire-box img {
+            height: 200px; /* Set a fixed height for the image */
+            object-fit: cover; /* Ensure the image covers the entire container */
+            object-position: right center; /* Adjust the position of the image to the right */
+            display: block;
+        }
+    #view-more-text {
+        transform: translate(-50%, -70%);
+        padding: 15px 40px;
+        padding-bottom: 40px;
+        text-decoration: none; /* Add underline */
+    }
+
+    #inquire-text {
+        transform: translate(-50%, -70%);
+        padding: 15px 40px;
+        padding-bottom: 50px;
+        text-decoration: none; /* Add underline */
+    }
+
+    #view-more-id {
+        transform: translate(-50%, -14%);
+    }
+
+    #inquire-id {
+        transform: translate(-50%, -40%);
+    }
+
+    .inquire-box p {
+        margin-top: 10px;
+    }
+
+    .inquire-view-link {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #2E2118; /* Text color */
+        font-size: 18px; /* Adjust font size */
+        text-decoration: underline; /* Remove underline */
+        transition: color 0.3s ease, transform 0.3s ease; /* Add transition effect for color change */
+    }
+
+    #view-more-id:hover {
+        transform: translate(-50%, -14%) scale(1.2);
+    }
+}

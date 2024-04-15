@@ -5,24 +5,30 @@
 <head runat="server">
     <title>LOGIN</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="javascripts/JavaScript.js"></script>
-     <link rel="stylesheet" type="text/css" href="CSS/login-page.css"> 
+    <script src="javascripts/JavaScript.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/login-page.css">
 
 </head>
 <body>
+
+    
+
+    
+
     <form id="form1" runat="server">
+
     <div id="login_auth">
-    <img src="login_form.png" style="display: inline-block;"/> 
+        <img src="login_form.png" style="display: inline-block;" />
         <div id="Google">
-            <asp:ImageButton ID="GoogleImage" ImageUrl="g sign in.png" runat ="server" OnClick="Login" />
+            <asp:ImageButton ID="GoogleImage" ImageUrl="g sign in.png" runat="server" OnClick="Login" />
         </div>
         <div id="Facebook">
             <asp:ImageButton ID="FacebookImage" ImageUrl="fb.png" runat="server" OnClick="FBLogin" />
         </div>
-    <asp:Panel ID="pnlProfile" runat="server" Visible="false">
-   <asp:Panel ID="pnlFaceBookUser" runat="server" Visible="false">
+        <asp:Panel ID="pnlProfile" runat="server" Visible="false">
+            <asp:Panel ID="pnlFaceBookUser" runat="server" Visible="false">
 
-         <!-- <table>
+                <!-- <table>
         <tr>
             <td rowspan="6" valign="top">
                 <asp:Image ID="ProfileImage" runat="server" Width="50" Height="50" />
@@ -54,9 +60,9 @@
     </table> -->
 
 
-    </asp:Panel>
+            </asp:Panel>
         </asp:Panel>
-</div>
-</form>
+    </div>
+    </form>
 </body>
 </html>
