@@ -1,24 +1,101 @@
-﻿body {
-    background-image: url(../login_bg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+﻿@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap');
+
+@font-face {
+    font-family: 'Kapakana';
+    src: url('path/to/kapakana-font.woff2') format('woff2'), url('path/to/kapakana-font.woff') format('woff');
+    /* Add additional font formats and paths as needed */
+}
+body {
+    background-color: #faebdb;
+    font-family: 'Barlow Semi Condensed';
+
 }
 
-#login_auth {
-    position: center;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* Adjusted height with 50px space on top and bottom */
+}
+
+.login-container {
+    width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.logo {
+    
+    background: #2E2118;
+    flex: 1;
     text-align: center;
-    margin-top: 232px;
+    padding: 40px 40px; /* Adjusted padding with 50px space on top and bottom */
+    color: #fff;
 }
 
-#Google {
-    position: static;
-    margin-top: -192px;
-    margin-left: 287px;
+    .logo h1 {
+        font-family: 'Kapakana';
+        margin-top: 20px;
+        font-size: 40px;
+    }
+
+    .logo img {
+        height: 300px;
+    }
+
+.login {
+    background: #C7B1A6;
+    color: #fff;
+    flex: 1;
+    padding: 20px 40px;
+    font-family: 'Kaisei Opti', serif; /* Added font family */
+    display: flex;
+    justify-content: center;    
+    align-items: center;
 }
 
-#Facebook {
-    position: static;
-    margin-top: -73px;
-    margin-left: 466px;
+.login-content {
+    text-align: center; /* Align contents inside the login block */
 }
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+    .social-icons #GoogleImage{
+        height: 50px;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    .social-icons #FacebookImage {
+        height: 50px;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+    .divider hr {
+        flex: 1;
+        border: none;
+        height: 1px;
+        width: 2px;
+        background-color: #ffffff;
+    }
+
+    .divider p {
+        margin: 0 10px;
+        color: #ffffff;
+    }
