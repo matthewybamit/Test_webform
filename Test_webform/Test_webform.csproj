@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="content-page.aspx" />
     <Content Include="CSS\Collection-list.css" />
     <Content Include="CSS\Footer.css" />
     <Content Include="CSS\inquire-view.css" />

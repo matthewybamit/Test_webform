@@ -1,68 +1,40 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login-page.aspx.cs" Inherits="Test_webform.WebForm1" %>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>LOGIN</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="javascripts/JavaScript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="CSS/login-page.css">
-
 </head>
 <body>
-
-    
-
-    
-
-    <form id="form1" runat="server">
-
-    <div id="login_auth">
-        <img src="login_form.png" style="display: inline-block;" />
-        <div id="Google">
-            <asp:ImageButton ID="GoogleImage" ImageUrl="g sign in.png" runat="server" OnClick="Login" />
+<div class="container">
+    <div class="login-container">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            <h1>Dresserve</h1>
         </div>
-        <div id="Facebook">
-            <asp:ImageButton ID="FacebookImage" ImageUrl="fb.png" runat="server" OnClick="FBLogin" />
+        <div class="login">
+            <div class="login-content">
+                <h2 class="text-center">Log in</h2>
+                <div class="divider">
+                    <hr>
+                    <p>with</p>
+                    <hr>
+                </div>
+                <div class="social-icons">
+                    <form id="form1" runat="server">
+                    <asp:ImageButton ID="GoogleImage" ImageUrl="googlelogo1.png" runat="server" OnClick="Login" />
+                    <asp:ImageButton ID="FacebookImage" ImageUrl="fblogo1.png" runat="server" OnClick="FBLogin" />
+                    </form>
+
+                </div>
+            </div>
         </div>
-        <asp:Panel ID="pnlProfile" runat="server" Visible="false">
-            <asp:Panel ID="pnlFaceBookUser" runat="server" Visible="false">
-
-                <!-- <table>
-        <tr>
-            <td rowspan="6" valign="top">
-                <asp:Image ID="ProfileImage" runat="server" Width="50" Height="50" />
-            </td>
-        </tr>
-        <tr>
-    <td>
-        ID:
-        <asp:Label ID="lblId" runat="server" Text=""></asp:Label>
-        </td>
-        </tr>
-        <tr>
-            <td>
-                Name: 
-                <asp:Label ID="lblName" runat="server" Text=""></asp:Label>
-            </td>
-        </tr>
-         <tr>
-            <td>
-                Email: 
-                <asp:Label ID="lblEmail" runat="server" Text=""></asp:Label>
-            </td>
-        </tr>
-        <tr>
-    <td>
-        <asp:Button Text="Logout" runat="server" OnClick="Logout" />
-            </td>
-    </tr>
-    </table> -->
-
-
-            </asp:Panel>
-        </asp:Panel>
     </div>
-    </form>
+</div>
 </body>
 </html>

@@ -15,6 +15,8 @@ namespace Test_webform
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             GoogleConnect.ClientId = "35298655443-6geak9840cbrbia04o2gihnbouragbq1.apps.googleusercontent.com";
             GoogleConnect.ClientSecret = "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";
             GoogleConnect.RedirectUri = Request.Url.AbsoluteUri.Split('?')[0];
@@ -80,7 +82,7 @@ namespace Test_webform
             {
                 client_id = "447751964338432",
                 client_secret = "599c4f63b2500ed5d12dbacd694faeaa",
-                redirect_uri = "https://localhost:44308/login-page/",
+                redirect_uri = "https://localhost:44308/login-page/landing-page.aspx",
                 response_type = "code",
                 scope = "email"
             });
