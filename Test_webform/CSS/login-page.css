@@ -7,11 +7,11 @@
     /* Add additional font formats and paths as needed */
 }
 body {
-    background-color: #faebdb;
+    background-repeat: no-repeat;
+
+    background-size: 100%;
     font-family: 'Barlow Semi Condensed';
-
 }
-
 .container {
     display: flex;
     justify-content: center;
@@ -99,3 +99,22 @@ body {
         margin: 0 10px;
         color: #ffffff;
     }
+.footer {
+    margin-block-start: 10px;
+    color: #fff;
+    display:flex;
+    padding: 10px 20px; /* Added padding */
+
+}
+
+.left {
+    justify-content: flex-start;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.right {
+    margin-left: auto; /* Pushes content to the right */
+    justify-content: flex-end;
+    margin-right: 20px
+}

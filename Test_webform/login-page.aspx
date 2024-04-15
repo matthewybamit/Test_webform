@@ -10,7 +10,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="CSS/login-page.css">
 </head>
-<body>
+<body style="background-image: url('background.png');">
 <div class="container">
     <div class="login-container">
         <div class="logo">
@@ -36,5 +36,11 @@
         </div>
     </div>
 </div>
+    <div class="footer">
+        <p class="left">Terms and Conditions</p>
+        <p class="left"> Privacy and Policy</p>
+        <p class="right">2024 Dresserve All rights reserved.</p>
+
+    </div>
 </body>
 </html>
