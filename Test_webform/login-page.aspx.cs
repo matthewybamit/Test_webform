@@ -40,8 +40,8 @@ namespace Test_webform
 
         protected void FBPage(object sender, EventArgs e)
         {
-            FaceBookConnect.API_Key = "711184364288415";
-            FaceBookConnect.API_Secret = "cf06a3114cd0eb7d63ca230deae5c8d7";
+            FaceBookConnect.API_Key = "447751964338432";
+            FaceBookConnect.API_Secret = "599c4f63b2500ed5d12dbacd694faeaa";
             FaceBookConnect.Version = "v19.0";
             if (!this.IsPostBack)
             {
@@ -54,13 +54,13 @@ namespace Test_webform
                 string code = Request.QueryString["code"];
                 if (!string.IsNullOrEmpty(code))
                 {
-                    string data = FaceBookConnect.Fetch(code, "me", "id,name,email,picture");
+                    string data = FaceBookConnect.Fetch(code, "me");
                     FaceBookUser faceBookUser = new JavaScriptSerializer().Deserialize<FaceBookUser>(data);
-                    pnlFaceBookUser.Visible = true;
-                    lblId.Text = faceBookUser.Id;
-                    lblName.Text = faceBookUser.Name;
-                    lblEmail.Text = faceBookUser.Email;
-                    ProfileImage.ImageUrl = faceBookUser.Picture.Data.Url;
+                    //pnlFaceBookUser.Visible = true;
+                    //lblId.Text = faceBookUser.Id;
+                    //lblName.Text = faceBookUser.Name;
+                    //lblEmail.Text = faceBookUser.Email;
+                    //ProfileImage.ImageUrl = faceBookUser.Picture.Data.Url;
                     //btnLogin.Enabled = false;
                 }
             }
@@ -78,8 +78,8 @@ namespace Test_webform
             var fb = new FacebookClient();
             var loginUrl = fb.GetLoginUrl(new
             {
-                client_id = "711184364288415",
-                client_secret = "cf06a3114cd0eb7d63ca230deae5c8d7",
+                client_id = "447751964338432",
+                client_secret = "599c4f63b2500ed5d12dbacd694faeaa",
                 redirect_uri = "https://localhost:44308/login-page/",
                 response_type = "code",
                 scope = "email"
