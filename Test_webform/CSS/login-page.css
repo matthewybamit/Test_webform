@@ -1,15 +1,6 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap');
-
-@font-face {
-    font-family: 'Kapakana';
-    src: url('path/to/kapakana-font.woff2') format('woff2'), url('path/to/kapakana-font.woff') format('woff');
-    /* Add additional font formats and paths as needed */
-}
-body {
+﻿body {
     background-color: #faebdb;
-    font-family: 'Barlow Semi Condensed';
-
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 .container {
@@ -28,7 +19,6 @@ body {
 }
 
 .logo {
-    
     background: #2E2118;
     flex: 1;
     text-align: center;
@@ -37,7 +27,6 @@ body {
 }
 
     .logo h1 {
-        font-family: 'Kapakana';
         margin-top: 20px;
         font-size: 40px;
     }
@@ -53,7 +42,7 @@ body {
     padding: 20px 40px;
     font-family: 'Kaisei Opti', serif; /* Added font family */
     display: flex;
-    justify-content: center;    
+    justify-content: center;
     align-items: center;
 }
 
@@ -68,13 +57,14 @@ body {
     margin-top: 20px;
 }
 
-    .social-icons #GoogleImage{
-        height: 50px;
+    .social-icons #GoogleImage {
+        height: 30px;
         margin: 0 10px;
         cursor: pointer;
     }
+
     .social-icons #FacebookImage {
-        height: 50px;
+        height: 30px;
         margin: 0 10px;
         cursor: pointer;
     }

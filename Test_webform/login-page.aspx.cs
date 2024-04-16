@@ -8,6 +8,8 @@ using System.Web.UI.WebControls;
 using ASPSnippets.GoogleAPI;
 using ASPSnippets.FaceBookAPI;
 using System.Web.Script.Serialization;
+using Google.Apis.Auth.OAuth2.Flows;
+using Google.Apis.Auth.OAuth2;
 
 namespace Test_webform
 {
@@ -17,7 +19,7 @@ namespace Test_webform
         {
             
 
-            GoogleConnect.ClientId = "35298655443-6geak9840cbrbia04o2gihnbouragbq1.apps.googleusercontent.com";
+            /*GoogleConnect.ClientId = "35298655443-6geak9840cbrbia04o2gihnbouragbq1.apps.googleusercontent.com";
             GoogleConnect.ClientSecret = "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";
             GoogleConnect.RedirectUri = Request.Url.AbsoluteUri.Split('?')[0];
 
@@ -36,9 +38,28 @@ namespace Test_webform
                     //imgProfile.ImageUrl = profile.Picture;
                     //pnlProfile.Visible = true;
                     //btnLogin.Enabled = false;
+            
+
+                    var clientId = "35298655443-6geak9840cbrbia04o2gihnbouragbq1.apps.googleusercontent.com";
+                    var clientSecret = "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";
+                    var redirectUri = "https://localhost:44308/login-page/landing-page.aspx"; 
+                    var scopes = new[] { "email", "profile" }; 
+
+                    // Create the Google OAuth2 authorization code flow
+                    var flow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer
+                    {
+                        ClientSecrets = new ClientSecrets { ClientId = clientId, ClientSecret = clientSecret },
+                        Scopes = scopes
+                    });
+
+                    // Get the authorization URL to redirect the user to Google sign-in page
+                    var authUri = flow.CreateAuthorizationCodeRequest(redirectUri).Build();
+
+                    // Redirect the user to the authorization URL
+                    Response.Redirect(authUri.AbsoluteUri); */
                 }
-            }
-        }
+        
+
 
         protected void FBPage(object sender, EventArgs e)
         {
@@ -70,7 +91,23 @@ namespace Test_webform
 
             protected void Login(object sender, EventArgs e)
         {
-            GoogleConnect.Authorize("profile", "email");
+            var clientId = "35298655443-6geak9840cbrbia04o2gihnbouragbq1.apps.googleusercontent.com";
+            var clientSecret = "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";
+            var redirectUri = "https://localhost:44308/login-page/landing-page.aspx";
+            var scopes = new[] { "email", "profile" };
+
+            // Create the Google OAuth2 authorization code flow
+            var flow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer
+            {
+                ClientSecrets = new ClientSecrets { ClientId = clientId, ClientSecret = clientSecret },
+                Scopes = scopes
+            });
+
+            // Get the authorization URL to redirect the user to Google sign-in page
+            var authUri = flow.CreateAuthorizationCodeRequest(redirectUri).Build();
+
+            // Redirect the user to the authorization URL
+            Response.Redirect(authUri.AbsoluteUri);
         }
 
         protected void FBLogin(object sender, EventArgs e)
