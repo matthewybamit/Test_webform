@@ -1,0 +1,174 @@
+﻿@font-face {
+    font-family: 'Kapakana';
+    src: url('path/to/kapakana-font.woff2') format('woff2'), url('path/to/kapakana-font.woff') format('woff');
+    /* Add additional font formats and paths as needed */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FAEBDB;
+    
+    background-attachment: fixed; /* Ensures the background remains fixed while scrolling */
+}
+.topnav img.logo {
+    max-height: 40px; /* Adjust the maximum height for the logo */
+    max-width: auto; /* Let the width adjust proportionally */
+    vertical-align: middle;
+}
+
+.topnav {
+    position: fixed; /* Change to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2E2118;
+    padding: 4.5px 15px;
+    z-index: 1000;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+
+.topnav-right {
+    float: right;
+    padding-top: inherit;
+    padding-bottom: inherit;
+    vertical-align: middle;
+}
+
+
+.icon {
+    margin-left: 30px;
+    width: 30px;
+    height: 30px;
+    color: #f2f2f2;
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+    .icon:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+#burger{
+    margin-right:30px;
+
+}
+a.active {
+    margin-left: 5px;
+    font-family: Kapakana;
+    font-size: 30px;
+    color: white; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+    
+}
+
+.hamburger-menu{
+    display: none;
+}
+
+.logo {
+    margin-left: 20px;
+    transition: transform 0.3s ease;
+}
+
+    .logo:hover {
+        transform: scale(1.2);
+    }
+
+    .logo:hover {
+        cursor: pointer;
+    }
+
+p {
+    font-size: 20px;
+}
+
+.topnav.hidden {
+    transform: translateY(-100%);
+}
+
+.topnav.visible {
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+/* Mobile view */
+
+
+@media screen and (max-width: 730px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #FAEBDB;
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0) 20%, #FAEBDB 50%, #2E2118 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Ensures the background remains fixed while scrolling */
+    }
+   
+    .topnav {
+        padding: 5px 5px; /* Reduce padding */
+
+    }
+
+    .topnav-right {
+        float: right;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        vertical-align: middle;
+    }
+    .icon {
+        margin-top: 2px;
+        margin-left: 15px;
+        width: 25px;
+        height: 25px;
+        color: #f2f2f2;
+        margin-right: 5px;
+        text-decoration: none;
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+    #burger {
+        margin-right: 20px;
+    }
+
+    a.active {
+        margin-left: 5px;
+        font-family: Kapakana;
+        font-size: 20px;
+        color: white; /* Inherit color from parent */
+        text-decoration: none; /* Remove underline */
+    }
+
+
+    .topnav img.logo {
+        max-height: 30px; /* Adjust the maximum height for the logo */
+        max-width: auto; /* Let the width adjust proportionally */
+        vertical-align: middle;
+    }
+    /* Remove padding and margin for img.logo */
+    img.logo {
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+
+    .active {
+        font-size: 80px; /* Adjust font size for mobile */
+        margin-top: 20px; /* Move the active link down by 10px */
+    }
+    
+}
