@@ -10,11 +10,14 @@ using ASPSnippets.FaceBookAPI;
 using System.Web.Script.Serialization;
 using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Auth.OAuth2;
+using System.EnterpriseServices;
 
 namespace Test_webform
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -57,8 +60,8 @@ namespace Test_webform
 
                     // Redirect the user to the authorization URL
                     Response.Redirect(authUri.AbsoluteUri); */
-                }
-        
+        }
+
 
 
         protected void FBPage(object sender, EventArgs e)
@@ -87,9 +90,9 @@ namespace Test_webform
                     //btnLogin.Enabled = false;
                 }
             }
-    }
+        }
 
-            protected void Login(object sender, EventArgs e)
+        /*protected void Login(object sender, EventArgs e)
         {
             var clientId = "35298655443-6geak9840cbrbia04o2gihnbouragbq1.apps.googleusercontent.com";
             var clientSecret = "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";
@@ -108,7 +111,7 @@ namespace Test_webform
 
             // Redirect the user to the authorization URL
             Response.Redirect(authUri.AbsoluteUri);
-        }
+        }*/
 
         protected void FBLogin(object sender, EventArgs e)
         {
@@ -130,7 +133,7 @@ namespace Test_webform
         protected void Logout(object sender, EventArgs e)
         {
             Session.Clear();
-            Response.Redirect("login-page.aspx");
+            //Response.Redirect("login-page.aspx");
         }
 
 

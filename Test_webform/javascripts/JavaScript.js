@@ -2,7 +2,22 @@
 // JavaScript to toggle visibility of the top navigation on scroll
 
 
+window.onload = function () {
+    // Retrieve user data from session storage
+    const username = sessionStorage.getItem('username');
+    const name = sessionStorage.getItem('name');
+    const profilePicture = sessionStorage.getItem('profilePicture');
 
+    // Display the data in your HTML elements
+    document.getElementById('profile-name').textContent = name;
+    document.getElementById('profile-picture').style.backgroundImage = `url('${profilePicture}')`;
+};
+
+// Function to logout
+function logout() {
+    sessionStorage.clear(); // Clear session storage
+    window.location.href = 'login-page.aspx'; // Redirect to login page
+}
 
 $(document).ready(function () {
     var lastScrollTop = 0;

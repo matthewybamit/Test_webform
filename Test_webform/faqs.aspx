@@ -1,6 +1,3 @@
-﻿   <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Landing-page.aspx.cs" Inherits="Test_webform.Test_webform" %>
-
-
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title>DRESSERVE</title>
@@ -15,9 +12,57 @@
          <link rel="stylesheet" href="CSS/inquire-view.css">  
          <link rel="stylesheet" href="CSS/Footer.css">  
             <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
-            <link rel="stylesheet" href="CSS/StyleSheet1 - Copy.css">
+            <link rel="stylesheet" href="CSS/heshim.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+      @font-face {
+    font-family: 'Kaisei Opti';
+    src: url('path/to/kaisei-opti.woff2') format('woff2'), /* Modern Browsers */
+    url('path/to/kaisei-opti.woff') format('woff'); /* Older Browsers */
+    font-weight: normal;
+    font-style: normal;
+      }
+      .faq {
+        margin-top: 150px;
+        font-size: 50px;
+        text-align: center;
+        font-family: "Kaisei Opti", serif;
+        font-weight: 10;
+       
+      }
+      .container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr)
+      
+      }
+      .left {
+     
+        padding: 0px;
+        padding-left: 100px;
+        font-size: 20px;
+        padding-right: 100px;
+        text-align: justify;
+        font-family: "Barlow Semi Condensed", sans-serif;
+      }
+      
+     
+   
+     .right {
+        font-size: 20px;
+        padding-left: 100px;
+        padding-right: 100px;
+        text-align: justify;
+        font-family: "Barlow Semi Condensed", sans-serif;
+    }
+   
+    </style>
+    
+      </head>
    
 
 
@@ -29,7 +74,7 @@
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
     <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="#home">Dresserve</a>
+    <a class="active" href="landing.html">Dresserve</a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -40,91 +85,74 @@
 <div id="search-box">
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
-        <a href="Landing-page.aspx"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
-        <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
+        <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
+        <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
 </div>
     </div>
     <!-- END -->  
-</div>
-
-  <!-- END -->  
-
-      
 
 
-    <!--Courosel-->
-   
-       <div class="container">
-        <div class="slides"> 
-            <a href="#"><img src="2.jpg" alt="Slide 1" id="carousel1"></a>
-            <a href="#"><img src="2.jpg" alt="Slide 2" id="carousel2"></a>
-            <a href="#"><img src="3.jpg" alt="Slide 3" id="carousel3"></a>
+  <h2 class="faq">Frequently Asked Questions</h2>
+
+<div class="container">
+    <div class="left">
+        <div class="q1">
+            <h3 class="title1">
+                Q: how to place an order
+            </h3>
+            <p>
+                A:To place an order, simply browse our products, select the items you wish to purchase, add them to your cart, and proceed to the checkout page. Follow the prompts to provide your shipping information, select a payment method, and confirm your order.
+            </p>
         </div>
-        <div class="sliders">
-            <a class="slider" data-slide="0"></a>
-            <a class="slider" data-slide="1"></a>
-            <a class="slider" data-slide="2"></a>
+        <div class="q2">
+            <h3 class="title1">
+                Q: how to place an order
+            </h3>
+            <p>
+                A:To place an order, simply browse our products, select the items you wish to purchase, add them to your cart, and proceed to the checkout page. Follow the prompts to provide your shipping information, select a payment method, and confirm your order.
+            </p>
+        </div>
+        <div class="q3">
+            <h3 class="title1">
+                Q: how to place an order
+            </h3>
+            <p>
+                A:To place an order, simply browse our products, select the items you wish to purchase, add them to your cart, and proceed to the checkout page. Follow the prompts to provide your shipping information, select a payment method, and confirm your order.
+            </p>
         </div>
     </div>
+    <div class="right">
+        <div class="q1">
+            <h3 class="title1">
+                Q: how to place an order
+            </h3>
+            <p>
+                A:To place an order, simply browse our products, select the items you wish to purchase, add them to your cart, and proceed to the checkout page. Follow the prompts to provide your shipping information, select a payment method, and confirm your order.
+            </p>
+        </div>
+        <div class="q2">
+            <h3 class="title1">
+                Q: how to place an order
+            </h3>
+            <p>
+                A:To place an order, simply browse our products, select the items you wish to purchase, add them to your cart, and proceed to the checkout page. Follow the prompts to provide your shipping information, select a payment method, and confirm your order.
+            </p>
+        </div>
+        <div class="q3">
+            <h3 class="title1">
+                Q: how to place an order
+            </h3>
+            <p>
+                A:To place an order, simply browse our products, select the items you wish to purchase, add them to your cart, and proceed to the checkout page. Follow the prompts to provide your shipping information, select a payment method, and confirm your order.
+            </p>
+        </div>
+     </div>
+</div>
 
-    
-    <!--END-->
 
-            <div class="text-between-containers">
-                <span>|  TRY  |  CUSTOMIZE  |  RENT  |</span>
-            </div>
-
-
-<!--FOR HIM FOR HER-->
-
-  <div class="container1">
-  <div class="box" id="box1">
-    <img src="for-him.jpg" id="image1" alt="Image 1">
-    <a href="hes_him.html" class="box-link">FOR HIM</a> 
   
-  </div>
-  <div class="box">   
-    <img src="for-her.jpg" id="image2" alt="Image 2">
-    <a href="#" class="box-link">FOR HER</a> 
-   
-  </div>
-</div>
-
-<!--END-->
-
-
-
-         <div class="text-between-collections">
-     <span>COLLECTION LIST</span>
- </div>
-
-
-
-
-<!--COLLECTION LIST-->
-    <div class="collections">
-    <div class="collection-list">
-        <div class="collection-item">
-            <img src="wedding.png" alt="Wedding Gowns">
-            <a href="wedding.aspx" class="collection-link" id="wedding-link">Wedding Gowns</a>
-        </div>
-        <div class="collection-item">
-            <img src="debut.png" alt="Debut Gowns"  >
-            <a href="debut.html" class="collection-link" id="debut-link" >Debut Gowns</a>
-        </div>
-        <div class="collection-item">
-            <img src="formal.png" alt="Formal">
-            <a href="formal.html" class="collection-link" id="formal-link">Formal</a>
-        </div>
-        <div class="collection-item">
-            <img src="dresses.png" alt="Dresses">
-            <a href="dresses.html" class="collection-link" id="dress-link">Dresses</a>
-        </div>
-    </div>
-</div>
-        <!--END-->
 
   <!--QUOTE/SHOP-->
 
@@ -138,22 +166,7 @@
 </div>
 
 
-                 <!--INQUIRE/VIEWMORE-->
-    
- <div class="Inquire-veiw-container">
-  <div class="inquire-box">
-    <img src="inquire.jpg" id="inquire-image" alt="inquire-image">
-    <p class="inquire-view-link" id="inquire-text">Find Your Piece</p> 
-    <a href="inquire.html" class="inquire-view-link" id="inquire-id">Inquire</a> 
-  </div>
-  <div class="inquire-box">   
-    <img src="viewmore.jpg" id="view-image" alt="view-image">
-    <p class="inquire-view-link" id="view-more-text">Dress For Every Occassion</p> 
-    <a href="#" class="inquire-view-link" id="view-more-id">View More</a> 
-  </div>
-</div>
-
-                 <!--END-->
+          
 
 
 
@@ -178,15 +191,15 @@
 
       <ul class="nav__ul">
         <li>
-          <a href="aboutus.html">About Us</a>
+          <a href="About.aspx">About Us</a>
         </li>
 
         <li>
-          <a href="contact.html">Contact Us</a>
+          <a href="Contact.aspx">Contact Us</a>
         </li>
             
         <li>
-          <a href="faqs.html">FAQs</a>
+          <a href="faqs.aspx">FAQs</a>
         </li>
       </ul>
     </li>
@@ -237,7 +250,7 @@
    <div class="separator"></div>
    
   <div class="legal">
-    <a><p>Terms and Condition   |   Privacy Policy   |  &copy; 2024 All rights reserved </p></a>
+    <p>Terms and Condition   |   Privacy Policy   |  &copy; 2024 All rights reserved </p>
     
     <div class="legal__links">
       <span> <img scr="facebook (1).png" /> <span class="heart"></span> </span>
@@ -263,27 +276,9 @@
 
 
         <script>
-
-            /*window.onload = function () {
-                // Retrieve user data from session storage
-                const username = sessionStorage.getItem('username');
-                const name = sessionStorage.getItem('name');
-                const profilePicture = sessionStorage.getItem('profilePicture');
-
-                // Display the data in your HTML elements
-                document.getElementById('profile-name').textContent = name;
-                document.getElementById('profile-picture').src = profilePicture;
-            };
-
-            // Function to logout
-            function logout() {
-                sessionStorage.clear(); // Clear session storage
-                window.location.href = 'login-page.aspx'; // Redirect to login page
-            }*/
-
-            document.getElementById("search-icon").addEventListener("click", function () {
-                document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
-            });
+document.getElementById("search-icon").addEventListener("click", function() {
+    document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
+});
 
             document.getElementById("search-icon").addEventListener("click", function () {
                 // Toggle the 'active' class on the .topnav-right element
@@ -314,7 +309,7 @@
                 // Perform your search action here
                 console.log("Search term:", searchTerm);
                 // You can replace the console.log statement with your actual search logic
-            }
+            }   
 
 
             // JavaScript to toggle visibility of the top navigation on scroll
