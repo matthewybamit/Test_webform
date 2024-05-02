@@ -94,41 +94,6 @@ function performSearch() {
     // You can replace the console.log statement with your actual search logic
 }
 
-document.getElementById("search-icon").addEventListener("click", function () {
-    document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
-});
-
-document.getElementById("search-icon").addEventListener("click", function () {
-    // Toggle the 'active' class on the .topnav-right element
-    document.querySelector(".topnav-right").classList.toggle("active-padding");
-});
-
-// Get the input element
-var input = document.getElementById("search-input");
-
-// Add event listener for keydown event
-input.addEventListener("keydown", function (event) {
-    // Check if the key pressed is Enter (key code 13)
-    if (event.keyCode === 13) {
-        // Prevent the default action (e.g., form submission)
-        event.preventDefault();
-        // Clear the input value
-        input.value = "";
-        // Trigger your search function here
-        // For example, you can call a function to handle the search
-        performSearch();
-    }
-});
-
-// Function to handle search
-function performSearch() {
-    // Get the search input value
-    var searchTerm = document.getElementById("search-input").value;
-    // Perform your search action here
-    console.log("Search term:", searchTerm);
-    // You can replace the console.log statement with your actual search logic
-}
-
 
 // Function to open the cart
 function openCart() {

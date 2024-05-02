@@ -104,68 +104,28 @@
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
         <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
-        <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
+          <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
 </div>
     </div>
     <!-- END -->  
     <div class="h">
-        <h2 class="mc"> WOMEN'S COLLECTION</h2><br>
+        <h2 class="mc"> DRESS COLLECTION</h2><br>
         <h4 class="cf"> C &nbsp;O &nbsp;L&nbsp; L&nbsp; E&nbsp; C&nbsp; T&nbsp; I&nbsp; O&nbsp; N&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   F &nbsp;I &nbsp;T &nbsp;T &nbsp;I &nbsp;N&nbsp; G </h4>
     </div>
 </div>
 
   <!-- END -->  
 
- 
+
 <div class="grid-wrapper">
- 
-  <div class="grid-container">
-    <div class="grid-item">
-        <img src="dresses/Aurora Amount Dress.jpeg" alt="Image 1">
-        <div class="label">Aurora Amount Dress
-        </div>
-        <br><br><br>
-        <div class="label">₱6,899.00
-        </div>
+    <div class="grid-container" id="gridContainer" runat="server">
+        <!-- Products will be dynamically added here -->
     </div>
-    <div class="grid-item">
-        <img src="dresses/Azure Skies Corset Charm Dress.jpeg" alt="Image 2">
-        <div class="label">Azure Skies Corset Charm Dress</div><br>
-        <div class="label">₱6,899.00</div>
-    </div>
-    <div class="grid-item">
-        <img src="dresses/Barbie Blush Bombshell Dress.jpeg" alt="Image 3">
-        <div class="label">Barbie Blush Bombshell Dress</div><br>
-        <div class="label">₱6,899.00</div>
-    </div>
-    <!--<div class="grid-item">
-        <img src="heshim/FlatFrontLinensuit.png" alt="Image 4">
-        <div class="label">Label 4</div>
-    </div>
-    <div class="grid-item">
-        <img src="heshim/LuxeBlackWoolBlendSuit.png" alt="Image 5">
-        <div class="label">Label 5</div>
-    </div>
-    <div class="grid-item">
-        <img src="heshim/NavyBlueTwo-PieceSuit.png" alt="Image 6">
-        <div class="label">Label 6</div>
-    </div>
-    <div class="grid-item">
-        <img src="heshim/ShawlLapelBlackTuxedo.png" alt="Image 7">
-        <div class="label">Label 7</div>
-    </div>
-    <div class="grid-item">
-        <img src="heshim/SlimFitGreySuit.png" alt="Image 8">
-        <div class="label">Label 8</div>
-    </div>
-    <div class="grid-item">
-        <img src="image9.jpg" alt="Image 9">
-        <div class="label">Label 9</div>
-    </div> -->
 </div>
-</div>
+
+
                  <!--FOOTER -->
 
       <footer class="footer">

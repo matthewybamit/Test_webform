@@ -128,7 +128,7 @@
         </div>
         <div class="collection-item">
             <img src="formal.png" alt="Formal">
-            <a href="" class="collection-link" id="formal-link">Formal</a>
+            <a href="formal.aspx" class="collection-link" id="formal-link">Formal</a>
         </div>
         <div class="collection-item">
             <img src="dresses.png" alt="Dresses">
@@ -272,3 +272,4 @@
       <script src="javascripts/JavaScript.js"></script>
 
     </body>
+    </html>

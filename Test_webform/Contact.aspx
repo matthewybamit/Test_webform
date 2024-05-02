@@ -1,4 +1,4 @@
-﻿cc<html xmlns="http://www.w3.org/1999/xhtml">
+﻿dcc<html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title>DRESSERVE</title>
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
@@ -127,7 +127,7 @@
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
         <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
-        <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
+          <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
 </div>
