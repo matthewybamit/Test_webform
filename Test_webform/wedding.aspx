@@ -1,17 +1,22 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="wedding.aspx.cs" Inherits="Test_webform.weddingaspx" %>
+
+<!DOCTYPE html>
+
 ﻿<html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title>DRESSERVE</title>
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
-         <link rel="stylesheet" href="Copy.css">
-         <link rel="stylesheet" href="Carousel.css">  
-         <link rel="stylesheet" href="for_him_for_her.css">
-         <link rel="stylesheet" href="Collection-list.css">  
-         <link rel="stylesheet" href="Quote.css">  
-         <link rel="stylesheet" href="inquire-view.css">  
-         <link rel="stylesheet" href="Footer.css">  
-            <link type="text/css" href="search-box-animation.css" rel="stylesheet" />
+        <link rel="stylesheet" href="CSS/Copy.css">
+ <link rel="stylesheet" href="CSS/Carousel.css">  
+ <link rel="stylesheet" href="CSS/for_him_for_her.css">
+ <link rel="stylesheet" href="CSS/Collection-list.css">  
+ <link rel="stylesheet" href="CSS/Quote.css">  
+ <link rel="stylesheet" href="CSS/inquire-view.css">  
+ <link rel="stylesheet" href="CSS/Footer.css">  
+    <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/StyleSheet1 - Copy.css">
             <link rel="stylesheet" href="heshim.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,7 +99,7 @@
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
     <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="landing.html">Dresserve</a>
+    <a class="active" href="Landing-page.aspx">Dresserve</a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -113,7 +118,7 @@
     </div>
     <!-- END -->  
     <div class="h">
-        <h2 class="mc"> MEN'S COLLECTION</h2><br>
+        <h2 class="mc"> WEDDING COLLECTION</h2><br>
         <h4 class="cf"> C &nbsp;O &nbsp;L&nbsp; L&nbsp; E&nbsp; C&nbsp; T&nbsp; I&nbsp; O&nbsp; N&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   F &nbsp;I &nbsp;T &nbsp;T &nbsp;I &nbsp;N&nbsp; G </h4>
     </div>
 </div>
@@ -125,22 +130,21 @@
  
   <div class="grid-container">
     <div class="grid-item">
-        <img src="heshim/ChocolateBrownClassicCutSuit.png" alt="Image 1">
-        <div class="label">Choloate Brown Classic 
-            Cut Suit
+      <a href="pment.html"><img src="wedding/CelestialLumierGown.jpg" alt="Image 1"></a>
+        <div class="label">Celestial Lumier Gown
         </div>
-        <br>
+        <br><br><br>
         <div class="label">₱6,899.00
         </div>
     </div>
     <div class="grid-item">
-        <img src="heshim/ClassicCutBlackSuit.png" alt="Image 2">
-        <div class="label">Classic Cut Black Suit</div><br><br><br>
+        <img src="wedding/CrystalCascadeCouture.jpg" alt="Image 2">
+        <div class="label">Crystal Cascade Couture</div><br><br><br>
         <div class="label">₱6,899.00</div>
     </div>
     <div class="grid-item">
-        <img src="heshim/DarkCheckeredTwo-PieceSuit.png" alt="Image 3">
-        <div class="label">Dark Checkered Two-Piece Suit</div><br>
+        <img src="wedding/DiamondDreamsBridalGown.jpg" alt="Image 3">
+        <div class="label">Diamond Dreams Bridal Gown</div><br>
         <div class="label">₱6,899.00</div>
     </div>
     <!--<div class="grid-item">
@@ -375,3 +379,4 @@ document.getElementById("search-icon").addEventListener("click", function() {
 
 
     </body>
+    </html>

@@ -1,18 +1,20 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="formal.aspx.cs" Inherits="Test_webform.formal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title>DRESSERVE</title>
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
-         <link rel="stylesheet" href="CSS/Copy.css">
-         <link rel="stylesheet" href="CSS/Carousel.css">  
-         <link rel="stylesheet" href="CSS/for_him_for_her.css">
-         <link rel="stylesheet" href="CSS/Collection-list.css">  
-         <link rel="stylesheet" href="CSS/Quote.css">  
-         <link rel="stylesheet" href="CSS/inquire-view.css">  
-         <link rel="stylesheet" href="CSS/Footer.css">  
-            <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
-            <link rel="stylesheet" href="CSS/heshim.css">
+       <link href="CSS/StyleSheet1%20-%20Copy.css" rel="stylesheet" />
+        <link href="CSS/Shopping-cart.css" rel="stylesheet" />
+        <link href="CSS/search-box-animation.css" rel="stylesheet" />
+        <link href="CSS/Footer.css" rel="stylesheet" />
+        <link href="CSS/heshim.css" rel="stylesheet" />
+            <link type="text/css" href="search-box-animation.css" rel="stylesheet" />
+            <link rel="stylesheet" href="heshim.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,7 +115,7 @@
     </div>
     <!-- END -->  
     <div class="h">
-        <h2 class="mc"> WOMEN'S COLLECTION</h2><br>
+        <h2 class="mc"> MEN'S COLLECTION</h2><br>
         <h4 class="cf"> C &nbsp;O &nbsp;L&nbsp; L&nbsp; E&nbsp; C&nbsp; T&nbsp; I&nbsp; O&nbsp; N&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   F &nbsp;I &nbsp;T &nbsp;T &nbsp;I &nbsp;N&nbsp; G </h4>
     </div>
 </div>
@@ -125,21 +127,21 @@
  
   <div class="grid-container">
     <div class="grid-item">
-        <img src="debut/Golden Hour Debut Gown.png" alt="Image 1">
-        <div class="label">Golden Hour Debut Gown
+        <img src="formal/Black Double Breasted Suit.png" alt="Image 1">
+        <div class="label">Black Double Breasted Suit
         </div>
-        <br><br><br>
+        <br>
         <div class="label">₱6,899.00
         </div>
     </div>
     <div class="grid-item">
-        <img src="debut/High-Slit Mermaid Debut Dress.png" alt="Image 2">
-        <div class="label">High-Slit Mermaid Debut Dress</div><br>
+        <img src="formal/Brown Plain Three-Piece Suit.png" alt="Image 2">
+        <div class="label">Brown Plain Three-Piece Suit</div><br>
         <div class="label">₱6,899.00</div>
     </div>
     <div class="grid-item">
-        <img src="debut/Ice Blue Fairytale Gown.png" alt="Image 3">
-        <div class="label">Ice Blue Fairytale Gown</div><br><br><br>
+        <img src="formal/Mid Blue Three-Piece Suit.png" alt="Image 3">
+        <div class="label">Mid Blue Three-Piece Suit</div><br>
         <div class="label">₱6,899.00</div>
     </div>
     <!--<div class="grid-item">
@@ -189,15 +191,15 @@
 
       <ul class="nav__ul">
         <li>
-          <a href="#">About Us</a>
+          <a href="About.aspx">About Us</a>
         </li>
 
         <li>
-          <a href="#">Contact Us</a>
+          <a href="Contact.aspx">Contact Us</a>
         </li>
             
         <li>
-          <a href="#">FAQs</a>
+          <a href="faqs.aspx">FAQs</a>
         </li>
       </ul>
     </li>
@@ -273,104 +275,10 @@
 
 
 
-        <script>
-document.getElementById("search-icon").addEventListener("click", function() {
-    document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
-});
-
-            document.getElementById("search-icon").addEventListener("click", function () {
-                // Toggle the 'active' class on the .topnav-right element
-                document.querySelector(".topnav-right").classList.toggle("active-padding");
-            });
-
-            // Get the input element
-            var input = document.getElementById("search-input");
-
-            // Add event listener for keydown event
-            input.addEventListener("keydown", function (event) {
-                // Check if the key pressed is Enter (key code 13)
-                if (event.keyCode === 13) {
-                    // Prevent the default action (e.g., form submission)
-                    event.preventDefault();
-                    // Clear the input value
-                    input.value = "";
-                    // Trigger your search function here
-                    // For example, you can call a function to handle the search
-                    performSearch();
-                }
-            });
-
-            // Function to handle search
-            function performSearch() {
-                // Get the search input value
-                var searchTerm = document.getElementById("search-input").value;
-                // Perform your search action here
-                console.log("Search term:", searchTerm);
-                // You can replace the console.log statement with your actual search logic
-            }   
-
-
-            // JavaScript to toggle visibility of the top navigation on scroll
-
-
-
-
-            $(document).ready(function () {
-                var lastScrollTop = 0;
-
-                $(window).scroll(function (event) {
-                    var st = $(this).scrollTop();
-                    if (st > lastScrollTop) {
-                        // Scroll down
-                        $("#topnav").removeClass("visible").addClass("hidden");
-                    } else {
-                        // Scroll up
-                        $("#topnav").removeClass("hidden").addClass("visible");
-                    }
-                    lastScrollTop = st;
-                });
-            });
-
-            document.getElementById("search-icon").addEventListener("click", function () {
-                document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
-            });
-
-            $(document).ready(function () {
-                var slideIndex = 0; // Initialize slide index
-
-                // Function to move to the next slide
-                function nextSlide() {
-                    var slideWidth = $('.slides a').eq(0).outerWidth();
-                    slideIndex = (slideIndex + 1) % $('.slides a').length; // Increment slide index
-                    $('.slides').css('transform', 'translateX(' + (-slideIndex * slideWidth) + 'px)');
-                    updateSliderIndicator(); // Update slider indicator
-                }
-
-                // Function to update the slider indicator
-                function updateSliderIndicator() {
-                    $('.slider').removeClass('active');
-                    $('.slider[data-slide="' + slideIndex + '"]').addClass('active');
-                }
-
-                // Set interval to automatically move to the next slide every 8 seconds
-                var interval = setInterval(nextSlide, 4000);
-
-                // Click event handler for slider
-                $('.slider').click(function () {
-                    clearInterval(interval); // Clear previous interval
-                    slideIndex = $(this).data('slide'); // Update slide index
-                    var slideWidth = $('.slides a').eq(0).outerWidth();
-                    $('.slides').css('transform', 'translateX(' + (-slideIndex * slideWidth) + 'px)');
-                    updateSliderIndicator(); // Update slider indicator
-                    // Set new interval after click
-                    interval = setInterval(nextSlide, 4000);
-                });
-            });
-
-
-
-
-        </script>
+     
+     <script src="javascripts/JavaScript.js"></script>
 
 
     </body>
+
+    </html>

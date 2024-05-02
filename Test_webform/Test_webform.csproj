@@ -171,7 +171,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="content-page.aspx" />
+    <Content Include="All-content.aspx" />
+    <Content Include="CSS\Shopping-cart.css" />
     <Content Include="CSS\Collection-list.css" />
     <Content Include="CSS\Footer.css" />
     <Content Include="CSS\heshim.css" />
@@ -202,21 +203,21 @@
     <Content Include="Content\Site.css" />
     <Content Include="CSS\Carousel.css" />
     <Content Include="CSS\for_him_for_her.css" />
-    <Content Include="CSS\debut.aspx" />
+    <Content Include="debut.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="CSS\dresses.aspx" />
+    <Content Include="dresses.aspx" />
     <Content Include="faqs.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="CSS\formal.aspx" />
+    <Content Include="formal.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="CSS\hes_him.aspx" />
+    <Content Include="hes_him.aspx" />
     <Content Include="inquire.aspx" />
     <Content Include="javascripts\JavaScript.js" />
     <Content Include="javascripts\login.js" />
     <Content Include="javascripts\profile.js" />
+    <Content Include="mens_collection.aspx" />
     <Content Include="payment.aspx" />
     <Content Include="user-profile.aspx" />
-    <Content Include="Mens collection.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -246,12 +247,13 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="login-page.aspx" />
-    <Content Include="WebForm2.aspx" />
+    <Content Include="womens_collection.aspx" />
     <!--HEAD -->
-    <Content Include="CSS\wedding.aspx" />
     <!--=======-->
+
     <Content Include="WebForm3.aspx" />
     <Content Include="WebForm4.aspx" />
+    <Content Include="wedding.aspx" />
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -294,6 +296,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="All-content.aspx.cs">
+      <DependentUpon>All-content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="All-content.aspx.designer.cs">
+      <DependentUpon>All-content.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -310,12 +319,68 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="debut.aspx.cs">
+      <DependentUpon>debut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="debut.aspx.designer.cs">
+      <DependentUpon>debut.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dresses.aspx.cs">
+      <DependentUpon>dresses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dresses.aspx.designer.cs">
+      <DependentUpon>dresses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="faqs.aspx.cs">
+      <DependentUpon>faqs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="faqs.aspx.designer.cs">
+      <DependentUpon>faqs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formal.aspx.cs">
+      <DependentUpon>formal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formal.aspx.designer.cs">
+      <DependentUpon>formal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hes_him.aspx.cs">
+      <DependentUpon>hes_him.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hes_him.aspx.designer.cs">
+      <DependentUpon>hes_him.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inquire.aspx.cs">
+      <DependentUpon>inquire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inquire.aspx.designer.cs">
+      <DependentUpon>inquire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mens_collection.aspx.cs">
+      <DependentUpon>mens_collection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mens_collection.aspx.designer.cs">
+      <DependentUpon>mens_collection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="payment.aspx.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="payment.aspx.designer.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="user-profile.aspx.cs">
       <DependentUpon>user-profile.aspx</DependentUpon>
@@ -360,19 +425,19 @@
     <Compile Include="login-page.aspx.designer.cs">
       <DependentUpon>login-page.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="womens_collection.aspx.cs">
+      <DependentUpon>womens_collection.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="womens_collection.aspx.designer.cs">
+      <DependentUpon>womens_collection.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm3.aspx.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm3.aspx.designer.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm4.aspx.cs">
       <DependentUpon>WebForm4.aspx</DependentUpon>
@@ -380,6 +445,13 @@
     </Compile>
     <Compile Include="WebForm4.aspx.designer.cs">
       <DependentUpon>WebForm4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wedding.aspx.cs">
+      <DependentUpon>wedding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wedding.aspx.designer.cs">
+      <DependentUpon>wedding.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -30,7 +30,7 @@
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
     <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="#home">Dresserve</a>
+    <a class="active" href="Landing-page.aspx">Dresserve</a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -371,7 +371,7 @@
 
 
         </script>
-
+        <script src="javascripts/profile.js"></script>
          
 
     </body>
