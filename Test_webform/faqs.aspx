@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="faqs.aspx.cs" Inherits="Test_webform.faqsspx" %>
+﻿ff<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="faqs.aspx.cs" Inherits="Test_webform.faqsspx" %>
 
 <!DOCTYPE html>
 
@@ -90,7 +90,7 @@
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
         <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
-        <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
+          <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
 </div>

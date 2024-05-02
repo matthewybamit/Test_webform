@@ -201,7 +201,7 @@
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
     <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="landing.html">Dresserve</a>
+    <a class="active" href="Landing-page.aspx">Dresserve</a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -213,7 +213,7 @@
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
         <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
-        <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
+          <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
 </div>

@@ -1,0 +1,19 @@
+﻿/* Define styles for grid items */
+.grid-item {
+    width: 100%; /* Set width to fill container */
+    max-width: 300px; /* Set maximum width for responsiveness */
+    margin: 0 auto; /* Center align grid items */
+}
+
+/* Define styles for images */
+.grid-item img {
+    width: 100%; /* Make images fill their container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Media query for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+    .grid-item {
+        max-width: 100%; /* Set maximum width to fill screen */
+    }
+}

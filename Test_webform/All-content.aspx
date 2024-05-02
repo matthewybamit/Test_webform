@@ -12,6 +12,7 @@
         <link href="CSS/Shopping-cart.css" rel="stylesheet" />
         <link href="CSS/search-box-animation.css" rel="stylesheet" />
         <link href="CSS/Footer.css" rel="stylesheet" />
+    <link href="CSS/items-responsive.css" rel="stylesheet" />
         <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -98,7 +99,7 @@
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
         <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
-        <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
+          <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
 </div>
@@ -111,63 +112,10 @@
   <!-- END -->  
 
  
-<div class="grid-wrapper"> 
- 
-  <div class="grid-container">
-   
-      <div class="grid-item">
-        <img src="Scarlet Sangria cocktail dress.jpeg" alt="Image 1">
-        <div class="label">Scarlet Sangria cocktail dress
-        </div>
-        <br>
-        <div class="label">₱6,899.00
-        </div>
+<div class="grid-wrapper">
+    <div class="grid-container" id="gridContainer" runat="server">
+        <!-- Products will be dynamically added here -->
     </div>
-
-    <div class="grid-item">
-        <img src="Ethereal Prism Poise cocktail dress.jpeg" alt="Image 2">
-        <div class="label">Ethereal Prism Poise cocktail dress</div>
-        <br>
-         <div class="label">₱6,899.00
-    </div>
-      
-
-</div>
-    <div class="grid-item">
-        <img src="Midnight Shimmer Sonata cocktail dress.jpeg" alt="Image 3">
-        <div class="label">Midnight Shimmer Sonata cocktail dress</div>
-        <br>
-<div class="label">₱10,200.00
-</div>
-    </div>
-
-  </div>
-    <!--
-    <div class="grid-item">
-        <img src="Midnight Shimmer Sonata cocktail dress.jpeg" alt="Image 4">
-        <div class="label">Label 4</div>
-    </div>
-      
-    <div class="grid-item">
-        <img src="Peony Princess Cocktail Dress.jpeg" alt="Image 5">
-        <div class="label">Label 5</div>
-    </div>
-    <div class="grid-item">
-        <img src="Scarlet Sangria cocktail dress.jpeg" alt="Image 6">
-        <div class="label">Label 6</div>
-    </div>
-    <div class="grid-item">
-        <img src="Cherry Charisma Silk Cocktail Dress.jpeg" alt="Image 7">
-        <div class="label">Label 7</div>
-    </div>
-    <div class="grid-item">
-        <img src="heshim/SlimFitGreySuit.png" alt="Image 8">
-        <div class="label">Label 8</div>
-    </div>
-    <div class="grid-item">
-        <img src="image9.jpg" alt="Image 9">
-        <div class="label">Label 9</div>
-    </div> -->
 </div>
     
 

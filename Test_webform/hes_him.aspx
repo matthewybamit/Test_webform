@@ -139,55 +139,11 @@
 
   <!-- END -->  
 
- 
 <div class="grid-wrapper">
- 
-  <div class="grid-container">
-    <div class="grid-item">
-        <img src="heshim/ChocolateBrownClassicCutSuit.png" alt="Image 1">
-        <div class="label">Choloate Brown Classic 
-            Cut Suit
-        </div>
-        <br>
-        <div class="label">₱6,899.00
-        </div>
+    <div class="grid-container" id="gridContainer" runat="server">
+        <!-- Products will be dynamically added here -->
     </div>
-    <div class="grid-item">
-        <img src="heshim/ClassicCutBlackSuit.png" alt="Image 2">
-        <div class="label">Classic Cut Black Suit</div><br><br><br>
-        <div class="label">₱6,899.00</div>
-    </div>
-    <div class="grid-item">
-        <img src="heshim/DarkCheckeredTwo-PieceSuit.png" alt="Image 3">
-        <div class="label">Dark Checkered Two-Piece Suit</div><br>
-        <div class="label">₱6,899.00</div>
-    </div>
-    <!--<div class="grid-item">
-        <img src="heshim/FlatFrontLinensuit.png" alt="Image 4">
-        <div class="label">Label 4</div>
-    </div>
-    <div class="grid-item">
-        <img src="heshim/LuxeBlackWoolBlendSuit.png" alt="Image 5">
-        <div class="label">Label 5</div>
-    </div>
-    <div class="grid-item">
-        <img src="heshim/NavyBlueTwo-PieceSuit.png" alt="Image 6">
-        <div class="label">Label 6</div>
-    </div>
-    <div class="grid-item">
-        <img src="heshim/ShawlLapelBlackTuxedo.png" alt="Image 7">
-        <div class="label">Label 7</div>
-    </div>
-    <div class="grid-item">
-        <img src="heshim/SlimFitGreySuit.png" alt="Image 8">
-        <div class="label">Label 8</div>
-    </div>
-    <div class="grid-item">
-        <img src="image9.jpg" alt="Image 9">
-        <div class="label">Label 9</div>
-    </div> -->
-</div>
-</div>
+</div> 
                  <!--FOOTER -->
 
       <footer class="footer">
