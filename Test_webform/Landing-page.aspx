@@ -134,7 +134,7 @@
         <p id="line-1">Once in a Lifetime Event</p>
         <p id="line-2">Let us show you what you Deserve</p>      
     </div>
-      <button class="shop-now">Shop Now</button>
+      <button class="shop-now" href="WebForm4.aspx">Shop Now</button>
 </div>
 
 
