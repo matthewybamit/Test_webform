@@ -79,7 +79,6 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64" />
-
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -175,6 +174,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="content-page.aspx" />
+    <Content Include="CSS\Shopping-cart.css" />
     <Content Include="CSS\Collection-list.css" />
     <Content Include="CSS\Footer.css" />
     <Content Include="CSS\heshim.css" />
@@ -205,14 +205,14 @@
     <Content Include="Content\Site.css" />
     <Content Include="CSS\Carousel.css" />
     <Content Include="CSS\for_him_for_her.css" />
-    <Content Include="CSS\debut.aspx" />
+    <Content Include="debut.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="CSS\dresses.aspx" />
+    <Content Include="dresses.aspx" />
     <Content Include="faqs.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="CSS\formal.aspx" />
+    <Content Include="formal.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="CSS\hes_him.aspx" />
+    <Content Include="hes_him.aspx" />
     <Content Include="inquire.aspx" />
     <Content Include="javascripts\JavaScript.js" />
     <Content Include="javascripts\login.js" />
@@ -250,11 +250,9 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="login-page.aspx" />
     <Content Include="WebForm2.aspx" />
-
     <!--HEAD -->
-    <Content Include="CSS\wedding.aspx" />
+    <Content Include="wedding.aspx" />
     <!--=======-->
-
     <Content Include="WebForm3.aspx" />
     <Content Include="WebForm4.aspx" />
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
@@ -263,7 +261,6 @@
     <None Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
-
     <!-->>>>>>> 8daa061270e1e8096dd06ebd5dfce3073697b9db -->
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -322,6 +319,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hes_him.aspx.cs">
+      <DependentUpon>hes_him.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hes_him.aspx.designer.cs">
+      <DependentUpon>hes_him.aspx</DependentUpon>
     </Compile>
     <Compile Include="user-profile.aspx.cs">
       <DependentUpon>user-profile.aspx</DependentUpon>

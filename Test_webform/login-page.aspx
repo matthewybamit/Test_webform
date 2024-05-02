@@ -40,11 +40,11 @@
     
 
     <button class="GoogleImage">
-        <img src="/googlelogo1.png" id="gimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
+        <img src="googlelogo1.png" id="gimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
     </button>
 
     <button class="FacebookImage">
-        <img src="/fblogo1.png" id="fbimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
+        <img src="fblogo1.png" id="fbimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
     </button>
 
 </div>

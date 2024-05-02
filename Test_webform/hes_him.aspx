@@ -1,18 +1,23 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="hes_him.aspx.cs" Inherits="Test_webform.hes_him" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title>DRESSERVE</title>
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
-         <link rel="stylesheet" href="Copy.css">
-         <link rel="stylesheet" href="Carousel.css">  
-         <link rel="stylesheet" href="for_him_for_her.css">
-         <link rel="stylesheet" href="Collection-list.css">  
-         <link rel="stylesheet" href="Quote.css">  
-         <link rel="stylesheet" href="inquire-view.css">  
-         <link rel="stylesheet" href="Footer.css">  
-            <link type="text/css" href="search-box-animation.css" rel="stylesheet" />
-            <link rel="stylesheet" href="heshim.css">
+         <link href="CSS/StyleSheet1%20-%20Copy.css" rel="stylesheet" />
+        <link href="CSS/heshim.css" rel="stylesheet" />
+        
+        <link href="CSS/login-page.css" rel="stylesheet" />
+        <link href="CSS/profile.css" rel="stylesheet" />
+       
+        <link href="CSS/Footer.css" rel="stylesheet" />
+        <link href="CSS/search-box-animation.css" rel="stylesheet" />
+        <link type="text/css" href="search-box-animation.css" rel="stylesheet" />
+        <link rel="stylesheet" href="heshim.css"/>
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,7 +99,7 @@
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
     <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="landing.html">Dresserve</a>
+    <a class="active" href="Landing-page.aspx">Dresserve</a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -275,9 +280,9 @@
 
 
         <script>
-document.getElementById("search-icon").addEventListener("click", function() {
-    document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
-});
+            document.getElementById("search-icon").addEventListener("click", function () {
+                document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
+            });
 
             document.getElementById("search-icon").addEventListener("click", function () {
                 // Toggle the 'active' class on the .topnav-right element
@@ -308,7 +313,7 @@ document.getElementById("search-icon").addEventListener("click", function() {
                 // Perform your search action here
                 console.log("Search term:", searchTerm);
                 // You can replace the console.log statement with your actual search logic
-            }   
+            }
 
 
             // JavaScript to toggle visibility of the top navigation on scroll
