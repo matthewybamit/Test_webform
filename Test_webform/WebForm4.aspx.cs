@@ -19,11 +19,36 @@ namespace Test_webform
                 LoadProducts();
             }
         }
+        protected void ddlGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadProducts();
+        }
 
+        protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadProducts();
+        }
         private void LoadProducts()
         {
             string connString = ConfigurationManager.ConnectionStrings["OracleConString"].ConnectionString;
-            string query = "SELECT * FROM PRODUCT"; // Adjust query if needed (e.g., filter by category)
+            string query = "SELECT * FROM PRODUCTS WHERE 1=1"; // Base query
+
+            if (!string.IsNullOrEmpty(ddlGender.SelectedValue))
+            {
+                if (ddlGender.SelectedValue == "Him")
+                {
+                    query += " AND PRODUCT_CATEGORY = 'Formal'";
+                }
+                else if (ddlGender.SelectedValue == "Her")
+                {
+                    query += " AND PRODUCT_CATEGORY IN ('Wedding Gowns', 'Debut Gowns', 'Dresses')";
+                }
+            }
+
+            if (!string.IsNullOrEmpty(ddlCategory.SelectedValue))
+            {
+                query += " AND PRODUCT_CATEGORY = :category";
+            }
 
             using (OracleConnection con = new OracleConnection(connString))
             {
@@ -31,6 +56,13 @@ namespace Test_webform
 
                 using (OracleCommand cmd = new OracleCommand(query, con))
                 {
+                    if (!string.IsNullOrEmpty(ddlCategory.SelectedValue))
+                    {
+                        OracleParameter categoryParam = new OracleParameter(":category", OracleDbType.Varchar2); // Assuming the category is a string
+                        categoryParam.Value = ddlCategory.SelectedValue;
+                        cmd.Parameters.Add(categoryParam);
+                    }
+
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
                         // Clear existing items (if any)
@@ -40,21 +72,27 @@ namespace Test_webform
                         {
                             while (reader.Read())
                             {
+                                
                                 string productName = reader.GetString(reader.GetOrdinal("PRODUCT_NAME"));
                                 decimal productPrice = reader.GetDecimal(reader.GetOrdinal("PRODUCT_PRICE"));
                                 string productDesc = reader.GetString(reader.GetOrdinal("PRODUCT_DESC"));
                                 string productCategory = reader.GetString(reader.GetOrdinal("PRODUCT_CATEGORY"));
                                 string productImg = !reader.IsDBNull(reader.GetOrdinal("PRODUCT_IMG")) ? reader.GetString(reader.GetOrdinal("PRODUCT_IMG")) : string.Empty;
-
+                                string formattedPrice = productPrice.ToString("#,##0.00");
 
                                 // Create a new grid item dynamically
                                 LiteralControl item = new LiteralControl();
+                                decimal productId = reader.GetInt32(reader.GetOrdinal("PRODUCT_ID")); // Assuming PRODUCT_ID is an integer column
+                                System.Diagnostics.Debug.WriteLine($"Product ID: {productId}");
                                 item.Text = $@"
-                                    <div class=""grid-item"">
-                                        <img src=""{productImg}"" alt=""{productName}"">
-                                        <div class=""label"">{productName}</div><br>
-                                        <div class=""label"">₱{productPrice}</div>
-                                        <div class=""label"">{productDesc}</div>  <div class=""label"">{productCategory}</div>  </div>";
+                                            <div class=""grid-item"">
+                                                <a href='WebForm5.aspx?productId={productId}'><img src=""{productImg}"" alt=""{productName}""></a> 
+                                                <div class=""label"">{productName}</div><br>
+                                                <div class=""labelprice"">₱ {formattedPrice}</div>
+                                                <div class=""labeldesc"">{productDesc}</div>
+                                                
+                                            </div>";    
+
 
                                 gridProducts.Controls.Add(item);
                             }

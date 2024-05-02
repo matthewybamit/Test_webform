@@ -94,12 +94,12 @@
   <div class="container1">
   <div class="box" id="box1">
     <img src="for-him.jpg" id="image1" alt="Image 1">
-    <a href="hes_him.aspx" class="box-link">FOR HIM</a> 
+    <a href="WebForm4.aspx" class="box-link">FOR HIM</a> 
   
   </div>
   <div class="box">   
     <img src="for-her.jpg" id="image2" alt="Image 2">
-    <a href="womens_collection.aspx" class="box-link">FOR HER</a> 
+    <a href="WebForm4.aspx" class="box-link">FOR HER</a> 
    
   </div>
 </div>
@@ -120,19 +120,19 @@
     <div class="collection-list">
         <div class="collection-item">
             <img src="wedding.png" alt="Wedding Gowns">
-            <a href="wedding.aspx" class="collection-link" id="wedding-link">Wedding Gowns</a>
+            <a href="WebForm4.aspx" class="collection-link" id="wedding-link">Wedding Gowns</a>
         </div>
         <div class="collection-item">
             <img src="debut.png" alt="Debut Gowns"  >
-            <a href="debut.aspx" class="collection-link" id="debut-link" >Debut Gowns</a>
+            <a href="WebForm4.aspx" class="collection-link" id="debut-link" >Debut Gowns</a>
         </div>
         <div class="collection-item">
             <img src="formal.png" alt="Formal">
-            <a href="" class="collection-link" id="formal-link">Formal</a>
+            <a href="WebForm4.aspx" class="collection-link" id="formal-link">Formal</a>
         </div>
         <div class="collection-item">
             <img src="dresses.png" alt="Dresses">
-            <a href="dresses.aspx" class="collection-link" id="dress-link">Dresses</a>
+            <a href="WebForm4.aspx" class="collection-link" id="dress-link">Dresses</a>
         </div>
     </div>
 </div>
@@ -146,7 +146,7 @@
         <p id="line-1">Once in a Lifetime Event</p>
         <p id="line-2">Let us show you what you Deserve</p>      
     </div>
-     <a href="All-content.aspx">  <button class="shop-now">Shop Now</button></a>
+     <a href="WebForm4.aspx.aspx">  <button class="shop-now">Shop Now</button></a>
 </div>
 
 

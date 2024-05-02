@@ -216,7 +216,7 @@
     <Content Include="javascripts\login.js" />
     <Content Include="javascripts\profile.js" />
     <Content Include="mens_collection.aspx" />
-    <Content Include="payment.aspx" />
+    <Content Include="product_info.aspx" />
     <Content Include="user-profile.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -247,10 +247,10 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="login-page.aspx" />
+    <Content Include="WebForm5.aspx" />
     <Content Include="womens_collection.aspx" />
     <!--HEAD -->
     <!--=======-->
-
     <Content Include="WebForm3.aspx" />
     <Content Include="WebForm4.aspx" />
     <Content Include="wedding.aspx" />
@@ -375,12 +375,12 @@
     <Compile Include="mens_collection.aspx.designer.cs">
       <DependentUpon>mens_collection.aspx</DependentUpon>
     </Compile>
-    <Compile Include="payment.aspx.cs">
-      <DependentUpon>payment.aspx</DependentUpon>
+    <Compile Include="product_info.aspx.cs">
+      <DependentUpon>product_info.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="payment.aspx.designer.cs">
-      <DependentUpon>payment.aspx</DependentUpon>
+    <Compile Include="product_info.aspx.designer.cs">
+      <DependentUpon>product_info.aspx</DependentUpon>
     </Compile>
     <Compile Include="user-profile.aspx.cs">
       <DependentUpon>user-profile.aspx</DependentUpon>
@@ -424,6 +424,13 @@
     </Compile>
     <Compile Include="login-page.aspx.designer.cs">
       <DependentUpon>login-page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm5.aspx.cs">
+      <DependentUpon>WebForm5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm5.aspx.designer.cs">
+      <DependentUpon>WebForm5.aspx</DependentUpon>
     </Compile>
     <Compile Include="womens_collection.aspx.cs">
       <DependentUpon>womens_collection.aspx</DependentUpon>

@@ -64,6 +64,13 @@
             .label {
                 font-size: 30px; /* Font size for labels */
             }
+            .labelprice {
+                font-size: 23px;
+            }
+            .labeldesc {
+             font-size: 20px;
+             color: gray;
+            }
             .h {
                margin: auto;
                width: 370px;
@@ -117,7 +124,7 @@
     </div>
     <!-- END -->  
     <div class="h">
-        <h2 class="mc"> MEN'S COLLECTION</h2><br>
+        <h2 class="mc">COLLECTION</h2><br>
         <h4 class="cf"> C &nbsp;O &nbsp;L&nbsp; L&nbsp; E&nbsp; C&nbsp; T&nbsp; I&nbsp; O&nbsp; N&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   F &nbsp;I &nbsp;T &nbsp;T &nbsp;I &nbsp;N&nbsp; G </h4>
     </div>
 </div>
@@ -126,9 +133,45 @@
 
  
  <form id="form1" runat="server">
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+     <div>
+    <asp:DropDownList ID="ddlGender" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlGender_SelectedIndexChanged">
+    <asp:ListItem Text="Default or All" Value=""></asp:ListItem>
+    <asp:ListItem Text="Him" Value="Him"></asp:ListItem>
+    <asp:ListItem Text="Her" Value="Her"></asp:ListItem>
+</asp:DropDownList>
+
+<asp:DropDownList ID="ddlCategory" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged">
+    <asp:ListItem Text="Default or All" Value=""></asp:ListItem>
+    <asp:ListItem Text="Wedding Gowns" Value="Wedding Gowns"></asp:ListItem>
+    <asp:ListItem Text="Debut Gowns" Value="Debut Gowns"></asp:ListItem>
+    <asp:ListItem Text="Formal" Value="Formal"></asp:ListItem>
+    <asp:ListItem Text="Dresses" Value="Dresses"></asp:ListItem>
+</asp:DropDownList>
+</div>
+
+    <ContentTemplate>
         <div class="grid-wrapper">
-            <asp:PlaceHolder ID="gridProducts" runat="server"></asp:PlaceHolder>
+            <div class="grid-container">
+                <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+            </div>
         </div>
+    </ContentTemplate>
+
+        <asp:UpdatePanel ID="updatePanel" runat="server">
+    <Triggers>
+        <asp:AsyncPostBackTrigger ControlID="ddlGender" EventName="SelectedIndexChanged" />
+        <asp:AsyncPostBackTrigger ControlID="ddlCategory" EventName="SelectedIndexChanged" />
+    </Triggers>
+    <ContentTemplate>
+        <div class="grid-wrapper">
+            <div class="grid-container">
+                <asp:PlaceHolder ID="gridProducts" runat="server"></asp:PlaceHolder>
+            </div>
+        </div>
+    </ContentTemplate>
+</asp:UpdatePanel>
     </form>
     <!--<div class="grid-item">
         <img src="heshim/FlatFrontLinensuit.png" alt="Image 4">

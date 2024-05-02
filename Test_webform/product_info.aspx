@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="payment.aspx.cs" Inherits="Test_webform.payment" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="product_info.aspx.cs" Inherits="Test_webform.product_info" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -226,8 +226,8 @@
     <div class="left">   
         
        <div class="pics">
-            <img class="pic" src="wedding/CelestialLumierGown.jpg" alt="">
-        </div> 
+        <img class="pic" id="productImage" src="" alt="">
+        </div>
         
         <div class="detailsss">
             <h3>DETAILS</h3>
@@ -235,9 +235,12 @@
         <img class="schartz" src="schart.png" alt="" >
     </div>
     <div class="right">
-        <div class="name">
-            <h3>Halter Gown with Flower Appliques</h3>
-            <h3>₱6,899.00</h3>
+    <div class="name">
+        <h3 id="productName"></h3>
+        <h3 id="productDesc"></h3>
+        <h3 id="productPrice"></h3>
+
+    </div>
             
         </div>
         <h2 class="s">SIZE</h2>
@@ -471,3 +474,4 @@
        <script src="javascripts/JavaScript.js"></script>
 
     </body>
+    </html>

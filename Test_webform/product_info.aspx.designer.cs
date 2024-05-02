@@ -11,7 +11,7 @@ namespace Test_webform
 {
 
 
-    public partial class payment
+    public partial class product_info
     {
     }
 }
