@@ -9,12 +9,13 @@
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
         <link rel="stylesheet" href="CSS/Copy.css">
- <link rel="stylesheet" href="CSS/Carousel.css">  
- <link rel="stylesheet" href="CSS/for_him_for_her.css">
- <link rel="stylesheet" href="CSS/Collection-list.css">  
- <link rel="stylesheet" href="CSS/Quote.css">  
- <link rel="stylesheet" href="CSS/inquire-view.css">  
- <link rel="stylesheet" href="CSS/Footer.css">  
+         <link rel="stylesheet" href="CSS/Carousel.css">  
+         <link rel="stylesheet" href="CSS/for_him_for_her.css">
+         <link rel="stylesheet" href="CSS/Collection-list.css">  
+         <link rel="stylesheet" href="CSS/Quote.css">  
+         <link rel="stylesheet" href="CSS/inquire-view.css">  
+         <link rel="stylesheet" href="CSS/Footer.css">  
+        <link href="CSS/Shopping-cart.css" rel="stylesheet" />
     <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
     <link rel="stylesheet" href="CSS/StyleSheet1 - Copy.css">
             <link rel="stylesheet" href="heshim.css">
@@ -95,11 +96,11 @@
 
     <body>
 
-   <!--TOP NAV-->
+     <!--TOP NAV-->
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
-    <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="Landing-page.aspx">Dresserve</a>
+    <a class="active" href="Landing-page.aspx">  <img class="logo" src="Dresserve.png"> Dresserve
+  </a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -110,11 +111,16 @@
 <div id="search-box">
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
-        <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
+     <a href="#" id="open-form"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
         <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
-        <!-- Cart -->
+</div>
+    </div>
+    <!-- END -->  
+</div>
+
+<!-- Cart -->
 <div id="cart-overlay" class="cart-overlay">
     <div class="cart">
         <h2>Shopping Cart</h2>
@@ -127,10 +133,11 @@
         </div>
     </div>
 </div>
-
 </div>
     </div>
     <!-- END -->  
+
+
     <div class="h">
         <h2 class="mc"> WOMEN'S COLLECTION</h2><br>
         <h4 class="cf"> C &nbsp;O &nbsp;L&nbsp; L&nbsp; E&nbsp; C&nbsp; T&nbsp; I&nbsp; O&nbsp; N&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   F &nbsp;I &nbsp;T &nbsp;T &nbsp;I &nbsp;N&nbsp; G </h4>
