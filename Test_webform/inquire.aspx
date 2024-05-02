@@ -1,3 +1,7 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="inquire.aspx.cs" Inherits="Test_webform.inquire" %>
+
+<!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title>DRESSERVE</title>
@@ -5,13 +9,10 @@
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
             <link href="CSS/StyleSheet1%20-%20Copy.css" rel="stylesheet" />
-            <link href="CSS/inquire-view.css" rel="stylesheet" />
-            <link href="CSS/profile.css" rel="stylesheet" />
-            <link href="CSS/Quote.css" rel="stylesheet" />
             <link href="CSS/Shopping-cart.css" rel="stylesheet" />
+            <link href="CSS/search-box-animation.css" rel="stylesheet" />
             <link href="CSS/Footer.css" rel="stylesheet" />
-            <link type="text/css" href="search-box-animation.css" rel="stylesheet" />
-            <link rel="stylesheet" href="heshim.css">
+            <link href="CSS/Quote.css" rel="stylesheet" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,7 +97,7 @@
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
     <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="landing.html">Dresserve</a>
+    <a class="active" href="Landing-page.aspx">Dresserve</a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -242,7 +243,7 @@
     <div class="legal__links">
       <span> <img scr="facebook (1).png" /> <span class="heart"></span> </span>
     </div>
-  </div>
+  </div>s
 </footer>
 
 
@@ -264,3 +265,4 @@
 <script src="javascripts/JavaScript.js"></script>
 
     </body>
+    </html>

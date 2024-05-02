@@ -1,17 +1,17 @@
-﻿
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="All-content.aspx.cs" Inherits="Test_webform.All_content" %>
+
+<!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>DRESSERVE</title>
     <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
      <script src="javascripts/JavaScript.js"></script>
-        <link rel="stylesheet" type="text/css" href="CSS/content-page.css">
-        <link rel="stylesheet" type="text/css" href="CSS/Carousel.css">  
-        <link rel="stylesheet" type="text/css" href="CSS/for_him_for_her.css">
-        <link rel="stylesheet" type="text/css" href="CSS/Collection-list.css">  
-        <link rel="stylesheet" type="text/css" href="CSS/Quote.css">  
-        <link rel="stylesheet" type="text/css" href="CSS/inquire-view.css">  
-        <link rel="stylesheet" type="text/css" href="CSS/Footer.css">  
+        <link href="CSS/StyleSheet1%20-%20Copy.css" rel="stylesheet" />
+        <link href="CSS/Shopping-cart.css" rel="stylesheet" />
+        <link href="CSS/search-box-animation.css" rel="stylesheet" />
+        <link href="CSS/Footer.css" rel="stylesheet" />
         <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -86,7 +86,7 @@
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
     <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="#home">Dresserve</a>
+    <a class="active" href="Landing-page.aspx">Dresserve</a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -104,7 +104,7 @@
 </div>
     </div>
         <div class="h">
-        <h2 class="mc"> WOMEN'S COLLECTIONS</h2><br>
+        <h2 class="mc"> DRESSERVE COLLECTIONS</h2><br>
         <h4 class="cf"> C &nbsp;O &nbsp;L&nbsp; L&nbsp; E&nbsp; C&nbsp; T&nbsp; I&nbsp; O&nbsp; N&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   F &nbsp;I &nbsp;T &nbsp;T &nbsp;I &nbsp;N&nbsp; G </h4>
     </div>
 
@@ -265,43 +265,8 @@
 
 
          <!--END-->
-        <script>
-document.getElementById("search-icon").addEventListener("click", function() {
-    document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
-});
-
-            document.getElementById("search-icon").addEventListener("click", function () {
-                // Toggle the 'active' class on the .topnav-right element
-                document.querySelector(".topnav-right").classList.toggle("active-padding");
-            });
-
-            // Get the input element
-            var input = document.getElementById("search-input");
-
-            // Add event listener for keydown event
-            input.addEventListener("keydown", function (event) {
-                // Check if the key pressed is Enter (key code 13)
-                if (event.keyCode === 13) {
-                    // Prevent the default action (e.g., form submission)
-                    event.preventDefault();
-                    // Clear the input value
-                    input.value = "";
-                    // Trigger your search function here
-                    // For example, you can call a function to handle the search
-                    performSearch();
-                }
-            });
-
-            // Function to handle search
-            function performSearch() {
-                // Get the search input value
-                var searchTerm = document.getElementById("search-input").value;
-                // Perform your search action here
-                console.log("Search term:", searchTerm);
-                // You can replace the console.log statement with your actual search logic
-            }   
-        </script>
-
+    
+        <script src="javascripts/JavaScript.js"></script>
 
     </body>
     </html>

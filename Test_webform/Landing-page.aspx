@@ -1,4 +1,7 @@
-﻿    <html xmlns="http://www.w3.org/1999/xhtml">
+﻿ 
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title>DRESSERVE</title>
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
@@ -11,7 +14,7 @@
             <link rel="stylesheet" type="text/css" href="CSS/Quote.css"/>  
             <link rel="stylesheet" type="text/css" href="CSS/inquire-view.css"/>  
             <link rel="stylesheet" type="text/css" href="CSS/Footer.css"/>  
-            <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
+            <link href="CSS/search-box-animation.css" rel="stylesheet" />
         <link href="CSS/Shopping-cart.css" rel="stylesheet" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -38,7 +41,7 @@
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
      <a href="#" id="open-form"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
-        <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
+        <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
 </div>
@@ -91,12 +94,12 @@
   <div class="container1">
   <div class="box" id="box1">
     <img src="for-him.jpg" id="image1" alt="Image 1">
-    <a href="#" class="box-link">FOR HIM</a> 
+    <a href="hes_him.aspx" class="box-link">FOR HIM</a> 
   
   </div>
   <div class="box">   
     <img src="for-her.jpg" id="image2" alt="Image 2">
-    <a href="#" class="box-link">FOR HER</a> 
+    <a href="womens_collection.aspx" class="box-link">FOR HER</a> 
    
   </div>
 </div>
@@ -117,19 +120,19 @@
     <div class="collection-list">
         <div class="collection-item">
             <img src="wedding.png" alt="Wedding Gowns">
-            <a href="#" class="collection-link" id="wedding-link">Wedding Gowns</a>
+            <a href="wedding.aspx" class="collection-link" id="wedding-link">Wedding Gowns</a>
         </div>
         <div class="collection-item">
             <img src="debut.png" alt="Debut Gowns"  >
-            <a href="#" class="collection-link" id="debut-link" >Debut Gowns</a>
+            <a href="debut.aspx" class="collection-link" id="debut-link" >Debut Gowns</a>
         </div>
         <div class="collection-item">
             <img src="formal.png" alt="Formal">
-            <a href="#" class="collection-link" id="formal-link">Formal</a>
+            <a href="" class="collection-link" id="formal-link">Formal</a>
         </div>
         <div class="collection-item">
             <img src="dresses.png" alt="Dresses">
-            <a href="#" class="collection-link" id="dress-link">Dresses</a>
+            <a href="dresses.aspx" class="collection-link" id="dress-link">Dresses</a>
         </div>
     </div>
 </div>
@@ -143,7 +146,7 @@
         <p id="line-1">Once in a Lifetime Event</p>
         <p id="line-2">Let us show you what you Deserve</p>      
     </div>
-      <button class="shop-now">Shop Now</button>
+     <a href="All-content.aspx">  <button class="shop-now">Shop Now</button></a>
 </div>
 
 
@@ -153,12 +156,12 @@
   <div class="inquire-box">
     <img src="inquire.jpg" id="inquire-image" alt="inquire-image">
     <p class="inquire-view-link" id="inquire-text">Find Your Piece</p> 
-    <a href="#" class="inquire-view-link" id="inquire-id">Inquire</a> 
+    <a href="inquire.aspx" class="inquire-view-link" id="inquire-id">Inquire</a> 
   </div>
   <div class="inquire-box">   
     <img src="viewmore.jpg" id="view-image" alt="view-image">
     <p class="inquire-view-link" id="view-more-text">Dress For Every Occassion</p> 
-    <a href="#" class="inquire-view-link" id="view-more-id">View More</a> 
+    <a href="All-content.aspx" class="inquire-view-link" id="view-more-id">View More</a> 
   </div>
 </div>
 
@@ -191,11 +194,11 @@
         </li>
 
         <li>
-          <a href="Contact-us.aspx">Contact Us</a>
+          <a href="Contact.aspx">Contact Us</a>
         </li>
             
         <li>
-          <a href="#">FAQs</a>
+          <a href="faqs.aspx">FAQs</a>
         </li>
       </ul>
     </li>

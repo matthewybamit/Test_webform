@@ -1,3 +1,7 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="wedding.aspx.cs" Inherits="Test_webform.weddingaspx" %>
+
+<!DOCTYPE html>
+
 ﻿<html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title>DRESSERVE</title>
@@ -95,7 +99,7 @@
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
     <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="landing.html">Dresserve</a>
+    <a class="active" href="Landing-page.aspx">Dresserve</a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -114,7 +118,7 @@
     </div>
     <!-- END -->  
     <div class="h">
-        <h2 class="mc"> WOMEN'S COLLECTION</h2><br>
+        <h2 class="mc"> WEDDING COLLECTION</h2><br>
         <h4 class="cf"> C &nbsp;O &nbsp;L&nbsp; L&nbsp; E&nbsp; C&nbsp; T&nbsp; I&nbsp; O&nbsp; N&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   F &nbsp;I &nbsp;T &nbsp;T &nbsp;I &nbsp;N&nbsp; G </h4>
     </div>
 </div>
@@ -375,3 +379,4 @@ document.getElementById("search-icon").addEventListener("click", function() {
 
 
     </body>
+    </html>

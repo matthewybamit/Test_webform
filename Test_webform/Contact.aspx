@@ -1,4 +1,4 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿cc<html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title>DRESSERVE</title>
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
@@ -168,14 +168,16 @@
 
   <!--QUOTE/SHOP-->
 
+
   <div class="container-quote">
     <img src="gown.png" alt="Quote image" class="quote-image" />
     <div class="quote">
         <p id="line-1">Once in a Lifetime Event</p>
         <p id="line-2">Let us show you what you Deserve</p>      
     </div>
-      <button class="shop-now">Shop Now</button>
+     <a href="All-content.aspx">  <button class="shop-now">Shop Now</button></a>
 </div>
+
 
 
           
@@ -290,3 +292,4 @@
     <script src="javascripts/JavaScript.js"></script>
 
     </body>
+    </html>

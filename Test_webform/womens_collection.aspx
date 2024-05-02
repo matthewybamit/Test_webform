@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="debut.aspx.cs" Inherits="Test_webform.debut" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="womens_collection.aspx.cs" Inherits="Test_webform.WebForm2" %>
 
-<!DOCTYPE html>
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
@@ -8,10 +8,16 @@
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
-        <link href="CSS/StyleSheet1%20-%20Copy.css" rel="stylesheet" />
-        <link href="CSS/Shopping-cart.css" rel="stylesheet" />
-        <link href="CSS/search-box-animation.css" rel="stylesheet" />
-        <link href="CSS/Footer.css" rel="stylesheet" />
+        <link rel="stylesheet" href="CSS/Copy.css">
+ <link rel="stylesheet" href="CSS/Carousel.css">  
+ <link rel="stylesheet" href="CSS/for_him_for_her.css">
+ <link rel="stylesheet" href="CSS/Collection-list.css">  
+ <link rel="stylesheet" href="CSS/Quote.css">  
+ <link rel="stylesheet" href="CSS/inquire-view.css">  
+ <link rel="stylesheet" href="CSS/Footer.css">  
+    <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/StyleSheet1 - Copy.css">
+            <link rel="stylesheet" href="heshim.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,7 +118,7 @@
     </div>
     <!-- END -->  
     <div class="h">
-        <h2 class="mc"> DEBUT COLLECTION</h2><br>
+        <h2 class="mc"> WOMEN'S COLLECTION</h2><br>
         <h4 class="cf"> C &nbsp;O &nbsp;L&nbsp; L&nbsp; E&nbsp; C&nbsp; T&nbsp; I&nbsp; O&nbsp; N&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   F &nbsp;I &nbsp;T &nbsp;T &nbsp;I &nbsp;N&nbsp; G </h4>
     </div>
 </div>
@@ -124,21 +130,21 @@
  
   <div class="grid-container">
     <div class="grid-item">
-        <img src="debut/Golden Hour Debut Gown.png" alt="Image 1">
-        <div class="label">Golden Hour Debut Gown
+      <a href="pment.html"><img src="wedding/CelestialLumierGown.jpg" alt="Image 1"></a>
+        <div class="label">Celestial Lumier Gown
         </div>
         <br><br><br>
         <div class="label">₱6,899.00
         </div>
     </div>
     <div class="grid-item">
-        <img src="debut/High-Slit Mermaid Debut Dress.png" alt="Image 2">
-        <div class="label">High-Slit Mermaid Debut Dress</div><br>
+        <img src="wedding/CrystalCascadeCouture.jpg" alt="Image 2">
+        <div class="label">Crystal Cascade Couture</div><br><br><br>
         <div class="label">₱6,899.00</div>
     </div>
     <div class="grid-item">
-        <img src="debut/Ice Blue Fairytale Gown.png" alt="Image 3">
-        <div class="label">Ice Blue Fairytale Gown</div><br><br><br>
+        <img src="wedding/DiamondDreamsBridalGown.jpg" alt="Image 3">
+        <div class="label">Diamond Dreams Bridal Gown</div><br>
         <div class="label">₱6,899.00</div>
     </div>
     <!--<div class="grid-item">
@@ -188,15 +194,15 @@
 
       <ul class="nav__ul">
         <li>
-          <a href="#">About Us</a>
+          <a href="About.aspx">About Us</a>
         </li>
 
         <li>
-          <a href="#">Contact Us</a>
+          <a href="Contact.aspx">Contact Us</a>
         </li>
             
         <li>
-          <a href="#">FAQs</a>
+          <a href="faqs.aspx">FAQs</a>
         </li>
       </ul>
     </li>
@@ -271,7 +277,8 @@
    <!--JAVASCRIPTS-->
 
 
-<script src="javascripts/JavaScript.js"></script>
+
+        <script src="javascripts/JavaScript.js"></script>
 
     </body>
     </html>
