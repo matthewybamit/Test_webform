@@ -105,16 +105,16 @@
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
     <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="landing.html">Dresserve</a>
+    <a class="active" href="Landing-page.aspx">Dresserve</a>
     <!-- END -->  
 
     <!--NAV ICON-->
     <div class="topnav-right">
         <a href="#home" id="search-icon">
-  <img class="icon" src="magnifying-glass.png" alt="Search">
+  <img class="icon" src="magnifying-glass.png" alt="Search"/>
 </a>
 <div id="search-box">
-  <input type="text" id="search-input" placeholder="Enter your search">
+  <input type="text" id="search-input" placeholder="Enter your search"/>
 </div>
         <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
         <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
@@ -130,9 +130,11 @@
 </div>
 
   <!-- END -->  
-
+   
  
  <form id="form1" runat="server">
+
+
      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
      <div>

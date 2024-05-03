@@ -146,7 +146,7 @@
         <p id="line-1">Once in a Lifetime Event</p>
         <p id="line-2">Let us show you what you Deserve</p>      
     </div>
-     <a href="WebForm4.aspx.aspx">  <button class="shop-now">Shop Now</button></a>
+     <a href="WebForm4.aspx">  <button class="shop-now">Shop Now</button></a>
 </div>
 
 
