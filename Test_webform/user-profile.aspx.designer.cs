@@ -11,7 +11,8 @@ namespace Test_webform
 {
 
 
-    public partial class Test_webform
+    public partial class user
     {
+        
     }
 }

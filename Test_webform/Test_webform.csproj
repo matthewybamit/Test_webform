@@ -33,7 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>BasicDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -79,7 +79,6 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64" />
-
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -205,19 +204,20 @@
     <Content Include="Content\Site.css" />
     <Content Include="CSS\Carousel.css" />
     <Content Include="CSS\for_him_for_her.css" />
-    <Content Include="CSS\debut.aspx" />
+    <Content Include="debut.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="CSS\dresses.aspx" />
+    <Content Include="dresses.aspx" />
     <Content Include="faqs.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="CSS\formal.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="CSS\hes_him.aspx" />
+    <Content Include="hes_him.aspx" />
     <Content Include="inquire.aspx" />
     <Content Include="javascripts\JavaScript.js" />
     <Content Include="javascripts\login.js" />
     <Content Include="javascripts\profile.js" />
     <Content Include="payment.aspx" />
+    <Content Include="profile-page.aspx" />
     <Content Include="user-profile.aspx" />
     <Content Include="Mens collection.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -250,11 +250,9 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="login-page.aspx" />
     <Content Include="WebForm2.aspx" />
-
     <!--HEAD -->
-    <Content Include="CSS\wedding.aspx" />
+    <Content Include="wedding.aspx" />
     <!--=======-->
-
     <Content Include="WebForm3.aspx" />
     <Content Include="WebForm4.aspx" />
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
@@ -263,7 +261,6 @@
     <None Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
-
     <!-->>>>>>> 8daa061270e1e8096dd06ebd5dfce3073697b9db -->
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -322,6 +319,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile-page.aspx.cs">
+      <DependentUpon>profile-page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile-page.aspx.designer.cs">
+      <DependentUpon>profile-page.aspx</DependentUpon>
     </Compile>
     <Compile Include="user-profile.aspx.cs">
       <DependentUpon>user-profile.aspx</DependentUpon>

@@ -7,7 +7,7 @@
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
-         <link rel="stylesheet" href="CSS/Copy.css">
+         <!-- link rel="stylesheet" href="CSS/Copy.css"> !-->
          <link rel="stylesheet" href="CSS/Carousel.css">  
          <link rel="stylesheet" href="CSS/for_him_for_her.css">
          <link rel="stylesheet" href="CSS/Collection-list.css">  
@@ -52,8 +52,33 @@
 
   <!-- END -->  
 
+         <form id="form1" runat="server">
+            <div class="container-info">
+        <div class="texthead">YOUR ACCOUNT</div>
+        <div class="container-uid"> 
+            <asp:Label ID="lbluid" runat="server" Text=""></asp:Label>
+            </div>
+                  <div class="profile-container">
+      <div class="profile">
+          <asp:Image ID="profilePic" runat="server" Width="50" Height="50" />
+      </div>
+                </div>
+                <hr class="divider">
+<div class="container-name"> 
+    <asp:Label ID="lblusername" runat="server" Text=""></asp:Label>
+</div>
+                <div class="container-email"> 
+                    <asp:Label ID="txtEmail" runat="server" Text=""></asp:Label>
+</div>
+                <div class="logout-btn">
+    <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
+</div>
+            </div>
+        </form> 
 
-    <div class="container-info">
+                        
+
+    <!-- <div class="container-info">
         <div class="texthead">YOUR ACCOUNT</div>
         <div class="container-uid"> 
             <p id="user-uid"></p>
@@ -71,9 +96,9 @@
             <p id="user-email"></p>
         </div>
   <div class="logout-btn">
-      <button id="btnLogout" onclick="logout()">Logout</button>
+      <button id="btnLogout2" onclick="logout()">Logout</button>
   </div>
-        </div>
+        </div> -->
 
                  <!--FOOTER -->
 
@@ -202,7 +227,7 @@
                 }
             });*/
 
-            window.onload = function () {
+            /*window.onload = function () {
                 // Retrieve user data from session storage
                 const uid = sessionStorage.getItem('uid');
                 const username = sessionStorage.getItem('username');
@@ -225,7 +250,7 @@
 
             function redirectToLogin() {
                 window.location.href = 'login-page.aspx';
-            }
+            }*/
 
             // Function to logout
             function logout() {

@@ -26,26 +26,27 @@
                     <p>with</p>
                     <hr>
                 </div>
-                
-                    <!-- <form id="form1" runat="server"> 
-                        <asp:ImageButton ID="GoogleImage" ImageUrl="googlelogo1.png" runat="server"  style="height: 50px; margin: 0 10px; cursor: pointer;"/>
-                        <asp:ImageButton ID="FacebookImage" ImageUrl="fblogo1.png" runat="server" OnClick="FBLogin" />
-                    
-                    </form> -->
-
-                    
-                
 
                 <div class="social-icons">
+                     <form id="form1" runat="server"> 
+                        <asp:ImageButton ID="GoogleImage" ImageUrl="googlelogo1.png" runat="server" OnClick="Login" style="height: 50px; margin: 0 10px; cursor: pointer;"/>
+                        <!-- <asp:ImageButton ID="FacebookImage" ImageUrl="fblogo1.png" runat="server" OnClick="FBLogin" /> -->
+                    
+                    </form> 
+
+                    
+                
+
+                
     
 
-    <button class="GoogleImage">
+    <!-- <button class="GoogleImage">
         <img src="/googlelogo1.png" id="gimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
     </button>
 
     <button class="FacebookImage">
         <img src="/fblogo1.png" id="fbimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
-    </button>
+    </button> -->
 
 </div>
             </div>
@@ -135,7 +136,7 @@
                                 console.log("Email:", getCookie('email'));
                                 console.log("UID:", getCookie('uid'));
 
-                                
+                                fetchCookies();
 
                                 // Redirect to another page where you want to display the data
                                 window.location.href = 'Landing-page.aspx'; // Replace with your actual path
@@ -194,7 +195,7 @@
                                 console.log("Email:", getCookie('email'));
                                 console.log("UID:", getCookie('uid'));
 
-
+                                fetchCookies();
 
                                 // Redirect to another page where you want to display the data
                                 window.location.href = 'Landing-page.aspx'; // Replace with your actual path
@@ -208,6 +209,30 @@
                         });
                 });
             });
+
+            function fetchCookies() {
+                fetch('/login-page.aspx', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Data contains the cookies retrieved from the server
+                        console.log('Cookies received:', data);
+                        // Do something with the received cookies
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+            }
+
 
         </script>
 
