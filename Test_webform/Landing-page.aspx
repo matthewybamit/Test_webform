@@ -1,4 +1,4 @@
-﻿ 
+﻿﻿   <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Landing-page.aspx.cs" Inherits="Test_webform.Test_webform" %>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,15 +7,16 @@
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
-            <link rel="stylesheet" type="text/css" href="CSS/StyleSheet1 - Copy.css"/>
-            <link rel="stylesheet" type="text/css" href="CSS/Carousel.css">  
-            <link rel="stylesheet" type="text/css" href="CSS/for_him_for_her.css"/>
-            <link rel="stylesheet" type="text/css" href="CSS/Collection-list.css"/>  
-            <link rel="stylesheet" type="text/css" href="CSS/Quote.css"/>  
-            <link rel="stylesheet" type="text/css" href="CSS/inquire-view.css"/>  
-            <link rel="stylesheet" type="text/css" href="CSS/Footer.css"/>  
-            <link href="CSS/search-box-animation.css" rel="stylesheet" />
+         <!-- <link rel="stylesheet" href="CSS/Copy.css"> -->
+         <link rel="stylesheet" href="CSS/Carousel.css">  
+         <link rel="stylesheet" href="CSS/for_him_for_her.css">
+         <link rel="stylesheet" href="CSS/Collection-list.css">  
+         <link rel="stylesheet" href="CSS/Quote.css">  
+         <link rel="stylesheet" href="CSS/inquire-view.css">  
+         <link rel="stylesheet" href="CSS/Footer.css">  
         <link href="CSS/Shopping-cart.css" rel="stylesheet" />
+            <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
+            <link rel="stylesheet" href="CSS/StyleSheet1 - Copy.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
    
@@ -24,7 +25,7 @@
 
 
     <body>
-   
+ 
    <!--TOP NAV-->
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
@@ -264,12 +265,158 @@
 
 
 
-
-
-     
-     
          <!--END-->
-      <script src="javascripts/JavaScript.js"></script>
 
+
+
+
+
+   <!--JAVASCRIPTS-->
+
+
+
+        <script>
+            /*fetchCookies();
+
+            function fetchCookies() {
+                fetch('/Landing-page.aspx', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Data contains the cookies retrieved from the server
+                        console.log('Cookies received:', data);
+                        // Do something with the received cookies
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+            }
+
+
+            /*window.onload = function () {
+                // Retrieve user data from session storage
+                const username = sessionStorage.getItem('username');
+                const name = sessionStorage.getItem('name');
+                const profilePicture = sessionStorage.getItem('profilePicture');
+
+                // Display the data in your HTML elements
+                document.getElementById('profile-name').textContent = name;
+                document.getElementById('profile-picture').src = profilePicture;
+            };
+
+            // Function to logout
+            function logout() {
+                sessionStorage.clear(); // Clear session storage
+                window.location.href = 'login-page.aspx'; // Redirect to login page
+            }*/
+
+            document.getElementById("search-icon").addEventListener("click", function () {
+                document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
+            });
+
+            document.getElementById("search-icon").addEventListener("click", function () {
+                // Toggle the 'active' class on the .topnav-right element
+                document.querySelector(".topnav-right").classList.toggle("active-padding");
+            });
+
+            // Get the input element
+            var input = document.getElementById("search-input");
+
+            // Add event listener for keydown event
+            input.addEventListener("keydown", function (event) {
+                // Check if the key pressed is Enter (key code 13)
+                if (event.keyCode === 13) {
+                    // Prevent the default action (e.g., form submission)
+                    event.preventDefault();
+                    // Clear the input value
+                    input.value = "";
+                    // Trigger your search function here
+                    // For example, you can call a function to handle the search
+                    performSearch();
+                }
+            });
+
+            // Function to handle search
+            function performSearch() {
+                // Get the search input value
+                var searchTerm = document.getElementById("search-input").value;
+                // Perform your search action here
+                console.log("Search term:", searchTerm);
+                // You can replace the console.log statement with your actual search logic
+            }
+
+
+            // JavaScript to toggle visibility of the top navigation on scroll
+
+
+
+
+            $(document).ready(function () {
+                var lastScrollTop = 0;
+
+                $(window).scroll(function (event) {
+                    var st = $(this).scrollTop();
+                    if (st > lastScrollTop) {
+                        // Scroll down
+                        $("#topnav").removeClass("visible").addClass("hidden");
+                    } else {
+                        // Scroll up
+                        $("#topnav").removeClass("hidden").addClass("visible");
+                    }
+                    lastScrollTop = st;
+                });
+            });
+
+            document.getElementById("search-icon").addEventListener("click", function () {
+                document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
+            });
+
+            $(document).ready(function () {
+                var slideIndex = 0; // Initialize slide index
+
+                // Function to move to the next slide
+                function nextSlide() {
+                    var slideWidth = $('.slides a').eq(0).outerWidth();
+                    slideIndex = (slideIndex + 1) % $('.slides a').length; // Increment slide index
+                    $('.slides').css('transform', 'translateX(' + (-slideIndex * slideWidth) + 'px)');
+                    updateSliderIndicator(); // Update slider indicator
+                }
+
+                // Function to update the slider indicator
+                function updateSliderIndicator() {
+                    $('.slider').removeClass('active');
+                    $('.slider[data-slide="' + slideIndex + '"]').addClass('active');
+                }
+
+                // Set interval to automatically move to the next slide every 8 seconds
+                var interval = setInterval(nextSlide, 4000);
+
+                // Click event handler for slider
+                $('.slider').click(function () {
+                    clearInterval(interval); // Clear previous interval
+                    slideIndex = $(this).data('slide'); // Update slide index
+                    var slideWidth = $('.slides a').eq(0).outerWidth();
+                    $('.slides').css('transform', 'translateX(' + (-slideIndex * slideWidth) + 'px)');
+                    updateSliderIndicator(); // Update slider indicator
+                    // Set new interval after click
+                    interval = setInterval(nextSlide, 4000);
+                });
+            });
+
+
+
+
+        </script>
+
+        <script src="javascripts/JavaScript.js"></script>
     </body>
     </html>
