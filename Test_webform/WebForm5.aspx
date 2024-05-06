@@ -83,11 +83,17 @@
                 font-size: 20px;
                 font-family: "Barlow Semi Condensed", sans-serif;
             }
-            .product-label {
-               font-size: 20px;
-             font-family: "Barlow Semi Condensed", sans-serif;
-            /* Add more styling properties as needed */
+            .product-labeln {
+               font-size: 40px;
+
             }
+            .product-labeld {
+   font-size: 20px;
+
+}
+            .product-labelp {
+   font-size: 30px;
+}
             .s {
                 font-size: 25px;
                 font-weight: 1%;
@@ -274,9 +280,9 @@
     </div>
     <div class="right">
         <div class="name">
-        <asp:Label ID="productNameLabel" runat="server" CssClass="product-label" Font-Names="Barlow Semi Condensed, sans-serif" Font-Size="20px"></asp:Label>
-        <asp:Label ID="productDescLabel" runat="server" CssClass="product-label" Font-Names="Barlow Semi Condensed, sans-serif"></asp:Label>
-        <asp:Label ID="productPriceLabel" runat="server" CssClass="product-label" Font-Names="Barlow Semi Condensed, sans-serif"></asp:Label>
+        <asp:Label ID="productNameLabel" runat="server" CssClass="product-labeln" ></asp:Label> <br />
+        <asp:Label ID="productDescLabel" runat="server" CssClass="product-labeld" ></asp:Label> <br /><br />
+        <asp:Label ID="productPriceLabel" runat="server" CssClass="product-labelp"></asp:Label>
 
             
         </div>
@@ -309,7 +315,7 @@
         </div>
        
         <input id="subscribe-input" type="text" placeholder="Add your personalization(optional)" class="txtbox">
-        <br><br><br><br><br> <br><br> <br><br> <br><br> <br><br> <br><br> 
+        <br><br><br><br><br> <br><br> <br><br> <br><br> <br><br> 
         <div class="parag">
             <p>
                 1. Length<br>Measure from the top of your shoulder (center, where a seam would be placed) to the hem. <br> 

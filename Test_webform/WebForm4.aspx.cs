@@ -86,7 +86,7 @@ namespace Test_webform
                                 System.Diagnostics.Debug.WriteLine($"Product ID: {productId}");
                                 item.Text = $@"
                                             <div class=""grid-item"">
-                                                <a href='WebForm5.aspx?productId={productId}'><img src=""{productImg}"" alt=""{productName}""></a> 
+                                                <a href='WebForm5.aspx?productId={productId}'><img src=""Images/{productImg}"" alt=""{productName}""></a> 
                                                 <div class=""label"">{productName}</div><br>
                                                 <div class=""labelprice"">₱ {formattedPrice}</div>
                                                 <div class=""labeldesc"">{productDesc}</div>

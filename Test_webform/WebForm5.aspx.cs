@@ -50,7 +50,7 @@ namespace Test_webform
                             string formattedPrice = $"₱{productPrice.ToString("#,##0.00")}";
 
 
-                            productImage.Src = productImg;
+                            productImage.Src = "Images/"+productImg;
                             productNameLabel.Text = productName;
                             productDescLabel.Text = productDesc;
                             productPriceLabel.Text = formattedPrice; // Assuming productPriceLabel is an ASP.NET Label controlriceText;
