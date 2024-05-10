@@ -264,7 +264,39 @@
 </footer>
 
 
+        <script type="module">
+            $(document).ready(function () {
+                // Assuming this code is triggered when a user clicks a button or some other event
+                $('#btnSave').click(function () {
+                    // Retrieve user data from session storage
+                    const uid = sessionStorage.getItem('uid');
+                    const username = sessionStorage.getItem('username');
+                    const email = sessionStorage.getItem('email');
+                    const profilePicture = sessionStorage.getItem('profilePicture');
 
+                    // Send data to server-side code
+                    $.ajax({
+                        url: 'user-profile-handler.aspx', // Change to your server-side endpoint
+                        method: 'POST',
+                        data: {
+                            uid: uid,
+                            username: username,
+                            email: email,
+                            profilePicture: profilePicture
+                        },
+                        success: function (response) {
+                            // Handle success response
+                            console.log(response);
+                        },
+                        error: function (xhr, status, error) {
+                            // Handle error
+                            console.error(xhr.responseText);
+                        }
+                    });
+                });
+            });
+
+        </script>
 
 
 

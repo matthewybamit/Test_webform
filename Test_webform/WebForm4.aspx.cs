@@ -28,6 +28,11 @@ namespace Test_webform
         {
             LoadProducts();
         }
+
+        protected void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            // Add your logic here for adding the item to the cart
+        }
         private void LoadProducts()
         {
             string connString = ConfigurationManager.ConnectionStrings["OracleConString"].ConnectionString;
