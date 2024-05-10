@@ -174,7 +174,12 @@ input[type="date"]::before {
 
 <div class="container">
     <div class="left">
-    
+
+  <div class="UID" style="display: none;">
+    <div class="mail">Contact Number</div>
+    <input id="subscribe-input" type="text" placeholder="Your Contact" class="txtbox">
+</div>
+
     <div class="email">
         <div class="mail">Contact Number</div>
         <input id="subscribe-input" type="text" placeholder="Your Contact" class="txtbox">
@@ -314,119 +319,6 @@ input[type="date"]::before {
 
 
         <script>
-            document.getElementById("search-icon").addEventListener("click", function () {
-                document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
-            });
-
-            document.getElementById("search-icon").addEventListener("click", function () {
-                // Toggle the 'active' class on the .topnav-right element
-                document.querySelector(".topnav-right").classList.toggle("active-padding");
-            });
-
-            // Get the input element
-            var input = document.getElementById("search-input");
-
-            // Add event listener for keydown event
-            input.addEventListener("keydown", function (event) {
-                // Check if the key pressed is Enter (key code 13)
-                if (event.keyCode === 13) {
-                    // Prevent the default action (e.g., form submission)
-                    event.preventDefault();
-                    // Clear the input value
-                    input.value = "";
-                    // Trigger your search function here
-                    // For example, you can call a function to handle the search
-                    performSearch();
-                }
-            });
-
-            // Function to handle search
-            function performSearch() {
-                // Get the search input value
-                var searchTerm = document.getElementById("search-input").value;
-                // Perform your search action here
-                console.log("Search term:", searchTerm);
-                // You can replace the console.log statement with your actual search logic
-            }
-
-
-            // JavaScript to toggle visibility of the top navigation on scroll
-
-
-
-
-            $(document).ready(function () {
-                var lastScrollTop = 0;
-
-                $(window).scroll(function (event) {
-                    var st = $(this).scrollTop();
-                    if (st > lastScrollTop) {
-                        // Scroll down
-                        $("#topnav").removeClass("visible").addClass("hidden");
-                    } else {
-                        // Scroll up
-                        $("#topnav").removeClass("hidden").addClass("visible");
-                    }
-                    lastScrollTop = st;
-                });
-            });
-
-            document.getElementById("search-icon").addEventListener("click", function () {
-                document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
-            });
-
-            $(document).ready(function () {
-                var slideIndex = 0; // Initialize slide index
-
-                // Function to move to the next slide
-                function nextSlide() {
-                    var slideWidth = $('.slides a').eq(0).outerWidth();
-                    slideIndex = (slideIndex + 1) % $('.slides a').length; // Increment slide index
-                    $('.slides').css('transform', 'translateX(' + (-slideIndex * slideWidth) + 'px)');
-                    updateSliderIndicator(); // Update slider indicator
-                }
-
-                // Function to update the slider indicator
-                function updateSliderIndicator() {
-                    $('.slider').removeClass('active');
-                    $('.slider[data-slide="' + slideIndex + '"]').addClass('active');
-                }
-
-                // Set interval to automatically move to the next slide every 8 seconds
-                var interval = setInterval(nextSlide, 4000);
-
-                // Click event handler for slider
-                $('.slider').click(function () {
-                    clearInterval(interval); // Clear previous interval
-                    slideIndex = $(this).data('slide'); // Update slide index
-                    var slideWidth = $('.slides a').eq(0).outerWidth();
-                    $('.slides').css('transform', 'translateX(' + (-slideIndex * slideWidth) + 'px)');
-                    updateSliderIndicator(); // Update slider indicator
-                    // Set new interval after click
-                    interval = setInterval(nextSlide, 4000);
-                });
-            });
-            // Function to handle form submission
-            function handleSubmit() {
-                // Here you can perform form validation if needed
-
-                // Show booking successful notification
-                alert("Booking successful");
-
-                window.location.href = "Webform4.aspx";
-
-                // You can also redirect the user to another page or perform any other action here
-            }
-
-            // Event listener for submit button click
-            document.getElementById("buts").addEventListener("click", function (event) {
-                event.preventDefault(); // Prevent default form submission
-
-                // Call the handleSubmit function
-                handleSubmit();
-            });
-
-
 
         </script>
 

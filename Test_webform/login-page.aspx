@@ -193,7 +193,7 @@ function handleSignIn(user) {
     document.cookie = `uid=${user.uid}; path=/`;
 
     // Redirect to user-profile.aspx page
-    window.location.href = 'user-profile.aspx';
+    window.location.href = 'book.aspx';
 
     // No need to call sendUserDataToServer here; it's already called from user-profile.aspx
 }

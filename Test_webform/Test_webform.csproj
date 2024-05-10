@@ -89,6 +89,18 @@
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.21.14.0\lib\net462\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPalAdaptivePaymentsSDK, Version=2.15.117.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPalAdaptivePaymentsSDK.2.15.117\lib\net20\PayPalAdaptivePaymentsSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPalCoreSDK, Version=1.7.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPalCoreSDK.1.7.1\lib\net451\PayPalCoreSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="RestApiSDK, Version=0.11.0.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestApiSDK.0.11.0\lib\net45\RestApiSDK.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -172,6 +184,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="All-content.aspx" />
+    <Content Include="Book.aspx" />
     <Content Include="CSS\items-responsive.css" />
     <Content Include="CSS\Shopping-cart.css" />
     <Content Include="CSS\Collection-list.css" />
@@ -213,6 +226,7 @@
     <Content Include="Global.asax" />
     <Content Include="hes_him.aspx" />
     <Content Include="inquire.aspx" />
+    <Content Include="insert_data.aspx" />
     <Content Include="javascripts\JavaScript.js" />
     <Content Include="javascripts\login.js" />
     <Content Include="javascripts\profile.js" />
@@ -314,6 +328,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Book.aspx.cs">
+      <DependentUpon>Book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Book.aspx.designer.cs">
+      <DependentUpon>Book.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -369,6 +390,13 @@
     </Compile>
     <Compile Include="inquire.aspx.designer.cs">
       <DependentUpon>inquire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="insert_data.aspx.cs">
+      <DependentUpon>insert_data.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="insert_data.aspx.designer.cs">
+      <DependentUpon>insert_data.aspx</DependentUpon>
     </Compile>
     <Compile Include="mens_collection.aspx.cs">
       <DependentUpon>mens_collection.aspx</DependentUpon>
