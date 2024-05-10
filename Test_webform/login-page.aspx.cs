@@ -11,7 +11,6 @@ using System.Web.Script.Serialization;
 using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Auth.OAuth2;
 using System.EnterpriseServices;
-using Microsoft.Ajax.Utilities;
 
 namespace Test_webform
 {
@@ -34,7 +33,7 @@ namespace Test_webform
                 {
                     GoogleConnect connect = new GoogleConnect();
                     string json = connect.Fetch("me", code);
-                    GoogleProfile2 profile = new JavaScriptSerializer().Deserialize<GoogleProfile2>(json);
+                    GoogleProfile profile = new JavaScriptSerializer().Deserialize<GoogleProfile>(json);
                     //lblId.Text = profile.Id;
                     //lblName.Text = profile.Name;
                     //lblEmail.Text = profile.Email;
@@ -42,9 +41,9 @@ namespace Test_webform
                     //imgProfile.ImageUrl = profile.Picture;
                     //pnlProfile.Visible = true;
                     //btnLogin.Enabled = false;
+            
 
-
-                    /*var clientId = "35298655443-6geak9840cbrbia04o2gihnbouragbq1.apps.googleusercontent.com";
+                    var clientId = "35298655443-6geak9840cbrbia04o2gihnbouragbq1.apps.googleusercontent.com";
                     var clientSecret = "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";
                     var redirectUri = "https://localhost:44308/login-page/landing-page.aspx"; 
                     var scopes = new[] { "email", "profile" }; 
@@ -61,8 +60,6 @@ namespace Test_webform
 
                     // Redirect the user to the authorization URL
                     Response.Redirect(authUri.AbsoluteUri); */
-
-
         }
 
 
@@ -95,15 +92,13 @@ namespace Test_webform
             }
         }
 
-        protected void Login(object sender, EventArgs e)
+        /*protected void Login(object sender, EventArgs e)
         {
-            //GoogleConnect.Authorize("profile", "email");
             var clientId = "35298655443-6geak9840cbrbia04o2gihnbouragbq1.apps.googleusercontent.com";
             var clientSecret = "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";
             var redirectUri = "https://localhost:44308/login-page/landing-page.aspx";
             var scopes = new[] { "email", "profile" };
 
-            //GoogleProfile profile = new JavaScriptSerializer().Deserialize<GoogleProfile>(json);
             // Create the Google OAuth2 authorization code flow
             var flow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer
             {
@@ -116,7 +111,7 @@ namespace Test_webform
 
             // Redirect the user to the authorization URL
             Response.Redirect(authUri.AbsoluteUri);
-        }
+        }*/
 
         protected void FBLogin(object sender, EventArgs e)
         {

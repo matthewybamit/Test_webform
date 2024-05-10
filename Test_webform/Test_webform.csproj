@@ -249,6 +249,7 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="login-page.aspx" />
     <Content Include="WebForm5.aspx" />
+    <Content Include="WebForm6.aspx" />
     <Content Include="womens_collection.aspx" />
     <!--HEAD -->
     <!--=======-->
@@ -432,6 +433,13 @@
     </Compile>
     <Compile Include="WebForm5.aspx.designer.cs">
       <DependentUpon>WebForm5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm6.aspx.cs">
+      <DependentUpon>WebForm6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm6.aspx.designer.cs">
+      <DependentUpon>WebForm6.aspx</DependentUpon>
     </Compile>
     <Compile Include="womens_collection.aspx.cs">
       <DependentUpon>womens_collection.aspx</DependentUpon>

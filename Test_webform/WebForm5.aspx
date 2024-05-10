@@ -359,7 +359,7 @@
                 <button class="firstb">Add to cart</button>
             </div>
             <div class="last3">
-                <button class="firstb">Add to cart</button>
+                <a href="WebForm6.aspx"><button class="firstb" href="">Book Now</button></a>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-﻿   <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Landing-page.aspx.cs" Inherits="Test_webform.Test_webform" %>
+﻿﻿   <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Landing-page.aspx.cs" Inherits="Test_webform.Test_webform" %>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,12 +7,13 @@
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
-         <!-- link rel="stylesheet" href="CSS/Copy.css"> !-->
+         <link rel="stylesheet" href="CSS/Copy.css">
          <link rel="stylesheet" href="CSS/Carousel.css">  
          <link rel="stylesheet" href="CSS/for_him_for_her.css">
          <link rel="stylesheet" href="CSS/Collection-list.css">  
          <link rel="stylesheet" href="CSS/Quote.css">  
-         <link rel="stylesheet" href="CSS/inquire-view.css">  
+         <link rel="stylesheet" href="CSS/inquire-view.css">
+        <link href="CSS/Shopping-cart.css" rel="stylesheet" />
             <link rel="stylesheet" href="CSS/profile.css"> 
          <link rel="stylesheet" href="CSS/Footer.css">  
             <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
@@ -26,11 +27,11 @@
 
     <body>
 
-   <!--TOP NAV-->
+       <!--TOP NAV-->
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
-    <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="Landing-page.aspx">Dresserve</a>
+    <a class="active" href="Landing-page.aspx">  <img class="logo" src="Dresserve.png"> Dresserve
+  </a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -41,7 +42,7 @@
 <div id="search-box">
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
-        <a href="#"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
+     <a href="#" id="open-form"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
         <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
@@ -50,35 +51,26 @@
     <!-- END -->  
 </div>
 
+
+
+<!-- Cart -->
+<div id="cart-overlay" class="cart-overlay">
+    <div class="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be added dynamically here -->
+        </div>
+        <div class="cart-buttons">
+            <button id="close-cart" class="close-cart">Close</button>
+            <button id="checkout-cart" class="checkout-cart">Checkout</button>
+        </div>
+    </div>
+</div>
+
   <!-- END -->  
 
-         <form id="form1" runat="server">
-            <div class="container-info">
-        <div class="texthead">YOUR ACCOUNT</div>
-        <div class="container-uid"> 
-            <asp:Label ID="lbluid" runat="server" Text=""></asp:Label>
-            </div>
-                  <div class="profile-container">
-      <div class="profile">
-          <asp:Image ID="profilePic" runat="server" Width="50" Height="50" />
-      </div>
-                </div>
-                <hr class="divider">
-<div class="container-name"> 
-    <asp:Label ID="lblusername" runat="server" Text=""></asp:Label>
-</div>
-                <div class="container-email"> 
-                    <asp:Label ID="txtEmail" runat="server" Text=""></asp:Label>
-</div>
-                <div class="logout-btn">
-    <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
-</div>
-            </div>
-        </form> 
 
-                        
-
-    <!-- <div class="container-info">
+    <div class="container-info">
         <div class="texthead">YOUR ACCOUNT</div>
         <div class="container-uid"> 
             <p id="user-uid"></p>
@@ -96,9 +88,9 @@
             <p id="user-email"></p>
         </div>
   <div class="logout-btn">
-      <button id="btnLogout2" onclick="logout()">Logout</button>
+      <button id="btnLogout" onclick="logout()">Logout</button>
   </div>
-        </div> -->
+        </div>
 
                  <!--FOOTER -->
 
@@ -227,7 +219,7 @@
                 }
             });*/
 
-            /*window.onload = function () {
+            window.onload = function () {
                 // Retrieve user data from session storage
                 const uid = sessionStorage.getItem('uid');
                 const username = sessionStorage.getItem('username');
@@ -250,7 +242,7 @@
 
             function redirectToLogin() {
                 window.location.href = 'login-page.aspx';
-            }*/
+            }
 
             // Function to logout
             function logout() {
@@ -393,10 +385,46 @@
             });
 
 
+            function openCart() {
+                document.getElementById('cart-overlay').classList.add('show-cart');
+            }
 
+            // Function to close the cart
+            function closeCart() {
+                document.getElementById('cart-overlay').classList.remove('show-cart');
+            }
+
+            // Function to toggle the cart's visibility
+            function toggleCart() {
+                var cartOverlay = document.getElementById('cart-overlay');
+                if (cartOverlay.classList.contains('show-cart')) {
+                    closeCart();
+                } else {
+                    openCart();
+                }
+            }
+
+            // Event listener for opening/closing the cart
+            document.getElementById('open-form').addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default action of anchor tag
+                toggleCart();
+            });
+
+            // Event listener for closing the cart
+            document.getElementById('close-cart').addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default action of anchor tag
+                closeCart();
+            });
+
+            // Event listener for clicking outside the cart to close it
+            document.getElementById('cart-overlay').addEventListener('click', function (event) {
+                if (event.target === document.getElementById('cart-overlay')) {
+                    closeCart();
+                }
+            });
 
         </script>
-
+        <script src="javascripts/profile.js"></script>
          
 
     </body>
