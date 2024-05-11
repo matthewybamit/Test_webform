@@ -28,7 +28,8 @@ namespace Test_webform
 
                 string uid = uidInput.Value;
                 string productId = productID.Value;
-                string bookingDate = $"{selectedDate} {selectedTime}"; // Assuming booking date is current date/time
+                string bookingDateStr = $"{selectedDate} {selectedTime}"; // Assuming booking date is current date/time
+                DateTime bookingDate = DateTime.Parse(bookingDateStr); // Parse bookingDate to DateTime
                 string bookingStatus = "Pending"; // Assuming booking status is initially set to "Pending"
                 string bookingNote = message.Text; // Assuming message field is used for booking notes
                 string bookingContact = contactnum.Text;
@@ -58,10 +59,10 @@ namespace Test_webform
                     }
                 }
 
-                // Redirect or display success message
-                Response.Redirect("Webform4.aspx"); // Redirect to a success page
-            
-           
+            // Redirect or display success message
+            ClientScript.RegisterStartupScript(this.GetType(), "BookingSuccessAlert", "alert('Booking successful'); window.location.href = 'Webform5.aspx?productId=" + productId + "';", true);
+
+
         }
     }
 }
