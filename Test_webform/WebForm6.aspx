@@ -168,45 +168,36 @@ input[type="date"]::before {
 </div>
     </div>
     <!-- END -->  
-</div>
+<!--FORM-->
+    <form id="form1" runat="server">
+        <h2 class="contact">Book for Fitting</h2>
 
-  <h2 class="contact">Customization</h2>
+        <div class="container">
+            <div class="left">
+                <asp:HiddenField ID="productID" runat="server" />
+                <asp:HiddenField ID="uidInput" runat="server" />
+                <div class="mail">Email</div>
+                <asp:TextBox ID="emailInput" runat="server" CssClass="txtbox" placeholder="Your Email"></asp:TextBox>
+                <div class="mail">Contact Number</div>
+                <asp:TextBox ID="contactnum" runat="server" CssClass="txtbox" placeholder="Your Contact"></asp:TextBox>
+                <div class="msg">Message:</div>
+                <asp:TextBox ID="message" runat="server" CssClass="txtbox"></asp:TextBox>
+            </div>
+            <div class="right">
+                <div class="label1">Select Date</div>
+                <div class="brown">
+                    <asp:TextBox ID="date" runat="server" type="date" placeholder="Your Email"></asp:TextBox>
+                </div>
+                <div class="label1">Select Time</div>
+                <asp:TextBox ID="meetingTime" runat="server" type="time" placeholder="Your Email"></asp:TextBox>
+            </div>
+        </div>
+        <div class="sub">
+            <asp:Button ID="buts" runat="server" Text="SUBMIT" CssClass="buts" OnClick="InsertBooking" />
+        </div>
+    </form>
+ <!--FORM END-->
 
-<div class="container">
-    <div class="left">
-
-  <div class="UID" style="display: none;">
-    <div class="mail">Contact Number</div>
-    <input id="subscribe-input" type="text" placeholder="Your Contact" class="txtbox">
-</div>
-
-    <div class="email">
-        <div class="mail">Contact Number</div>
-        <input id="subscribe-input" type="text" placeholder="Your Contact" class="txtbox">
-    </div>
-
-    <div class="message">
-        <div class="msg">Message:</div>
-        <input id="subscribe-input-msg" type="text" class="txtbox">
-    </div>
-</div>
-<div class="right">
-    <div class="label1">Select Date</div>
- 
-    <div class="center">
-  <div class="brown">
-    <input type="date" id="birthday" name="birthday">
-  </div> 
- </div>
- <div class="label1">Select Time</div>
- <input type="time" id="meeting-time" name="meeting-time">
-</div>
-
-</div>
-<div class="sub">
-    <button id="buts">SUBMIT</button>
-</div>
-  
 
  
           
@@ -319,7 +310,11 @@ input[type="date"]::before {
 
 
         <script>
+            const uid = sessionStorage.getItem('uid');
+            const email = sessionStorage.getItem('email');
 
+            document.getElementById('uidInput').value = uid;
+            document.getElementById('emailInput').value = email;
         </script>
 
 

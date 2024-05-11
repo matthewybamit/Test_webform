@@ -49,6 +49,7 @@ namespace Test_webform
 
                             string formattedPrice = $"₱{productPrice.ToString("#,##0.00")}";
 
+                            lnkBookNow.NavigateUrl = $"WebForm6.aspx?productId={productId}";
 
                             productImage.Src = "Images/"+productImg;
                             productNameLabel.Text = productName;

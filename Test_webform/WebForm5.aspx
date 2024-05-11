@@ -359,7 +359,8 @@
                 <button class="firstb">Add to cart</button>
             </div>
             <div class="last3">
-                <a href="WebForm6.aspx"><button class="firstb" href="">Book Now</button></a>
+                <asp:HyperLink ID="lnkBookNow" runat="server" CssClass="buts"><button class="firstb">Book Now</button></asp:HyperLink>
+
             </div>
         </div>
     </div>

@@ -24,6 +24,15 @@ namespace Test_webform
         protected global::System.Web.UI.HtmlControls.HtmlInputText uidInput;
 
         /// <summary>
+        /// usernameInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText usernameInput;
+
+        /// <summary>
         /// emailInput control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace Test_webform
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText emailInput;
+
+        /// <summary>
+        /// profilePictureInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText profilePictureInput;
 
         /// <summary>
         /// insertButton control.
