@@ -1,5 +1,4 @@
-﻿   <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Landing-page.aspx.cs" Inherits="Test_webform.Test_webform" %>
-
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="profile-page.aspx.cs" Inherits="Test_webform.profile_page" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
@@ -7,15 +6,16 @@
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
-         <link rel="stylesheet" href="CSS/Copy.css">
+         <!-- link rel="stylesheet" href="CSS/Copy.css"> !-->
          <link rel="stylesheet" href="CSS/Carousel.css">  
          <link rel="stylesheet" href="CSS/for_him_for_her.css">
          <link rel="stylesheet" href="CSS/Collection-list.css">  
          <link rel="stylesheet" href="CSS/Quote.css">  
          <link rel="stylesheet" href="CSS/inquire-view.css">  
+            <link rel="stylesheet" href="CSS/profile.css"> 
          <link rel="stylesheet" href="CSS/Footer.css">  
             <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
-            <link rel="stylesheet" href="CSS/StyleSheet1 - Copy.css">
+     
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
    
@@ -41,7 +41,7 @@
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
         <a href="Landing-page.aspx"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
-        <a href="profile-page.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
+        <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
 </div>
@@ -51,111 +51,29 @@
 
   <!-- END -->  
 
-      
+                        
 
-
-    <!--Courosel-->
-   
-       <div class="container">
-        <div class="slides"> 
-            <a href="#"><img src="2.jpg" alt="Slide 1" id="carousel1"></a>
-            <a href="#"><img src="2.jpg" alt="Slide 2" id="carousel2"></a>
-            <a href="#"><img src="3.jpg" alt="Slide 3" id="carousel3"></a>
+        <div class="container-info">
+        <div class="texthead">YOUR ACCOUNT</div>
+        <div class="container-uid"> 
+            <p id="user-uid"></p>
         </div>
-        <div class="sliders">
-            <a class="slider" data-slide="0"></a>
-            <a class="slider" data-slide="1"></a>
-            <a class="slider" data-slide="2"></a>
-        </div>
-    </div>
-
-    
-    <!--END-->
-
-            <div class="text-between-containers">
-                <span>|  TRY  |  CUSTOMIZE  |  RENT  |</span>
+        <div class="profile-container">
+            <div class="profile">
+      <img src="" id="profile-picture">
             </div>
-
-
-<!--FOR HIM FOR HER-->
-
-  <div class="container1">
-  <div class="box" id="box1">
-    <img src="for-him.jpg" id="image1" alt="Image 1">
-    <a href="hes_him.html" class="box-link">FOR HIM</a> 
-  
-  </div>
-  <div class="box">   
-    <img src="for-her.jpg" id="image2" alt="Image 2">
-    <a href="#" class="box-link">FOR HER</a> 
-   
-  </div>
-</div>
-
-<!--END-->
-
-
-
-         <div class="text-between-collections">
-     <span>COLLECTION LIST</span>
- </div>
-
-
-
-
-<!--COLLECTION LIST-->
-    <div class="collections">
-    <div class="collection-list">
-        <div class="collection-item">
-            <img src="wedding.png" alt="Wedding Gowns">
-            <a href="wedding.aspx" class="collection-link" id="wedding-link">Wedding Gowns</a>
         </div>
-        <div class="collection-item">
-            <img src="debut.png" alt="Debut Gowns"  >
-            <a href="debut.html" class="collection-link" id="debut-link" >Debut Gowns</a>
+        <hr class="divider">
+        <div class="container-name"> 
+            <p id="profile-name"></p>
         </div>
-        <div class="collection-item">
-            <img src="formal.png" alt="Formal">
-            <a href="formal.html" class="collection-link" id="formal-link">Formal</a>
+        <div class="container-email"> 
+            <p id="user-email"></p>
         </div>
-        <div class="collection-item">
-            <img src="dresses.png" alt="Dresses">
-            <a href="dresses.html" class="collection-link" id="dress-link">Dresses</a>
-        </div>
-    </div>
-</div>
-        <!--END-->
-
-  <!--QUOTE/SHOP-->
-
-  <div class="container-quote">
-    <img src="gown.png" alt="Quote image" class="quote-image" />
-    <div class="quote">
-        <p id="line-1">Once in a Lifetime Event</p>
-        <p id="line-2">Let us show you what you Deserve</p>      
-    </div>
-      <button class="shop-now">Shop Now</button>
-</div>
-
-
-                 <!--INQUIRE/VIEWMORE-->
-    
- <div class="Inquire-veiw-container">
-  <div class="inquire-box">
-    <img src="inquire.jpg" id="inquire-image" alt="inquire-image">
-    <p class="inquire-view-link" id="inquire-text">Find Your Piece</p> 
-    <a href="inquire.html" class="inquire-view-link" id="inquire-id">Inquire</a> 
+  <div class="logout-btn">
+      <button id="btnLogout2" onclick="logout()">Logout</button>
   </div>
-  <div class="inquire-box">   
-    <img src="viewmore.jpg" id="view-image" alt="view-image">
-    <p class="inquire-view-link" id="view-more-text">Dress For Every Occassion</p> 
-    <a href="#" class="inquire-view-link" id="view-more-id">View More</a> 
-  </div>
-</div>
-
-                 <!--END-->
-
-
+        </div>
 
                  <!--FOOTER -->
 
@@ -264,22 +182,100 @@
 
         <script>
 
-            /*window.onload = function () {
+            // Send user data to server-side code to insert into Oracle database
+            /*$.ajax({
+                url: 'user-profile.aspx.cs', // Change to your server-side endpoint
+                method: 'POST',
+                data: {
+                    uid: uid,
+                    username: username,
+                    email: email,
+                    profilePicture: profilePicture
+                },
+                success: function (response) {
+                    // Handle success response
+                    console.log(response);
+                },
+                error: function (xhr, status, error) {
+                    // Handle error
+                    console.error(xhr.responseText);
+                }
+            });*/
+
+            
+
+            window.onload = function () {
                 // Retrieve user data from session storage
+                const uid = sessionStorage.getItem('uid');
                 const username = sessionStorage.getItem('username');
                 const name = sessionStorage.getItem('name');
+                const email = sessionStorage.getItem('email');
                 const profilePicture = sessionStorage.getItem('profilePicture');
 
+                // Check if any of the necessary session data is missing
+                if (!username || !name || !profilePicture || !uid || !email) {
+                    redirectToLogin();
+                    return; // Stop further execution
+                }
+
                 // Display the data in your HTML elements
+                document.getElementById('user-uid').textContent = uid; // Display UID
                 document.getElementById('profile-name').textContent = name;
                 document.getElementById('profile-picture').src = profilePicture;
+                document.getElementById('user-email').textContent = email; // Display email
             };
+
+            function redirectToLogin() {
+                window.location.href = 'login-page.aspx';
+            }
 
             // Function to logout
             function logout() {
                 sessionStorage.clear(); // Clear session storage
+                clearAllCookies();
                 window.location.href = 'login-page.aspx'; // Redirect to login page
-            }*/
+            }
+
+            function clearAllCookies() {
+                const cookies = document.cookie.split(';');
+
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i];
+                    const eqPos = cookie.indexOf('=');
+                    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+                }
+            }
+
+
+            $(document).ready(function () {
+                $('#btnLogout').click(function () {
+                    var uid = $('#user-uid').text();
+                    var username = $('#profile-name').text();
+                    var email = $('#user-email').text();
+                    var profilePicture = $('#profile-picture').attr('src');
+
+                    // Send data to server-side code
+                    $.ajax({
+                        url: 'user-profile.aspx.cs', // Change to your server-side endpoint
+                        method: 'POST',
+                        data: {
+                            uid: uid,
+                            username: username,
+                            email: email,
+                            profilePicture: profilePicture
+                        },
+                        success: function (response) {
+                            // Handle success response
+                            console.log(response);
+                        },
+                        error: function (xhr, status, error) {
+                            // Handle error
+                            console.error(xhr.responseText);
+                        }
+                    });
+                });
+            });
 
             document.getElementById("search-icon").addEventListener("click", function () {
                 document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
@@ -379,5 +375,6 @@
 
         </script>
 
+         
 
     </body>

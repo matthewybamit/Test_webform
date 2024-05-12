@@ -1,4 +1,4 @@
-﻿   <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Landing-page.aspx.cs" Inherits="Test_webform.Test_webform" %>
+﻿   <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="user-profile.aspx.cs" Inherits="Test_webform.Test_webform" %>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -54,6 +54,31 @@
 
 
     <div class="container-info">
+        <div class="texthead">YOUR ACCOUNT</div>
+        <div class="container-uid"> 
+            <asp:Label ID="lbluid" runat="server" Text=""></asp:Label>
+            </div>
+                  <div class="profile-container">
+      <div class="profile">
+          <asp:Image ID="profilePic" runat="server" Width="50" Height="50" />
+      </div>
+                </div>
+                <hr class="divider">
+<div class="container-name"> 
+    <asp:Label ID="lblusername" runat="server" Text="" Enabled="true"></asp:Label>
+</div>
+                <div class="container-email"> 
+                    <asp:Label ID="txtEmail" runat="server" Text=""></asp:Label>
+</div>
+                <div class="logout-btn">
+    <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
+</div>
+            </div>
+        </form> 
+
+                        
+
+    <!-- <div class="container-info">
         <div class="texthead">YOUR ACCOUNT</div>
         <div class="container-uid"> 
             <p id="user-uid"></p>

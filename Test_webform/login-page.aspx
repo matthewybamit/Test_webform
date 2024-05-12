@@ -4,7 +4,7 @@
 <head runat="server">
     <title>LOGIN</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="javascripts/login.js"></script>
+    <!-- <script src="javascripts/login.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -26,29 +26,30 @@
                     <p>with</p>
                     <hr>
                 </div>
+
                 
-                    <!-- <form id="form1" runat="server"> 
-                        <asp:ImageButton ID="GoogleImage" ImageUrl="googlelogo1.png" runat="server"  style="height: 50px; margin: 0 10px; cursor: pointer;"/>
-                        <asp:ImageButton ID="FacebookImage" ImageUrl="fblogo1.png" runat="server" OnClick="FBLogin" />
+                     <!-- <form id="form1" runat="server"> 
+                        <asp:ImageButton ID="GoogleImage" ImageUrl="googlelogo1.png" runat="server" style="height: 50px; margin: 0 10px; cursor: pointer;"/>
+                        <!-- <asp:ImageButton ID="FacebookImage" ImageUrl="fblogo1.png" runat="server" OnClick="FBLogin" /> 
                     
                     </form> -->
 
                     
                 
+<div class="social-icons">
+                
+     <button class="GoogleImage">
+    <img src="/googlelogo1.png" id="gimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
+</button>
 
-                <div class="social-icons">
-    
+<button class="FacebookImage">
+    <img src="/fblogo1.png" id="fbimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
+</button> 
 
-    <button class="GoogleImage">
-        <img src="/googlelogo1.png" id="gimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
-    </button>
-
-    <button class="FacebookImage">
-        <img src="/fblogo1.png" id="fbimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
-    </button>
+     
 
 </div>
-            </div>
+           </div>
         </div>
     </div>
 </div>

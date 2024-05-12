@@ -28,8 +28,59 @@ namespace Test_webform
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack)
+            /*GoogleConnect.ClientId = "35298655443-6geak9840cbrbia04o2gihnbouragbq1.apps.googleusercontent.com";
+            GoogleConnect.ClientSecret = "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";
+            GoogleConnect.RedirectUri = Request.Url.AbsoluteUri.Split('?')[0];
+
+            if (!this.IsPostBack)
             {
+                string code = Request.QueryString["code"];
+                if (!string.IsNullOrEmpty(code))
+                {
+                    GoogleConnect connect = new GoogleConnect();
+                    string json = connect.Fetch("me", code);
+                    GoogleProfile3 profile = new JavaScriptSerializer().Deserialize<GoogleProfile3>(json);
+
+
+                    profile.InsertIntoDatabase();
+
+
+
+                    //lblId.Text = profile.Id;
+                    //lblName.Text = profile.Name;
+                    //lblEmail.Text = profile.Email;
+                    //ProfileImage.ImageUrl = profile.Picture;
+                    //lblName.Text = profile.Name;
+
+                    //pnlProfile.Visible = true;
+                }
+                if (Request.QueryString["error"] == "access_denied")
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "alert('Access denied.')", true);
+                }
+
+                /*GoogleConnect.ClientId = "35298655443-6geak9840cbrbia04o2gihnbouragbq1.apps.googleusercontent.com";
+                GoogleConnect.ClientSecret = "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";
+                GoogleConnect.RedirectUri = Request.Url.AbsoluteUri.Split('?')[0];
+
+                if (!this.IsPostBack)
+                {
+                    string code = Request.QueryString["code"];
+                    if (!string.IsNullOrEmpty(code))
+                    {
+                        GoogleConnect connect = new GoogleConnect();
+                        string json = connect.Fetch("me", code);
+                        GoogleProfile profile = new JavaScriptSerializer().Deserialize<GoogleProfile>(json);
+                        lblId.Text = profile.Id;
+                        lblName.Text = profile.Name;
+                        lblEmail.Text = profile.Email;
+                        ProfileImage.ImageUrl = profile.Picture;
+                        //pnlProfile.Visible = true;
+                    }
+                    if (Request.QueryString["error"] == "access_denied")
+                    {
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "alert('Access denied.')", true);
+                    }
                 // This page will handle the AJAX request to insert data into Oracle database
                 string uid = Request.Form["uid"];
                 string username = Request.Form["username"];
@@ -38,12 +89,80 @@ namespace Test_webform
 
                 // Call method to insert data into Oracle database
                 //InsertData(uid, username, email, profilePicture);
+            }*/
+        }
+
+        public string RetrieveUserIdFromDb(string googleProfileId)
+        {
+            string userId = null;
+
+            // Retrieve the connection string from configuration
+            string connectionString = ConfigurationManager.ConnectionStrings["OracleConString"].ConnectionString;
+
+            // SQL query to retrieve user data based on Google profile Id
+            string query = "SELECT U_ID FROM ACCOUNTS WHERE U_ID = :googleProfileId";
+
+            // Create connection object
+            using (OracleConnection connection = new OracleConnection(connectionString))
+            {
+                // Create command object
+                using (OracleCommand command = new OracleCommand(query, connection))
+                {
+                    // Set parameter for the query
+                    command.Parameters.Add("googleProfileId", OracleDbType.Varchar2).Value = googleProfileId;
+
+                    // Open connection
+                    connection.Open();
+
+                    // Execute the query and retrieve data
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        // Check if there is data to read
+                        if (reader.Read())
+                        {
+                            // Retrieve the U_ID
+                            userId = reader["U_ID"].ToString();
+                        }
+                    }
+                }
+            }
+
+            return userId;
+        }
+
+        public class GoogleProfile
+        {
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public string Email { get; set; }
+            public string Picture { get; set; }
+
+            public void InsertIntoDB()
+            {
+                // Retrieve the connection string from configuration
+                string connectionString = ConfigurationManager.ConnectionStrings["OracleConString"].ConnectionString;
+
+                // SQL query to insert data into the Accounts table
+                string query = "INSERT INTO ACCOUNTS (U_ID, USERNAME, EMAIL, PROFILE_PIC) VALUES (:uid, :username, :email, :profile_pic)";
+
+                // Create connection and command objects
+                using (OracleConnection connection = new OracleConnection(connectionString))
+                using (OracleCommand command = new OracleCommand(query, connection))
+                {
+                    // Set parameters
+                    command.Parameters.Add("p_uid", OracleDbType.Varchar2).Value = Id;
+                    command.Parameters.Add("p_username", OracleDbType.Varchar2).Value = Name;
+                    command.Parameters.Add("p_email", OracleDbType.Varchar2).Value = Email;
+                    command.Parameters.Add("p_profile_pic", OracleDbType.Varchar2).Value = Picture;
+
+                    // Open connection and execute command
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
             }
         }
 
-
-
-        public static void InsertData(string uid, string username, string email, string profilePicture)
+        public static void InsertDataDB(string uid, string username, string email, string profilePicture)
         {
             
                 // Connection string for Oracle database

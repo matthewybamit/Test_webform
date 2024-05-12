@@ -4,15 +4,15 @@
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
-         <link rel="stylesheet" href="Copy.css">
-         <link rel="stylesheet" href="Carousel.css">  
-         <link rel="stylesheet" href="for_him_for_her.css">
-         <link rel="stylesheet" href="Collection-list.css">  
-         <link rel="stylesheet" href="Quote.css">  
-         <link rel="stylesheet" href="inquire-view.css">  
-         <link rel="stylesheet" href="Footer.css">  
-            <link type="text/css" href="search-box-animation.css" rel="stylesheet" />
-            <link rel="stylesheet" href="heshim.css">
+         <link rel="stylesheet" href="CSS/Copy.css">
+         <link rel="stylesheet" href="CSS/Carousel.css">  
+         <link rel="stylesheet" href="CSS/for_him_for_her.css">
+         <link rel="stylesheet" href="CSS/Collection-list.css">  
+         <link rel="stylesheet" href="CSS/Quote.css">  
+         <link rel="stylesheet" href="CSS/inquire-view.css">  
+         <link rel="stylesheet" href="CSS/Footer.css">  
+            <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
+            <link rel="stylesheet" href="CSS/heshim.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
