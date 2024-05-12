@@ -7,6 +7,8 @@
     visibility: hidden;
     overflow: hidden; /* Hide any overflow content */
     border-radius: 10px;
+    color: #FAEBDB;
+  
 }
 
 #search-input::placeholder {
@@ -25,8 +27,10 @@
     height: 40px;
     width: 800px;
 }
-
-
+#search-icon {
+    text-decoration: none;
+    color: inherit;
+}
 
 @media screen and (max-width: 730px) {
 

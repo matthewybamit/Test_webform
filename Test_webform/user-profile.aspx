@@ -1,5 +1,6 @@
-﻿   <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="user-profile.aspx.cs" Inherits="Test_webform.Test_webform" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="user-profile.aspx.cs" Inherits="Test_webform.user_profile" %>
 
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
@@ -7,16 +8,16 @@
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
-         <link rel="stylesheet" href="CSS/Copy.css">
-         <link rel="stylesheet" href="CSS/Carousel.css">  
-         <link rel="stylesheet" href="CSS/for_him_for_her.css">
-         <link rel="stylesheet" href="CSS/Collection-list.css">  
-         <link rel="stylesheet" href="CSS/Quote.css">  
-         <link rel="stylesheet" href="CSS/inquire-view.css">  
-            <link rel="stylesheet" href="CSS/profile.css"> 
-         <link rel="stylesheet" href="CSS/Footer.css">  
-            <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
-     
+            <link rel="stylesheet" type="text/css" href="CSS/StyleSheet1 - Copy.css"/>
+            <link rel="stylesheet" type="text/css" href="CSS/Carousel.css">  
+            <link rel="stylesheet" type="text/css" href="CSS/for_him_for_her.css"/>
+            <link rel="stylesheet" type="text/css" href="CSS/Collection-list.css"/>  
+            <link rel="stylesheet" type="text/css" href="CSS/Quote.css"/>  
+            <link rel="stylesheet" type="text/css" href="CSS/inquire-view.css"/>  
+            <link rel="stylesheet" type="text/css" href="CSS/Footer.css"/>  
+        <link href="CSS/profile.css" rel="stylesheet" />
+            <link href="CSS/search-box-animation.css" rel="stylesheet" />
+        <link href="CSS/Shopping-cart.css" rel="stylesheet" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
    
@@ -25,12 +26,12 @@
 
 
     <body>
-
+   
    <!--TOP NAV-->
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
-    <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="#home">Dresserve</a>
+    <a class="active" href="Landing-page.aspx">  <img class="logo" src="Dresserve.png"> Dresserve
+  </a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -41,65 +42,53 @@
 <div id="search-box">
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
-        <a href="Landing-page.aspx"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
+     <a href="#" id="open-form"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
         <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
-        <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
+        <a href="Book.aspx"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
 </div>
     </div>
     <!-- END -->  
 </div>
 
-  <!-- END -->  
+<!-- Cart -->
+<div id="cart-overlay" class="cart-overlay">
+    <div class="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be added dynamically here -->
+        </div>
+        <div class="cart-buttons">
+            <button id="close-cart" class="close-cart">Close</button>
+            <button id="checkout-cart" class="checkout-cart">Checkout</button>
+        </div>
+    </div>
+</div>
 
-
-    <div class="container-info">
-        <div class="texthead">YOUR ACCOUNT</div>
-        <div class="container-uid"> 
-            <asp:Label ID="lbluid" runat="server" Text=""></asp:Label>
+    <input type="text" id="uidInput" />
+    <form id="form1" runat="server">
+        <div class="container-info">
+            <div class="texthead">YOUR ACCOUNT</div>
+            <div class="container-uid">
+                <p id="user-uid"></p>
             </div>
-                  <div class="profile-container">
-      <div class="profile">
-          <asp:Image ID="profilePic" runat="server" Width="50" Height="50" />
-      </div>
+            <div class="profile-container">
+                <div class="profile">
+                    <img src="" id="profile-picture" />
                 </div>
-                <hr class="divider">
-<div class="container-name"> 
-    <asp:Label ID="lblusername" runat="server" Text="" Enabled="true"></asp:Label>
-</div>
-                <div class="container-email"> 
-                    <asp:Label ID="txtEmail" runat="server" Text=""></asp:Label>
-</div>
-                <div class="logout-btn">
-    <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
-</div>
             </div>
-        </form> 
-
-                        
-
-    <!-- <div class="container-info">
-        <div class="texthead">YOUR ACCOUNT</div>
-        <div class="container-uid"> 
-            <p id="user-uid"></p>
-        </div>
-        <div class="profile-container">
-            <div class="profile">
-      <img src="" id="profile-picture">
+            <hr class="divider" />
+            <div class="container-name">
+                <p id="profile-name"></p>
+            </div>
+            <div class="container-email">
+                <p id="user-email"></p>
+            </div>
+            <div class="logout-btn">
+                <button id="btnLogout" onclick="logout()">Logout</button>
             </div>
         </div>
-        <hr class="divider">
-        <div class="container-name"> 
-            <p id="profile-name"></p>
-        </div>
-        <div class="container-email"> 
-            <p id="user-email"></p>
-        </div>
-  <div class="logout-btn">
-      <button id="btnLogout" onclick="logout()">Logout</button>
-  </div>
-        </div>
-
+    </form>
                  <!--FOOTER -->
 
       <footer class="footer">
@@ -121,15 +110,15 @@
 
       <ul class="nav__ul">
         <li>
-          <a href="aboutus.html">About Us</a>
+          <a href="About.aspx">About Us</a>
         </li>
 
         <li>
-          <a href="contact.html">Contact Us</a>
+          <a href="Contact.aspx">Contact Us</a>
         </li>
             
         <li>
-          <a href="faqs.html">FAQs</a>
+          <a href="faqs.aspx">FAQs</a>
         </li>
       </ul>
     </li>
@@ -180,223 +169,73 @@
    <div class="separator"></div>
    
   <div class="legal">
-    <a><p>Terms and Condition   |   Privacy Policy   |  &copy; 2024 All rights reserved </p></a>
+    <p>Terms and Condition   |   Privacy Policy   |  &copy; 2024 All rights reserved </p>
     
     <div class="legal__links">
-      <span> <img scr="facebook (1).png" /> <span class="heart"></span> </span>
-    </div>
+  <a href="https://www.facebook.com/mathew.ybamit.9" target="_blank"><img src="facebook.png" alt="Image 1"> </a>
+ <a href="https://www.instagram.com/mathewybamit/" target="_blank"> <img src="photo.png" alt="Image 2" > </a>
+ <a href="https://www.facebook.com/mathew.ybamit.9" target="_blank"> <img src="video.png" alt="Image 2"> </a>
+  <!-- Add more images as needed -->
+  <span class="heart"></span>
+</div>
   </div>
 </footer>
 
+      <script>
+          // Retrieve UID from session storage
+          const uid = sessionStorage.getItem('uid');
 
+          // Update the input field with the UID value
+          document.getElementById('uidInput').value = uid;
+      </script>
+<script>
+    window.onload = function () {
+        // Retrieve user data from session storage
+        const uid = sessionStorage.getItem('uid');
+        const username = sessionStorage.getItem('username');
+        const email = sessionStorage.getItem('email');
+        const profilePicture = sessionStorage.getItem('profilePicture');
 
+        // Check if any of the necessary session data is missing
+        if (!uid || !username || !email || !profilePicture) {
+            redirectToLogin();
+            return; // Stop further execution
+        }
 
+        // Display the data in your HTML elements
+        document.getElementById('user-uid').textContent = uid; // Display UID
+        document.getElementById('profile-name').textContent = username;
+        document.getElementById('profile-picture').src = profilePicture;
+        document.getElementById('user-email').textContent = email; // Display email
 
+        // Send user data to server-side code for database insertion
+        sendUserDataToServer(uid, username, email, profilePicture);
+    };
 
+    function redirectToLogin() {
+        window.location.href = 'login-page.aspx';
+    }
 
+    // Function to logout
+    function logout() {
+        sessionStorage.clear(); // Clear session storage
+        clearAllCookies();
+        window.location.href = 'login-page.aspx'; // Redirect to login page
+    }
 
-         <!--END-->
+    function clearAllCookies() {
+        const cookies = document.cookie.split(';');
 
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim(); // Trim the cookie to remove leading spaces
+            const eqPos = cookie.indexOf('=');
+            const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        }
+    }
 
-
-
-
-   <!--JAVASCRIPTS-->
-
-
-
-        <script>
-
-            // Send user data to server-side code to insert into Oracle database
-            /*$.ajax({
-                url: 'user-profile.aspx.cs', // Change to your server-side endpoint
-                method: 'POST',
-                data: {
-                    uid: uid,
-                    username: username,
-                    email: email,
-                    profilePicture: profilePicture
-                },
-                success: function (response) {
-                    // Handle success response
-                    console.log(response);
-                },
-                error: function (xhr, status, error) {
-                    // Handle error
-                    console.error(xhr.responseText);
-                }
-            });*/
-
-            window.onload = function () {
-                // Retrieve user data from session storage
-                const uid = sessionStorage.getItem('uid');
-                const username = sessionStorage.getItem('username');
-                const name = sessionStorage.getItem('name');
-                const email = sessionStorage.getItem('email');
-                const profilePicture = sessionStorage.getItem('profilePicture');
-
-                // Check if any of the necessary session data is missing
-                if (!username || !name || !profilePicture || !uid || !email) {
-                    redirectToLogin();
-                    return; // Stop further execution
-                }
-
-                // Display the data in your HTML elements
-                document.getElementById('user-uid').textContent = uid; // Display UID
-                document.getElementById('profile-name').textContent = name;
-                document.getElementById('profile-picture').src = profilePicture;
-                document.getElementById('user-email').textContent = email; // Display email
-            };
-
-            function redirectToLogin() {
-                window.location.href = 'login-page.aspx';
-            }
-
-            // Function to logout
-            function logout() {
-                sessionStorage.clear(); // Clear session storage
-                clearAllCookies();
-                window.location.href = 'login-page.aspx'; // Redirect to login page
-            }
-
-            function clearAllCookies() {
-                const cookies = document.cookie.split(';');
-
-                for (let i = 0; i < cookies.length; i++) {
-                    const cookie = cookies[i];
-                    const eqPos = cookie.indexOf('=');
-                    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-                    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-                }
-            }
-
-            $(document).ready(function () {
-                $('#btnLogout').click(function () {
-                    var uid = $('#user-uid').text();
-                    var username = $('#profile-name').text();
-                    var email = $('#user-email').text();
-                    var profilePicture = $('#profile-picture').attr('src');
-
-                    // Send data to server-side code
-                    $.ajax({
-                        url: 'user-profile.aspx', // Change to your server-side endpoint
-                        method: 'POST',
-                        data: {
-                            uid: uid,
-                            username: username,
-                            email: email,
-                            profilePicture: profilePicture
-                        },
-                        success: function (response) {
-                            // Handle success response
-                            console.log(response);
-                        },
-                        error: function (xhr, status, error) {
-                            // Handle error
-                            console.error(xhr.responseText);
-                        }
-                    });
-                });
-            });
-
-            document.getElementById("search-icon").addEventListener("click", function () {
-                document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
-            });
-
-            document.getElementById("search-icon").addEventListener("click", function () {
-                // Toggle the 'active' class on the .topnav-right element
-                document.querySelector(".topnav-right").classList.toggle("active-padding");
-            });
-
-            // Get the input element
-            var input = document.getElementById("search-input");
-
-            // Add event listener for keydown event
-            input.addEventListener("keydown", function (event) {
-                // Check if the key pressed is Enter (key code 13)
-                if (event.keyCode === 13) {
-                    // Prevent the default action (e.g., form submission)
-                    event.preventDefault();
-                    // Clear the input value
-                    input.value = "";
-                    // Trigger your search function here
-                    // For example, you can call a function to handle the search
-                    performSearch();
-                }
-            });
-
-            // Function to handle search
-            function performSearch() {
-                // Get the search input value
-                var searchTerm = document.getElementById("search-input").value;
-                // Perform your search action here
-                console.log("Search term:", searchTerm);
-                // You can replace the console.log statement with your actual search logic
-            }
-
-
-            // JavaScript to toggle visibility of the top navigation on scroll
-
-
-
-
-            $(document).ready(function () {
-                var lastScrollTop = 0;
-
-                $(window).scroll(function (event) {
-                    var st = $(this).scrollTop();
-                    if (st > lastScrollTop) {
-                        // Scroll down
-                        $("#topnav").removeClass("visible").addClass("hidden");
-                    } else {
-                        // Scroll up
-                        $("#topnav").removeClass("hidden").addClass("visible");
-                    }
-                    lastScrollTop = st;
-                });
-            });
-
-            document.getElementById("search-icon").addEventListener("click", function () {
-                document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
-            });
-
-            $(document).ready(function () {
-                var slideIndex = 0; // Initialize slide index
-
-                // Function to move to the next slide
-                function nextSlide() {
-                    var slideWidth = $('.slides a').eq(0).outerWidth();
-                    slideIndex = (slideIndex + 1) % $('.slides a').length; // Increment slide index
-                    $('.slides').css('transform', 'translateX(' + (-slideIndex * slideWidth) + 'px)');
-                    updateSliderIndicator(); // Update slider indicator
-                }
-
-                // Function to update the slider indicator
-                function updateSliderIndicator() {
-                    $('.slider').removeClass('active');
-                    $('.slider[data-slide="' + slideIndex + '"]').addClass('active');
-                }
-
-                // Set interval to automatically move to the next slide every 8 seconds
-                var interval = setInterval(nextSlide, 4000);
-
-                // Click event handler for slider
-                $('.slider').click(function () {
-                    clearInterval(interval); // Clear previous interval
-                    slideIndex = $(this).data('slide'); // Update slide index
-                    var slideWidth = $('.slides a').eq(0).outerWidth();
-                    $('.slides').css('transform', 'translateX(' + (-slideIndex * slideWidth) + 'px)');
-                    updateSliderIndicator(); // Update slider indicator
-                    // Set new interval after click
-                    interval = setInterval(nextSlide, 4000);
-                });
-            });
-
-
-
-
-        </script>
-
-         
-
-    </body>
+</script>
+        <script src="javascripts/JavaScript.js"></script>
+    <script src="javascripts/profile.js"></script>
+</body>
+</html>

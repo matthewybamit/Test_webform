@@ -34,9 +34,8 @@
             .grid-wrapper {
             display: flex;
             justify-content: center; /* Center horizontally */
-           
-           
-        }
+            }
+            
 
             .grid-container {
                 display: grid;
@@ -49,11 +48,16 @@
             
             .grid-item {
                 width: 320px;
-               
+                transition: transform .2s;
                 margin-left: 30px;
                 margin-right: 30px;
                 text-align: center; /* Center align content */
             }
+            .grid-item:hover {
+                  -ms-transform: scale(1.5); /* IE 9 */
+                  -webkit-transform: scale(1.5); /* Safari 3-8 */
+                  transform: scale(1.025); 
+                }
             
             .grid-item img {
                 max-width: 100%; /* Ensure images don't exceed their container */
@@ -63,6 +67,13 @@
             
             .label {
                 font-size: 30px; /* Font size for labels */
+            }
+            .labelprice {
+                font-size: 23px;
+            }
+            .labeldesc {
+             font-size: 20px;
+             color: gray;
             }
             .h {
                margin: auto;
@@ -85,6 +96,81 @@
                 letter-spacing: 15px;
                 
             }
+            /* Style for the dropdown container */
+            .dropdown-container {
+                /* Position the container relative */
+                position: relative;
+                 margin-left: 1070px;
+                 margin-bottom: 25px;
+            }
+
+            /* Style for the dropdown */
+            .styled-dropdown {
+                /* Position the dropdown absolute */
+                /* Position it at the top right corner of the container */
+
+                /* Add padding to the dropdown */
+                padding: 8px;
+                /* Set the background color */
+                background-color: #FAEBDB;
+                /* Set the border */
+                border: 1px solid #333;
+                /* Add rounded corners */
+                border-radius: 5px;
+                /* Set font size and color */
+                font-size: 12px;
+                color: #333;
+                /* Add some space between the text and the dropdown arrow */
+                padding-right: 30px; 
+                /* Set cursor to pointer to indicate it's clickable */
+                cursor: pointer;
+                /* Ensure it appears above other content */
+                z-index: 1;
+            }
+
+            /* Style for dropdown options */
+            .styled-dropdown option {
+                /* Set font size and color */
+                font-size: 12px;
+                color: #333;
+                /* Add padding */
+                padding: 8px;
+            }
+
+            /* Style for when dropdown is hovered */
+            .styled-dropdown:hover {
+                /* Change background color */
+                background-color: #FAEBDB;
+            }
+
+            /* Style for when dropdown is focused */
+            .styled-dropdown:focus {
+                /* Add box shadow */
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                /* Change border color */
+                border-color: #fff;
+            }
+
+            /* Style for when dropdown arrow */
+            .styled-dropdown:after {
+                /* Position the arrow */
+                content: '\25BC';
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                /* Transform to center vertically */
+                transform: translateY(-50%);
+                /* Adjust color and size */
+                color: #666;
+                font-size: 14px;
+            }
+
+            /* Style for when dropdown arrow is hovered */
+            .styled-dropdown:hover:after {
+                /* Adjust color */
+                color: #333;
+            }
+
         </style>
     </head>
    
@@ -98,16 +184,16 @@
 <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
     <img class="logo" src="Dresserve.png" alt="">
-    <a class="active" href="landing.html">Dresserve</a>
+    <a class="active" href="Landing-page.aspx">Dresserve</a>
     <!-- END -->  
 
     <!--NAV ICON-->
     <div class="topnav-right">
         <a href="#home" id="search-icon">
-  <img class="icon" src="magnifying-glass.png" alt="Search">
+  <img class="icon" src="magnifying-glass.png" alt="Search"/>
 </a>
 <div id="search-box">
-  <input type="text" id="search-input" placeholder="Enter your search">
+  <input type="text" id="search-input" placeholder="Enter your search"/>
 </div>
         <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
         <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
@@ -117,18 +203,57 @@
     </div>
     <!-- END -->  
     <div class="h">
-        <h2 class="mc"> MEN'S COLLECTION</h2><br>
+        <h2 class="mc">COLLECTION</h2><br>
         <h4 class="cf"> C &nbsp;O &nbsp;L&nbsp; L&nbsp; E&nbsp; C&nbsp; T&nbsp; I&nbsp; O&nbsp; N&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   F &nbsp;I &nbsp;T &nbsp;T &nbsp;I &nbsp;N&nbsp; G </h4>
     </div>
 </div>
 
   <!-- END -->  
-
+   
  
  <form id="form1" runat="server">
+
+
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+     <div class="dropdown-container">
+    <asp:DropDownList ID="ddlGender" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlGender_SelectedIndexChanged" CssClass="styled-dropdown">
+    <asp:ListItem Text="Default or All" Value=""></asp:ListItem>
+    <asp:ListItem Text="Him" Value="Him"></asp:ListItem>
+    <asp:ListItem Text="Her" Value="Her"></asp:ListItem>
+</asp:DropDownList>
+
+<asp:DropDownList ID="ddlCategory" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged" CssClass="styled-dropdown">
+    <asp:ListItem Text="Default or All" Value=""></asp:ListItem>
+    <asp:ListItem Text="Wedding Gowns" Value="Wedding Gowns"></asp:ListItem>
+    <asp:ListItem Text="Debut Gowns" Value="Debut Gowns"></asp:ListItem>
+    <asp:ListItem Text="Formal" Value="Formal"></asp:ListItem>
+    <asp:ListItem Text="Dresses" Value="Dresses"></asp:ListItem>
+</asp:DropDownList>
+
+</div>
+
+    <ContentTemplate>
         <div class="grid-wrapper">
-            <asp:PlaceHolder ID="gridProducts" runat="server"></asp:PlaceHolder>
+            <div class="grid-container">
+                <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+            </div>
         </div>
+    </ContentTemplate>
+
+        <asp:UpdatePanel ID="updatePanel" runat="server">
+    <Triggers>
+        <asp:AsyncPostBackTrigger ControlID="ddlGender" EventName="SelectedIndexChanged" />
+        <asp:AsyncPostBackTrigger ControlID="ddlCategory" EventName="SelectedIndexChanged" />
+    </Triggers>
+    <ContentTemplate>
+        <div class="grid-wrapper">
+            <div class="grid-container">
+                <asp:PlaceHolder ID="gridProducts" runat="server"></asp:PlaceHolder>
+            </div>
+        </div>
+    </ContentTemplate>
+</asp:UpdatePanel>
     </form>
     <!--<div class="grid-item">
         <img src="heshim/FlatFrontLinensuit.png" alt="Image 4">

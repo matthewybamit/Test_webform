@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login-page.aspx.cs" Inherits="Test_webform.WebForm1" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login-page.aspx.cs" Inherits="Test_webform.WebForm1" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -26,25 +26,22 @@
                     <p>with</p>
                     <hr>
                 </div>
-
                 
-                     <!-- <form id="form1" runat="server"> 
-                        <asp:ImageButton ID="GoogleImage" ImageUrl="googlelogo1.png" runat="server" style="height: 50px; margin: 0 10px; cursor: pointer;"/>
-                        <!-- <asp:ImageButton ID="FacebookImage" ImageUrl="fblogo1.png" runat="server" OnClick="FBLogin" /> 
-                    
-                    </form> -->
+             
 
                     
                 
-<div class="social-icons">
-                
-     <button class="GoogleImage">
-    <img src="/googlelogo1.png" id="gimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
-</button>
 
-<button class="FacebookImage">
-    <img src="/fblogo1.png" id="fbimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
-</button> 
+                <div class="social-icons">
+    
+
+    <button class="GoogleImage">
+        <img src="googlelogo1.png" id="gimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
+    </button>
+
+    <button class="FacebookImage">
+        <img src="fblogo1.png" id="fbimage" alt="Google Logo" style="height: 50px; margin: 0 10px; cursor: pointer;">
+    </button>
 
      
 
@@ -55,9 +52,9 @@
 </div>
 
         <script type="module">
-        // Import the functions you need from the SDKs you need
-            import {initializeApp} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-       
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+
             import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";            // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -65,13 +62,13 @@
             // For Firebase JS SDK v7.20.0 and later, measurementId is optional
             const firebaseConfig = {
                 apiKey: "AIzaSyCleDtO3LZ6hnkM6JaNZ7i5PygTRWeq3qA",
-            authDomain: "ultra-palisade-420202.firebaseapp.com",
-            projectId: "ultra-palisade-420202",
-            storageBucket: "ultra-palisade-420202.appspot.com",
-            messagingSenderId: "35298655443",
-            appId: "1:35298655443:web:18e39dfee6f727212ae826",
-            measurementId: "G-FK5MZYG8EX"
-  };
+                authDomain: "ultra-palisade-420202.firebaseapp.com",
+                projectId: "ultra-palisade-420202",
+                storageBucket: "ultra-palisade-420202.appspot.com",
+                messagingSenderId: "35298655443",
+                appId: "1:35298655443:web:18e39dfee6f727212ae826",
+                measurementId: "G-FK5MZYG8EX"
+            };
 
             const firebaseConfig2 = {
                 apiKey: "AIzaSyCleDtO3LZ6hnkM6JaNZ7i5PygTRWeq3qA",
@@ -93,12 +90,12 @@
             provider.setCustomParameters({ prompt: 'select_account' });
             const facebookProvider = new FacebookAuthProvider();
             facebookProvider.setCustomParameters({ prompt: 'select_account' });
-            
-            setPersistence(authFacebook, browserSessionPersistence);
-        // Get a reference to the authentication service
-       
 
-        // Get a reference to the sign-in button
+            setPersistence(authFacebook, browserSessionPersistence);
+            // Get a reference to the authentication service
+
+
+            // Get a reference to the sign-in button
             const signInWithGoogleButtons = document.querySelectorAll('.GoogleImage');
             setPersistence(auth, browserSessionPersistence);
             signInWithGoogleButtons.forEach(button => {
@@ -106,6 +103,7 @@
                     signInWithPopup(auth, provider)
                         .then((result) => {
                             const user = result.user;
+                               sendUserDataToServer(user);
                             console.log("User data before stored:", user);
                             if (user) {
                                 // Store user data in session storage
@@ -121,7 +119,7 @@
                                 console.log("Profile Picture URL:", sessionStorage.getItem('profilePicture'));
                                 console.log("Email:", sessionStorage.getItem('email')); // Display email
                                 console.log("UID:", sessionStorage.getItem('uid')); // Display UID
-                             
+
                                 // Store user data in cookies
                                 document.cookie = `username=${user.displayName}; path=/`;
                                 document.cookie = `name=${user.displayName}; path=/`;
@@ -136,10 +134,10 @@
                                 console.log("Email:", getCookie('email'));
                                 console.log("UID:", getCookie('uid'));
 
-                                
+
 
                                 // Redirect to another page where you want to display the data
-                                window.location.href = 'Landing-page.aspx'; // Replace with your actual path
+                                window.location.href = 'user-profile.aspx'; // Replace with your actual path
                                 alert("Welcome, " + user.displayName);
                             } else {
                                 console.error("User object is null or undefined");
@@ -158,60 +156,51 @@
                 if (parts.length === 2) return parts.pop().split(';').shift();
             }
 
-            const signInWithFacebookButtons = document.querySelectorAll('.FacebookImage');
+            function sendUserDataToServer(user) {
+    $.ajax({
+        url: 'user-profile.aspx', // Server-side endpoint for handling database insertion
+        method: 'POST',
+        data: {
+            uid: user.uid,
+            username: user.displayName,
+            email: user.email,
+            profilePicture: user.photoURL
+        },
+        success: function (response) {
+            console.log(response); // Handle success response if needed
+        },
+        error: function (xhr, status, error) {
+            console.error(xhr.responseText); // Handle error
+        }
+    });
+}
 
-            signInWithFacebookButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    signInWithPopup(authFacebook, facebookProvider)
-                        .then((result) => {
-                            const user = result.user;
-                            console.log("User data before stored:", user);
-                            if (user) {
-                                // Store user data in session storage
-                                sessionStorage.setItem('username', user.displayName);
-                                sessionStorage.setItem('name', user.displayName); // Assuming 'name' is the same as 'displayName'
-                                sessionStorage.setItem('profilePicture', user.photoURL);
-                                sessionStorage.setItem('email', user.email); // Store email
-                                sessionStorage.setItem('uid', user.uid); // Store UID
-
-                                console.log("User data after storing in session storage:");
-                                console.log("Username:", sessionStorage.getItem('username'));
-                                console.log("Name:", sessionStorage.getItem('name'));
-                                console.log("Profile Picture URL:", sessionStorage.getItem('profilePicture'));
-                                console.log("Email:", sessionStorage.getItem('email')); // Display email
-                                console.log("UID:", sessionStorage.getItem('uid')); // Display UID
-
-                                // Store user data in cookies
-                                document.cookie = `username=${user.displayName}; path=/`;
-                                document.cookie = `name=${user.displayName}; path=/`;
-                                document.cookie = `profilePicture=${user.photoURL}; path=/`;
-                                document.cookie = `email=${user.email}; path=/`;
-                                document.cookie = `uid=${user.uid}; path=/`;
-
-                                console.log("User data after storing in cookies:");
-                                console.log("Username:", getCookie('username'));
-                                console.log("Name:", getCookie('name'));
-                                console.log("Profile Picture URL:", getCookie('profilePicture'));
-                                console.log("Email:", getCookie('email'));
-                                console.log("UID:", getCookie('uid'));
-
-
-
-                                // Redirect to another page where you want to display the data
-                                window.location.href = 'Landing-page.aspx'; // Replace with your actual path
-                                alert("Welcome, " + user.displayName);
-                            } else {
-                                console.error("User object is null or undefined");
-                            }
-                        })
-                        .catch((error) => {
-                            console.error(error.message);
-                        });
-                });
-            });
 
         </script>
+      <script>
+        // After successful authentication
+function handleSignIn(user) {
+    // Store user data in session storage
+    sessionStorage.setItem('username', user.displayName);
+    sessionStorage.setItem('name', user.displayName);
+    sessionStorage.setItem('profilePicture', user.photoURL);
+    sessionStorage.setItem('email', user.email);
+    sessionStorage.setItem('uid', user.uid);
 
+    // Store user data in cookies
+    document.cookie = `username=${user.displayName}; path=/`;
+    document.cookie = `name=${user.displayName}; path=/`;
+    document.cookie = `profilePicture=${user.photoURL}; path=/`;
+    document.cookie = `email=${user.email}; path=/`;
+    document.cookie = `uid=${user.uid}; path=/`;
+
+    // Redirect to user-profile.aspx page
+    window.location.href = 'book.aspx';
+
+    // No need to call sendUserDataToServer here; it's already called from user-profile.aspx
+}
+
+      </script>
     <div class="footer">
         <p class="left">Terms and Conditions</p>
         <p class="left"> Privacy and Policy</p>
