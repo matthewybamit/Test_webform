@@ -26,7 +26,6 @@ namespace Test_webform
         protected async void Page_Load(object sender, EventArgs e)
         {
             
-
             if (Request.QueryString["token"] != null)
             {
                 string approvalToken = Request.QueryString["token"];
