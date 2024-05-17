@@ -86,15 +86,6 @@ input.addEventListener("keydown", function (event) {
 });
 
 // Function to handle search
-function performSearch() {
-    // Get the search input value
-    var searchTerm = document.getElementById("search-input").value;
-    // Perform your search action here
-    console.log("Search term:", searchTerm);
-    // You can replace the console.log statement with your actual search logic
-}
-
-
 // Function to open the cart
 function openCart() {
     document.getElementById('cart-overlay').classList.add('show-cart');
@@ -115,6 +106,7 @@ function toggleCart() {
     }
 }
 
+
 // Event listener for opening/closing the cart
 document.getElementById('open-form').addEventListener('click', function (event) {
     event.preventDefault(); // Prevent the default action of anchor tag
@@ -133,3 +125,4 @@ document.getElementById('cart-overlay').addEventListener('click', function (even
         closeCart();
     }
 });
+

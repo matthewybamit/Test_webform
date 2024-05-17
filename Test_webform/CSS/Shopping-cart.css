@@ -1,43 +1,28 @@
-﻿/* Cart overlay styles */
-.cart-overlay {
+﻿#sidePanel {
+    z-index: 1;
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-
-.show-cart {
-    display: flex;
-}
-
-/* Cart styles */
-.cart {
-    background: #fff;
+    right: -300px; /* Initially hidden off-screen */
     width: 300px;
-    padding: 20px;
-    border-radius: 5px;
+    height: 100%;
+    background-color: #fff; /* Change this to your desired background color */
+    transition: right 0.3s ease; /* Add transition for smooth animation */
 }
 
-    .cart h2 {
-        margin-bottom: 10px;
+    #sidePanel.open {
+        right: 0; /* Slide the side panel into view */
     }
 
-.cart-buttons {
-    display: flex;
-    justify-content: space-between;
+.cart-item-image {
+    max-width: 100px; /* Adjust the value as needed */
+    height: auto; /* Maintain aspect ratio */
 }
 
-    .cart-buttons button {
-        padding: 10px 20px;
-        background: #333;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+.cart {
+    max-height: 300px; /* Adjust the value as needed */
+    overflow-y: auto;
+}
+
+.cart-items-container {
+    padding-right: 15px; /* Add padding to prevent content from being covered by the scrollbar */
+}

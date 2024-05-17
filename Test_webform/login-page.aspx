@@ -135,7 +135,7 @@
 
 
                                 // Redirect to another page where you want to display the data
-                                window.location.href = 'user-profile.aspx'; // Replace with your actual path
+                                window.location.href = 'WebForm4.aspx'; // Replace with your actual path
                                 alert("Welcome, " + user.displayName);
                             } else {
                                 console.error("User object is null or undefined");

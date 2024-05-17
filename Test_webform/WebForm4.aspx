@@ -11,6 +11,7 @@
          <link rel="stylesheet" href="CSS/inquire-view.css"/>  
          <link rel="stylesheet" href="CSS/Footer.css"/>  
          <link type="text/css" href="CSS/search-box-animation.css" rel="stylesheet" />
+        <link href="CSS/webform4.css" rel="stylesheet" />
         <title>DRESSERVE</title>
         <link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet"/>
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -30,147 +31,49 @@
     font-weight: normal;
     font-style: normal;
 }
+            /* CSS for the side panel */
+#sidePanel {
+    z-index: 1;
+    position: fixed;
+    top: 0;l
+    right: -300px; /* Initially hidden off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: #fff; /* Change this to your desired background color */
+    transition: right 0.3s ease; /* Add transition for smooth animation */
+}
 
-            .grid-wrapper {
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            }
-            
+#sidePanel.open {
+    right: 0; /* Slide the side panel into view */
+}
+#sidePanel {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially hidden off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: #fff; /* Change this to your desired background color */
+    transition: right 0.3s ease; /* Add transition for smooth animation */
+}
 
-            .grid-container {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr); /* Three columns */
-                grid-template-rows: repeat(3, 1fr); /* Three rows */
-                gap: 10px; /* Gap between grid items */
-                
-                
-            }
-            
-            .grid-item {
-                width: 320px;
-                transition: transform .2s;
-                margin-left: 30px;
-                margin-right: 30px;
-                text-align: center; /* Center align content */
-            }
-            .grid-item:hover {
-                  -ms-transform: scale(1.5); /* IE 9 */
-                  -webkit-transform: scale(1.5); /* Safari 3-8 */
-                  transform: scale(1.025); 
-                }
-            
-            .grid-item img {
-                max-width: 100%; /* Ensure images don't exceed their container */
-                
-                margin-bottom: 10px; /* Add space between image and label */
-            }
-            
-            .label {
-                font-size: 30px; /* Font size for labels */
-            }
-            .labelprice {
-                font-size: 23px;
-            }
-            .labeldesc {
-             font-size: 20px;
-             color: gray;
-            }
-            .h {
-               margin: auto;
-               width: 370px;
-            }
-            .mc {
-                font-size: 30px;
-                
-                
-                margin-top: 100px;
-                text-align: center;
-                
-            
-            }
-            .cf{
-                text-align: center;
-                font-family: "Barlow Semi Condensed", sans-serif;
-            }
-            .h span {
-                letter-spacing: 15px;
-                
-            }
-            /* Style for the dropdown container */
-            .dropdown-container {
-                /* Position the container relative */
-                position: relative;
-                 margin-left: 1070px;
-                 margin-bottom: 25px;
-            }
+#sidePanel.open {
+    right: 0; /* Slide the side panel into view */
+}
 
-            /* Style for the dropdown */
-            .styled-dropdown {
-                /* Position the dropdown absolute */
-                /* Position it at the top right corner of the container */
+.cart-item-image {
+    max-width: 100px; /* Adjust the value as needed */
+    height: auto; /* Maintain aspect ratio */
+}
 
-                /* Add padding to the dropdown */
-                padding: 8px;
-                /* Set the background color */
-                background-color: #FAEBDB;
-                /* Set the border */
-                border: 1px solid #333;
-                /* Add rounded corners */
-                border-radius: 5px;
-                /* Set font size and color */
-                font-size: 12px;
-                color: #333;
-                /* Add some space between the text and the dropdown arrow */
-                padding-right: 30px; 
-                /* Set cursor to pointer to indicate it's clickable */
-                cursor: pointer;
-                /* Ensure it appears above other content */
-                z-index: 1;
-            }
+.cart {
+    max-height: 300px; /* Adjust the value as needed */
+    overflow-y: auto;
+}
 
-            /* Style for dropdown options */
-            .styled-dropdown option {
-                /* Set font size and color */
-                font-size: 12px;
-                color: #333;
-                /* Add padding */
-                padding: 8px;
-            }
-
-            /* Style for when dropdown is hovered */
-            .styled-dropdown:hover {
-                /* Change background color */
-                background-color: #FAEBDB;
-            }
-
-            /* Style for when dropdown is focused */
-            .styled-dropdown:focus {
-                /* Add box shadow */
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-                /* Change border color */
-                border-color: #fff;
-            }
-
-            /* Style for when dropdown arrow */
-            .styled-dropdown:after {
-                /* Position the arrow */
-                content: '\25BC';
-                position: absolute;
-                top: 50%;
-                right: 10px;
-                /* Transform to center vertically */
-                transform: translateY(-50%);
-                /* Adjust color and size */
-                color: #666;
-                font-size: 14px;
-            }
-
-            /* Style for when dropdown arrow is hovered */
-            .styled-dropdown:hover:after {
-                /* Adjust color */
-                color: #333;
-            }
-
+.cart-items-container {
+    padding-right: 15px; /* Add padding to prevent content from being covered by the scrollbar */
+}
         </style>
     </head>
    
@@ -179,6 +82,7 @@
 
 
     <body>
+ <form id="form1" runat="server">
 
    <!--TOP NAV-->
 <div class="topnav visible" id="topnav">
@@ -190,17 +94,27 @@
     <!--NAV ICON-->
     <div class="topnav-right">
         <a href="#home" id="search-icon">
-  <img class="icon" src="magnifying-glass.png" alt="Search"/>
+  <img class="icon" src="magnifying-glass.png" alt="Search">
 </a>
 <div id="search-box">
-  <input type="text" id="search-input" placeholder="Enter your search"/>
+  <input type="text" id="search-input" placeholder="Enter your search">
 </div>
-        <a href="#home"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
-        <a href="#home"><img class="icon" src="user-logo.png" alt="User"></a>
+
+<asp:LinkButton ID="toggleButton" runat="server" OnClientClick="toggleCartAndUpdate(); return false;">
+    <img class="icon" src="shopping-bag.png" alt="Shopping Bag" />
+</asp:LinkButton>
+        <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
 </div>
     </div>
+    <!-- END --> 
+       <!-- END --> 
+    <div id="sidePanel" runat="server">
+    <!-- Content of the side panel goes here -->
+    <!-- You can add whatever content you want to show in the side panel -->
+</div>
+
     <!-- END -->  
     <div class="h">
         <h2 class="mc">COLLECTION</h2><br>
@@ -211,7 +125,7 @@
   <!-- END -->  
    
  
- <form id="form1" runat="server">
+
 
 
      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -230,6 +144,8 @@
     <asp:ListItem Text="Formal" Value="Formal"></asp:ListItem>
     <asp:ListItem Text="Dresses" Value="Dresses"></asp:ListItem>
 </asp:DropDownList>
+
+         <asp:HiddenField ID="HiddenField1" runat="server" />
 
 </div>
 
@@ -370,14 +286,49 @@
 </footer>
 
 
+        
+    <script>
+        function toggleCartAndUpdate() {
+            // Make an AJAX request to the server-side method to refresh the side panel content
+            PageMethods.RefreshSidePanel(onSuccess, onError);
+        }
+
+        // Callback function for successful AJAX request
+        function onSuccess(result) {
+            // Update the side panel with the refreshed content
+            document.getElementById("sidePanel").innerHTML = result;
+        }
+
+        // Callback function for AJAX request error
+        function onError(error) {
+            // Handle error (e.g., display an alert)
+            alert("An error occurred: " + error.get_message());
+        }
+    </script>
 
 
+        <script>// JavaScript function to toggle the side panel
+            function toggleCartAndUpdate() {
+                var sidePanel = document.getElementById('sidePanel');
+                sidePanel.classList.toggle('open');
+            }
+        </script>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            const uid = sessionStorage.getItem('uid');
+            if (uid) {
+                document.getElementById('<%= HiddenField1.ClientID %>').value = uid;
+            }
+
+        };
 
 
-
+    </script>
 
          <!--END-->
-
+        <script src="javascripts/JavaScript.js"></script>
 
 
 
@@ -385,105 +336,6 @@
    <!--JAVASCRIPTS-->
 
 
-
-        <script>
-            document.getElementById("search-icon").addEventListener("click", function () {
-                document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
-            });
-
-            document.getElementById("search-icon").addEventListener("click", function () {
-                // Toggle the 'active' class on the .topnav-right element
-                document.querySelector(".topnav-right").classList.toggle("active-padding");
-            });
-
-            // Get the input element
-            var input = document.getElementById("search-input");
-
-            // Add event listener for keydown event
-            input.addEventListener("keydown", function (event) {
-                // Check if the key pressed is Enter (key code 13)
-                if (event.keyCode === 13) {
-                    // Prevent the default action (e.g., form submission)
-                    event.preventDefault();
-                    // Clear the input value
-                    input.value = "";
-                    // Trigger your search function here
-                    // For example, you can call a function to handle the search
-                    performSearch();
-                }
-            });
-
-            // Function to handle search
-            function performSearch() {
-                // Get the search input value
-                var searchTerm = document.getElementById("search-input").value;
-                // Perform your search action here
-                console.log("Search term:", searchTerm);
-                // You can replace the console.log statement with your actual search logic
-            }
-
-
-            // JavaScript to toggle visibility of the top navigation on scroll
-
-
-
-
-            $(document).ready(function () {
-                var lastScrollTop = 0;
-
-                $(window).scroll(function (event) {
-                    var st = $(this).scrollTop();
-                    if (st > lastScrollTop) {
-                        // Scroll down
-                        $("#topnav").removeClass("visible").addClass("hidden");
-                    } else {
-                        // Scroll up
-                        $("#topnav").removeClass("hidden").addClass("visible");
-                    }
-                    lastScrollTop = st;
-                });
-            });
-
-            document.getElementById("search-icon").addEventListener("click", function () {
-                document.getElementById("search-box").classList.toggle("active"); // toggle the 'active' class
-            });
-
-            $(document).ready(function () {
-                var slideIndex = 0; // Initialize slide index
-
-                // Function to move to the next slide
-                function nextSlide() {
-                    var slideWidth = $('.slides a').eq(0).outerWidth();
-                    slideIndex = (slideIndex + 1) % $('.slides a').length; // Increment slide index
-                    $('.slides').css('transform', 'translateX(' + (-slideIndex * slideWidth) + 'px)');
-                    updateSliderIndicator(); // Update slider indicator
-                }
-
-                // Function to update the slider indicator
-                function updateSliderIndicator() {
-                    $('.slider').removeClass('active');
-                    $('.slider[data-slide="' + slideIndex + '"]').addClass('active');
-                }
-
-                // Set interval to automatically move to the next slide every 8 seconds
-                var interval = setInterval(nextSlide, 4000);
-
-                // Click event handler for slider
-                $('.slider').click(function () {
-                    clearInterval(interval); // Clear previous interval
-                    slideIndex = $(this).data('slide'); // Update slide index
-                    var slideWidth = $('.slides a').eq(0).outerWidth();
-                    $('.slides').css('transform', 'translateX(' + (-slideIndex * slideWidth) + 'px)');
-                    updateSliderIndicator(); // Update slider indicator
-                    // Set new interval after click
-                    interval = setInterval(nextSlide, 4000);
-                });
-            });
-
-
-
-
-        </script>
 
 
     </body>

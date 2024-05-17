@@ -15,6 +15,7 @@
             <link rel="stylesheet" type="text/css" href="CSS/Collection-list.css"/>  
             <link rel="stylesheet" type="text/css" href="CSS/Quote.css"/>  
             <link rel="stylesheet" type="text/css" href="CSS/inquire-view.css"/>  
+        <link href="CSS/Shopping-cart.css" rel="stylesheet" />
             <link rel="stylesheet" type="text/css" href="CSS/Footer.css"/>  
             <link href="CSS/search-box-animation.css" rel="stylesheet" />
         <link href="CSS/Shopping-cart.css" rel="stylesheet" />
@@ -23,15 +24,13 @@
    
 
 
-
-
     <body>
-   
-   <!--TOP NAV-->
-<div class="topnav visible" id="topnav">
+   <form runat="server">
+
+ <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
-    <a class="active" href="Landing-page.aspx">  <img class="logo" src="Dresserve.png"> Dresserve
-  </a>
+    <img class="logo" src="Dresserve.png" alt="">
+    <a class="active" href="Landing-page.aspx">Dresserve</a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -42,29 +41,22 @@
 <div id="search-box">
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
-     <a href="#" id="open-form"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
+
+<asp:LinkButton ID="toggleButton" runat="server" OnClientClick="toggleCartAndUpdate(); return false;">
+    <img class="icon" src="shopping-bag.png" alt="Shopping Bag" />
+</asp:LinkButton>
+
         <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
         <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
 </div>
     </div>
-    <!-- END -->  
+    <!-- END --> 
+    <div id="sidePanel" runat="server">
+    <!-- Content of the side panel goes here -->
+    <!-- You can add whatever content you want to show in the side panel -->
 </div>
 
-<!-- Cart -->
-<div id="cart-overlay" class="cart-overlay">
-    <div class="cart">
-        <h2>Shopping Cart</h2>
-        <div id="cart-items" class="cart-items">
-            <!-- Cart items will be added dynamically here -->
-        </div>
-        <div class="cart-buttons">
-            <button id="close-cart" class="close-cart">Close</button>
-            <button id="checkout-cart" class="checkout-cart">Checkout</button>
-        </div>
-    </div>
-</div>
-<!-- Cart -->
 
 
 
@@ -153,7 +145,11 @@
 
 
                  <!--INQUIRE/VIEWMORE-->
-    
+     <asp:HiddenField ID="HiddenField1" runat="server" />
+ <input type="text" id="uidInput" runat="server" style="display: none;" />
+
+       </form>
+
  <div class="Inquire-veiw-container">
   <div class="inquire-box">
     <img src="inquire.jpg" id="inquire-image" alt="inquire-image">
@@ -169,8 +165,7 @@
 
                  <!--END-->
 
-
-
+      
                  <!--FOOTER -->
 
       <footer class="footer">
@@ -262,6 +257,47 @@
 </div>
   </div>
 </footer>
+
+  <script>
+      function toggleCartAndUpdate() {
+          // Make an AJAX request to the server-side method to refresh the side panel content
+          PageMethods.RefreshSidePanel(onSuccess, onError);
+      }
+
+      // Callback function for successful AJAX request
+      function onSuccess(result) {
+          // Update the side panel with the refreshed content
+          document.getElementById("sidePanel").innerHTML = result;
+      }
+
+      // Callback function for AJAX request error
+      function onError(error) {
+          // Handle error (e.g., display an alert)
+          alert("An error occurred: " + error.get_message());
+      }
+  </script>
+
+
+      <script>// JavaScript function to toggle the side panel
+          function toggleCartAndUpdate() {
+              var sidePanel = document.getElementById('sidePanel');
+              sidePanel.classList.toggle('open');
+          }
+      </script>
+
+  <script type="text/javascript">
+
+      window.onload = function () {
+          const uid = sessionStorage.getItem('uid');
+          if (uid) {
+              document.getElementById('<%= HiddenField1.ClientID %>').value = uid;
+          }
+
+      };
+
+
+  </script>
+
 
 
         <script type="module">

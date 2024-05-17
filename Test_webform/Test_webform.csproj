@@ -185,6 +185,9 @@
     <Content Include="About.aspx" />
     <Content Include="All-content.aspx" />
     <Content Include="Book.aspx" />
+    <Content Include="cashout.aspx" />
+    <Content Include="CSS\webform4.css" />
+    <Content Include="CSS\Webform5.css" />
     <Content Include="CSS\items-responsive.css" />
     <Content Include="CSS\Shopping-cart.css" />
     <Content Include="CSS\Collection-list.css" />
@@ -227,6 +230,8 @@
     <Content Include="hes_him.aspx" />
     <Content Include="inquire.aspx" />
     <Content Include="insert_data.aspx" />
+    <Content Include="javascripts\Logout.js" />
+    <Content Include="javascripts\user-session.js" />
     <Content Include="javascripts\JavaScript.js" />
     <Content Include="javascripts\login.js" />
     <Content Include="javascripts\profile.js" />
@@ -267,7 +272,6 @@
     <Content Include="womens_collection.aspx" />
     <!--HEAD -->
     <!--=======-->
-    <Content Include="WebForm3.aspx" />
     <Content Include="WebForm4.aspx" />
     <Content Include="wedding.aspx" />
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
@@ -334,6 +338,13 @@
     </Compile>
     <Compile Include="Book.aspx.designer.cs">
       <DependentUpon>Book.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cashout.aspx.cs">
+      <DependentUpon>cashout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cashout.aspx.designer.cs">
+      <DependentUpon>cashout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

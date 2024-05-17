@@ -11,7 +11,7 @@ namespace Test_webform
             // You can perform any necessary initialization here
         }
 
-        protected void InsertButton_Click(object sender, EventArgs e)
+        protected void user_accounts(object sender, EventArgs e)
         {
             // Retrieve values from input fields
             string uid = uidInput.Value;

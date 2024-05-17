@@ -9,12 +9,13 @@
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="javascripts/JavaScript.js"></script>
             <link rel="stylesheet" type="text/css" href="CSS/StyleSheet1 - Copy.css"/>
-            <link rel="stylesheet" type="text/css" href="CSS/Carousel.css">  
+            <link rel="stylesheet" type="text/css" href="CSS/Carousel.css"/>  
             <link rel="stylesheet" type="text/css" href="CSS/for_him_for_her.css"/>
             <link rel="stylesheet" type="text/css" href="CSS/Collection-list.css"/>  
             <link rel="stylesheet" type="text/css" href="CSS/Quote.css"/>  
             <link rel="stylesheet" type="text/css" href="CSS/inquire-view.css"/>  
             <link rel="stylesheet" type="text/css" href="CSS/Footer.css"/>  
+        <link href="CSS/Shopping-cart.css" rel="stylesheet" />
         <link href="CSS/profile.css" rel="stylesheet" />
             <link href="CSS/search-box-animation.css" rel="stylesheet" />
         <link href="CSS/Shopping-cart.css" rel="stylesheet" />
@@ -26,12 +27,12 @@
 
 
     <body>
-   
-   <!--TOP NAV-->
-<div class="topnav visible" id="topnav">
+      <form runat="server">
+
+ <div class="topnav visible" id="topnav">
     <!-- LOGO -->   
-    <a class="active" href="Landing-page.aspx">  <img class="logo" src="Dresserve.png"> Dresserve
-  </a>
+    <img class="logo" src="Dresserve.png" alt="">
+    <a class="active" href="Landing-page.aspx">Dresserve</a>
     <!-- END -->  
 
     <!--NAV ICON-->
@@ -42,31 +43,23 @@
 <div id="search-box">
   <input type="text" id="search-input" placeholder="Enter your search">
 </div>
-     <a href="#" id="open-form"><img class="icon" src="shopping-bag.png" alt="Shopping Bag"></a>
+
+<asp:LinkButton ID="toggleButton" runat="server" OnClientClick="toggleCartAndUpdate(); return false;">
+    <img class="icon" src="shopping-bag.png" alt="Shopping Bag" />
+</asp:LinkButton>
+
         <a href="user-profile.aspx"><img class="icon" src="user-logo.png" alt="User"></a>
-        <a href="Book.aspx"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
+        <a href="#home"><img class="icon" id="burger" src="hamburger.png" alt="Menu"></a>   
 
 </div>
     </div>
-    <!-- END -->  
+    <!-- END --> 
+    <div id="sidePanel" runat="server">
+    <!-- Content of the side panel goes here -->
+    <!-- You can add whatever content you want to show in the side panel -->
 </div>
 
-<!-- Cart -->
-<div id="cart-overlay" class="cart-overlay">
-    <div class="cart">
-        <h2>Shopping Cart</h2>
-        <div id="cart-items" class="cart-items">
-            <!-- Cart items will be added dynamically here -->
-        </div>
-        <div class="cart-buttons">
-            <button id="close-cart" class="close-cart">Close</button>
-            <button id="checkout-cart" class="checkout-cart">Checkout</button>
-        </div>
-    </div>
-</div>
-
-    <input type="text" id="uidInput" />
-    <form id="form1" runat="server">
+<asp:HiddenField ID="HiddenField1" runat="server" />
         <div class="container-info">
             <div class="texthead">YOUR ACCOUNT</div>
             <div class="container-uid">
@@ -88,6 +81,8 @@
                 <button id="btnLogout" onclick="logout()">Logout</button>
             </div>
         </div>
+
+
     </form>
                  <!--FOOTER -->
 
@@ -181,60 +176,50 @@
   </div>
 </footer>
 
-      <script>
-          // Retrieve UID from session storage
-          const uid = sessionStorage.getItem('uid');
 
-          // Update the input field with the UID value
-          document.getElementById('uidInput').value = uid;
-      </script>
 <script>
-    window.onload = function () {
-        // Retrieve user data from session storage
-        const uid = sessionStorage.getItem('uid');
-        const username = sessionStorage.getItem('username');
-        const email = sessionStorage.getItem('email');
-        const profilePicture = sessionStorage.getItem('profilePicture');
+              function toggleCartAndUpdate() {
+        // Make an AJAX request to the server-side method to refresh the side panel content
+        PageMethods.RefreshSidePanel(onSuccess, onError);
+    }
 
-        // Check if any of the necessary session data is missing
-        if (!uid || !username || !email || !profilePicture) {
-            redirectToLogin();
-            return; // Stop further execution
+    // Callback function for successful AJAX request
+    function onSuccess(result) {
+        // Update the side panel with the refreshed content
+        document.getElementById("sidePanel").innerHTML = result;
+    }
+
+    // Callback function for AJAX request error
+    function onError(error) {
+        // Handle error (e.g., display an alert)
+        alert("An error occurred: " + error.get_message());
+    }
+</script>
+
+
+    <script>// JavaScript function to toggle the side panel
+        function toggleCartAndUpdate() {
+            var sidePanel = document.getElementById('sidePanel');
+            sidePanel.classList.toggle('open');
+        }
+    </script>
+
+<script type="text/javascript">
+
+    window.onload = function () {
+        const uid = sessionStorage.getItem('uid');
+        if (uid) {
+            document.getElementById('<%= HiddenField1.ClientID %>').value = uid;
         }
 
-        // Display the data in your HTML elements
-        document.getElementById('user-uid').textContent = uid; // Display UID
-        document.getElementById('profile-name').textContent = username;
-        document.getElementById('profile-picture').src = profilePicture;
-        document.getElementById('user-email').textContent = email; // Display email
-
-        // Send user data to server-side code for database insertion
-        sendUserDataToServer(uid, username, email, profilePicture);
     };
 
-    function redirectToLogin() {
-        window.location.href = 'login-page.aspx';
-    }
-
-    // Function to logout
-    function logout() {
-        sessionStorage.clear(); // Clear session storage
-        clearAllCookies();
-        window.location.href = 'login-page.aspx'; // Redirect to login page
-    }
-
-    function clearAllCookies() {
-        const cookies = document.cookie.split(';');
-
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim(); // Trim the cookie to remove leading spaces
-            const eqPos = cookie.indexOf('=');
-            const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-        }
-    }
 
 </script>
+ 
+
+<script src="javascripts/Logout.js"></script>
+<script src="javascripts/user-session.js"></script>
         <script src="javascripts/JavaScript.js"></script>
     <script src="javascripts/profile.js"></script>
 </body>
