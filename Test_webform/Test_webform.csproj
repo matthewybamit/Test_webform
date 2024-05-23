@@ -186,6 +186,7 @@
     <Content Include="All-content.aspx" />
     <Content Include="Book.aspx" />
     <Content Include="cashout.aspx" />
+    <Content Include="CSS\Add-to-cart.css" />
     <Content Include="CSS\webform4.css" />
     <Content Include="CSS\Webform5.css" />
     <Content Include="CSS\items-responsive.css" />

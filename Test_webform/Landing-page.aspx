@@ -15,6 +15,7 @@
             <link rel="stylesheet" type="text/css" href="CSS/Collection-list.css"/>  
             <link rel="stylesheet" type="text/css" href="CSS/Quote.css"/>  
             <link rel="stylesheet" type="text/css" href="CSS/inquire-view.css"/>  
+        <link href="CSS/Add-to-cart.css" rel="stylesheet" />
         <link href="CSS/Shopping-cart.css" rel="stylesheet" />
             <link rel="stylesheet" type="text/css" href="CSS/Footer.css"/>  
             <link href="CSS/search-box-animation.css" rel="stylesheet" />
@@ -52,7 +53,7 @@
 </div>
     </div>
     <!-- END --> 
-    <div id="sidePanel" runat="server">
+<div id="sidePanel" runat="server" style="max-height: 100%; overflow-y: auto;">
     <!-- Content of the side panel goes here -->
     <!-- You can add whatever content you want to show in the side panel -->
 </div>

@@ -82,7 +82,6 @@ namespace Test_webform
             // Retrieve user ID from session storage
             return HiddenField1.Value;
         }
-
         private void RefreshSidePanel(string userId)
         {
             // Retrieve cart items associated with the user's session ID from the database
@@ -99,24 +98,35 @@ namespace Test_webform
                 htmlBuilder.Append($"<p>Size: {item.Size}</p>");
                 htmlBuilder.Append($"<p>Rent Rate: ₱{item.RentRate.ToString("#,##0.00")}</p>");
                 // Add data attribute for CARTID
+                htmlBuilder.Append($"<div class='cart-actions'>");
                 htmlBuilder.Append($"<button class='remove-item-btn' data-cartid='{item.CartId}'>Remove</button>");
+                htmlBuilder.Append("</div>");
                 htmlBuilder.Append($"</div>");
                 htmlBuilder.Append($"</div>");
             }
 
             // Add Cash-out button HTML
-            htmlBuilder.Append("<div>");
-            htmlBuilder.Append("<button id='cashOutButton' class='cash-out-btn'>Cash-out</button>");
+            htmlBuilder.Append("<div class='cart-actions'>");
+            htmlBuilder.Append("<asp:LinkButton ID='cashOutButton' runat='server' OnClick='CashOutButton_Click'>Cash-out</asp:LinkButton>");
             htmlBuilder.Append("</div>");
 
             // Update the content of the side panel
             sidePanel.InnerHtml = htmlBuilder.ToString();
 
-            // Register JavaScript function to handle remove button click
+            // Set CSS class for the cashOutButton LinkButton
+            string script = @"
+<script>
+    document.getElementById('cashOutButton').classList.add('cart-btn');
+</script>";
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CashOutButtonCssScript", script);
+
             Page.ClientScript.RegisterStartupScript(this.GetType(), "RemoveButtonClickScript", @"
 <script>
     $(document).ready(function(){
+        console.log('Document is ready');
+
         $('.remove-item-btn').click(function(){
+            console.log('Remove button clicked');
             var userId = '" + userId + @"';
             var cartId = $(this).data('cartid');
             $.ajax({
@@ -141,15 +151,15 @@ namespace Test_webform
 
         // Handle Cash-out button click
         $('#cashOutButton').click(function(){
-            // Ask for confirmation before redirecting
-            var confirmCashout = confirm('Are you sure you want to proceed with cashing out?');
-            if(confirmCashout){
-                window.location.href = 'cashout.aspx'; // Redirect to cashout.aspx
-            }
+            console.log('Cash-out button clicked');
+            // Redirect directly to cashout.aspx
+            window.location.href = 'cashout.aspx';
         });
     });
 </script>");
         }
+
+
 
         [WebMethod]
         public static bool RemoveItemFromCart(string userId, int cartId)

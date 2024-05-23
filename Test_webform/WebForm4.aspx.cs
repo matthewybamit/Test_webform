@@ -51,43 +51,68 @@ namespace Test_webform
                 htmlBuilder.Append($"<p>Size: {item.Size}</p>");
                 htmlBuilder.Append($"<p>Rent Rate: ₱{item.RentRate.ToString("#,##0.00")}</p>");
                 // Add data attribute for CARTID
+                htmlBuilder.Append($"<div class='cart-actions'>");
                 htmlBuilder.Append($"<button class='remove-item-btn' data-cartid='{item.CartId}'>Remove</button>");
+                htmlBuilder.Append("</div>");
                 htmlBuilder.Append($"</div>");
                 htmlBuilder.Append($"</div>");
             }
 
+            // Add Cash-out button HTML
+            htmlBuilder.Append("<div class='cart-actions'>");
+            htmlBuilder.Append("<asp:LinkButton ID='cashOutButton' runat='server' OnClick='CashOutButton_Click'>Cash-out</asp:LinkButton>");
+            htmlBuilder.Append("</div>");
+
             // Update the content of the side panel
             sidePanel.InnerHtml = htmlBuilder.ToString();
 
-            // Register JavaScript function to handle remove button click
+            // Set CSS class for the cashOutButton LinkButton
+            string script = @"
+<script>
+    document.getElementById('cashOutButton').classList.add('cart-btn');
+</script>";
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CashOutButtonCssScript", script);
+
             Page.ClientScript.RegisterStartupScript(this.GetType(), "RemoveButtonClickScript", @"
-        <script>
-            $(document).ready(function(){
-                $('.remove-item-btn').click(function(){
-                    var userId = '" + userId + @"';
-                    var cartId = $(this).data('cartid');
-                    $.ajax({
-                        type: 'POST',
-                        url: 'WebForm5.aspx/RemoveItemFromCart',
-                        data: JSON.stringify({ userId: userId, cartId: cartId }),
-                        contentType: 'application/json; charset=utf-8',
-                        dataType: 'json',
-                        success: function(response){
-                            if(response.d){
-                                alert('Item removed successfully.');
-                                location.reload(); // Refresh the page after removing the item
-                            } else {
-                                alert('Failed to remove item from cart.');
-                            }
-                        },
-                        error: function(){
-                            alert('Error occurred while processing your request.');
-                        }
-                    });
-                });
+<script>
+    $(document).ready(function(){
+        console.log('Document is ready');
+
+        $('.remove-item-btn').click(function(){
+            console.log('Remove button clicked');
+            var userId = '" + userId + @"';
+            var cartId = $(this).data('cartid');
+            $.ajax({
+                type: 'POST',
+                url: 'WebForm5.aspx/RemoveItemFromCart',
+                data: JSON.stringify({ userId: userId, cartId: cartId }),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function(response){
+                    if(response.d){
+                        alert('Item removed successfully.');
+                        location.reload(); // Refresh the page after removing the item
+                    } else {
+                        alert('Failed to remove item from cart.');
+                    }
+                },
+                error: function(){
+                    alert('Error occurred while processing your request.');
+                }
             });
-        </script>");
+        });
+
+        // Handle Cash-out button click
+        $('#cashOutButton').click(function(){
+            console.log('Cash-out button clicked');
+            // Redirect directly to cashout.aspx
+            window.location.href = 'cashout.aspx';
+        });
+    });
+</script>");
         }
+
+
         private string GetDatabaseUserId()
         {
             // Retrieve the user ID from the database
